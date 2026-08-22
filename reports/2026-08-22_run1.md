@@ -1,0 +1,37 @@
+# TRACE Demand Radar
+
+Run `1`, comparing against _no prior run (baseline)_.
+525 dress products from 9 creators across 108 collections. 73 cleared the volume floor, 38 are rising or peaking.
+
+## Alerts
+
+- **baseline** -  Baseline run recorded (525 products). Deltas and alerts begin from the next run.
+
+## Rising or peaking, ranked by demand-supply gap
+
+| # | Product | Brand | $ | State | Accel | Creators | Daily | Supply | Gap |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | Iris Embroidered Strapless Maxi Dress | JW PEI | 199.0 | rising | 2.405 | 1 | 134 | unmeasured | 0.4264 |
+| 2 | Himalia Maxi Dress  | De La Vali | 980.0 | rising | 1.813 | 1 | 115 | unmeasured | 0.4223 |
+| 3 | Kira Draped Silk Maxi Dress | STAUD | 795.0 | peaking | 0.988 | 1 | 91 | unmeasured | 0.4194 |
+| 4 | Brio Dress | STAUD | 325.0 | rising | 3.684 | 1 | 40 | unmeasured | 0.3842 |
+| 5 | Palmetto Textured Dress | Yellow the Label | 298.0 | rising | 2.197 | 1 | 86 | unmeasured | 0.3748 |
+| 6 | Arabella V-Neck Dress  | Arcina Ori | 580.0 | rising | 2.429 | 1 | 17 | unmeasured | 0.3374 |
+| 7 | Field of Dreams Maxi Dress | Lioness | 102.0 | rising | 1.354 | 1 | 41 | unmeasured | 0.3304 |
+| 8 | Visions Lace Maxi Dress | Third Form | 372.0 | peaking | 0.815 | 1 | 44 | unmeasured | 0.3243 |
+| 9 | Mini Wells Dress | STAUD | 195.0 | peaking | 1.052 | 1 | 49 | unmeasured | 0.32 |
+| 10 | Ashton Maxi Dress | Amanda Uprichard | 290.0 | peaking | 0.933 | 1 | 30 | unmeasured | 0.3184 |
+
+## Past peak (what a retrospective report would wrongly surface)
+
+High all-time volume, thin recent activity. Listed so the contrast is explicit: these are the products a 'most popular dresses' report would lead with, and they are exactly the ones TRACE should not organise demand around now.
+
+| Product | Brand | Total clicks | Monthly | Weekly | Week vs month |
+|---|---|---|---|---|---|
+| Marcie Dress | Tuckernuck | 55700 | 4084 | 148 | 0.155 |
+| Wedelia Bustier Midi Dress | ASTR the Label | 31812 | 2876 | 124 | 0.185 |
+| Ava Appliqué Floral Bustier Maxi Dress | Leo Lin | 18297 | 8925 | 206 | 0.099 |
+| Kinney Dress | Jenni Kayne | 13307 | 2792 | 67 | 0.103 |
+| The Sabine Dress in Silk Chiffon | Helsa | 10376 | 3878 | 89 | 0.098 |
+
+_Supply shown as `unmeasured` is not the same as zero; those rows are scored at neutral supply so an unchecked item cannot masquerade as a confirmed gap._

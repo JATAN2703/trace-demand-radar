@@ -1,0 +1,50 @@
+# Seed configuration for the radar.
+#
+# Discovery is creator-seeded rather than global-search, because ShopMy's
+# product search endpoints require authentication (verified 401) and we do not
+# bypass auth. See PROBE_LOG.md.
+#
+# Choosing which creators matter is the human-in-the-loop step: it is where
+# judgement genuinely beats automation, and it is the stage the role description
+# explicitly asks for. Everything downstream of this list is automated.
+
+creators:
+  # Handle              # Who they are                  # last activity seen when seeded
+  - dressforthewedding  # Dress for the Wedding          2026-06-22
+  - jamieschuppert      # Jamie Schuppert                2026-05-27
+  - lexxhidalgo         # Lexi Hidalgo                   2026-04-30
+  - hdillz11            # Heather DiLorenzo              2026-03-23
+  - curatedbymc         # CURATEDbyMC                    2026-03-03
+  - ladydianamay        # Diana-May                      2026-02-03
+  - jenniferatilemile   # Jennifer Atilemile
+  - lucycassels         # Lucy Cassels
+  - brooklynandbailey   # Brooklyn and Bailey
+
+# Only this category is scored. ShopMy taxonomy: Dresses = category id 192,
+# Department_id 44 (verified against /api/Categories/).
+category_filter: Dresses
+
+# Per creator, how many of their most-recently-updated collections to pull.
+# Bounded to keep request volume polite; raise it for a wider sweep.
+max_collections_per_creator: 12
+
+# Ignore collections not touched in this many days. Stale collections still
+# carry live click data, but they are weak evidence of *current* creator push.
+collection_staleness_days: 400
+
+# Google Trends cross-check terms. Kept small because the endpoint is
+# unofficial and rate-limits aggressively.
+trend_terms:
+  - wedding guest dress
+  - maxi dress
+  - formal dress
+
+# Brands to check for secondary-market supply on Poshmark. Populated from
+# whatever the demand side surfaces; these are the ones seen so far.
+supply_brands:
+  - MESHKI
+  - Retrofete
+  - House of CB
+
+# Polite request pacing, in seconds.
+request_delay: 0.7

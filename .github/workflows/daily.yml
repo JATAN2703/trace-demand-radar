@@ -1,0 +1,46 @@
+name: Daily demand radar
+
+# Momentum is a derivative, so the system needs history it collected itself.
+# This runs every morning, appends one snapshot, and commits it back to the repo
+# so the stored series is auditable rather than asserted.
+on:
+  schedule:
+    - cron: "0 13 * * *"   # 13:00 UTC daily (roughly 9am ET)
+  workflow_dispatch:        # manual trigger for demos
+
+permissions:
+  contents: write
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run radar
+        # Collectors fail soft, so a single unreachable source should not fail
+        # the run. The digest reports which sources were unavailable.
+        run: python run.py
+
+      - name: Commit snapshot
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/radar.sqlite reports/
+          if git diff --staged --quiet; then
+            echo "No change to commit."
+          else
+            git commit -m "radar: snapshot $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+      - name: Surface the digest in the run summary
+        run: cat reports/latest.md >> "$GITHUB_STEP_SUMMARY"

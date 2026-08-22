@@ -1,0 +1,42 @@
+# Manual supply observations (human-in-the-loop).
+#
+# Automated supply is inconclusive: Poshmark page one saturates at 48 listings
+# for every brand and a true total needs the robots-disallowed /search path;
+# Pickle is behind a Vercel bot gate returning 429 on every host, including its
+# own robots.txt. See PROBE_LOG.md and collectors/poshmark.py.
+#
+# So supply for finalist products is measured by hand. That is tractable because
+# the brief asks about two or three dresses, and it keeps the number honest.
+#
+# Rules for filling this in:
+#   * Record what you actually saw, with the date you saw it.
+#   * `null` means not checked. It is NOT zero. The scorer treats null as
+#     neutral supply so an unchecked item cannot look like a confirmed gap.
+#   * A Pickle listing that has disappeared is ambiguous: rented, sold, removed
+#     or deactivated are indistinguishable from outside. Use `ambiguous` notes
+#     rather than inferring a rental.
+#
+# Schema per entry:
+#   product_id:        ShopMy product id (preferred join key)
+#   title / brand:     for human readability
+#   poshmark_listings: integer count of matching listings seen by hand, or null
+#   pickle_listings:   integer count seen in the Pickle iOS app, or null
+#   pickle_checked_at: ISO date of the app check
+#   observed_at:       ISO date of the Poshmark check
+#   confidence:        manual
+#   note:              anything ambiguous or surprising
+
+observations: []
+
+# Template to copy once the finalist dresses are locked and checked by hand:
+#
+# observations:
+#   - product_id: "<shopmy product id>"
+#     title: "<product title>"
+#     brand: "<brand>"
+#     poshmark_listings: null
+#     pickle_listings: null
+#     pickle_checked_at: null
+#     observed_at: null
+#     confidence: manual
+#     note: ""
