@@ -152,24 +152,49 @@ observations:
     brand: "Kilentar"
     retail: 750
     poshmark_listings: 5           # brand-wide, from the automated collector
-    pickle_listings: 2             # PRODUCT-level FLOOR, not a total. See count_confidence.
-    pickle_brand_listings: 32      # also a floor; scrolling was stopped before the end
+    pickle_listings: 3             # PRODUCT-level, and this one IS a total. See count_confidence.
+    pickle_listings_nyc: 1         # the number that actually matters for TRACE
+    pickle_brand_listings: 32      # brand-wide floor; brand scroll was stopped early
     pickle_checked_at: 2026-08-23
+    pickle_ano_listings:
+      - location: "Kips Bay, NY"
+        size: "2"
+        rent: 300
+        pct_of_retail: 40
+        saves: 135
+        note: "The ONLY Ano rental unit in New York."
+      - location: "Dallas, TX"
+        size: "XS"
+        rent: 240
+        pct_of_retail: 32
+        saves: 136
+      - location: "Uptown, TX"
+        size: "2"
+        rent: 195
+        pct_of_retail: 26
+        saves: 2
+      - location: "Woburn, MA"
+        size: "S"
+        rent: 250
+        pct_of_retail: 33
+        saves: 12
+        note: >
+          Titled "KILENTAR Yellow Fringe", found in the brand search not the
+          product search. Visually the Ano, but not a titled match, so counted
+          separately as probable rather than folded into the total.
     count_confidence: >
-      LOAD-BEARING NUMBER, AND ONLY A FLOOR.
+      RESOLVED, and the count is now reliable rather than a floor.
 
-      Scrolling stopped before the end of results, so both counts are minimums:
-      at least 32 Kilentar listings brand-wide, of which at least 2 are the Ano.
-      The Kips Bay Ano listing appeared near the bottom of what was scrolled, so
-      further Ano listings below it cannot be ruled out.
+      Targeted product search "Kilentar Ano" in the Pickle iOS app returned three
+      Ano listings, after which search relevance collapsed entirely into unrelated
+      inventory (Norma Kamali, SNDYS denim, STAUD Albee, Retrofete, Cult Gaia,
+      Zimmermann swimwear). The result set exhausted itself rather than being cut
+      short by scrolling, which is what makes this a total and not a minimum.
 
-      This matters more than the Cora count because the whole recommendation
-      rests on Ano's product-level supply being thin. If a targeted search
-      returns materially more than 2, the recommendation weakens or changes.
+      Three titled Ano listings, plus one probable fourth ("KILENTAR Yellow
+      Fringe", Woburn MA) identified visually from the brand search.
 
-      Resolve with a direct product search ("Kilentar Ano") rather than by
-      scrolling the brand results, which is both faster and gives the number
-      without an inference step. NOT YET DONE.
+      So: 3 confirmed, 4 including the probable, nationwide.
     observed_at: 2026-08-23
     confidence: manual
     method: >
@@ -211,11 +236,30 @@ observations:
       brand is well represented. Cora has an order of magnitude more units of the
       same dress available to rent.
 
-      Second, and more telling: Ano rents at 33-40% of retail against Cora's
+      Second, and more telling: Ano rents at 26-40% of retail against Cora's
       12-28%, and against Pickle's own published guidance of 10-20%. A rental
       price that far above the platform norm is what scarcity looks like in
-      pricing. Owners are able to charge it because demand exceeds the two
+      pricing. Owners are able to charge it because demand exceeds the three
       available units.
+
+      THIRD, AND THIS IS THE SHARPEST VERSION OF THE FINDING. Geography.
+
+        Nationwide Ano rental units:      3 (4 including the probable Woburn one)
+        Ano rental units in NEW YORK:     1
+        Cora rental units in NEW YORK:    ~12
+
+      TRACE is New York based, and Pickle is peer-to-peer with local delivery, so
+      local supply is what actually competes. There is exactly ONE Ano available
+      to rent in New York, against roughly twelve Coras.
+
+      And the NYC unit is the most expensive of the three ($300, 40% of retail,
+      versus $240 in Dallas and $195 in Uptown TX). The highest price sits in the
+      highest-demand market on the only local unit. That is textbook scarcity
+      pricing, and it is observed rather than modelled.
+
+      Demand pressure against those few units is also visible: the Dallas listing
+      has 136 saves and the Kips Bay listing 135, on a product with three units in
+      existence on the platform.
 
       So the defensible claim is not "Kilentar is untapped". It is: proven brand
       rental economics, thin product-level supply, and rental pricing well above

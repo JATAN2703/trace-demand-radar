@@ -98,7 +98,7 @@ product-level supply all hold at once.
 | Creator activity | 205 promoters on ShopMy; at least 4 distinct TikTok creators on this dress |
 | Cross-platform breadth | ShopMy ✓ · TikTok ✓ (product-level) · Poshmark ✓ · Pickle ✓ |
 | Commerce intent | 8,537 total clicks; Pickle buy-outs on Kilentar at $500–1,000 |
-| **Rental liquidity** | **At least 2 product-level Pickle listings** (a floor, see caveat), renting at **$250–300 = 33–40% of retail** |
+| **Rental liquidity** | **3 Pickle listings nationwide, exactly 1 in New York**, renting at **26–40% of retail** |
 
 **The two things that make this the pick:**
 
@@ -109,10 +109,22 @@ The whole table turns before you've reached your seat."* Two further creators ta
 `#weddingguestdress`, one styled with a partner in a suit. My pipeline had inferred `occasion` from a
 curator's collection name; TikTok agreed.
 
-**The rental price is the scarcity tell.** Pickle's own guidance to lenders is 10–20% of retail value.
-Cora rents at 12–28%. **Ano rents at 33–40%.** Owners can charge double the platform norm because
-there are two units against real demand. That is scarcity expressed in price rather than inferred
-from a count.
+**The supply is thin where it counts, and the price proves it.** A targeted product search returns
+**three Ano listings nationwide** — Kips Bay NY at $300, Dallas at $240, Uptown TX at $195 — plus one
+probable fourth in Woburn MA identified visually. The count is reliable rather than a floor because
+search relevance collapsed into unrelated inventory after the fourth result; the result set exhausted
+itself.
+
+Pickle is peer-to-peer with local delivery, so local supply is what competes. **There is exactly one
+Ano available to rent in New York, against roughly twelve Coras.**
+
+And the New York unit is the most expensive of the three: $300, or **40% of retail**, against $240 in
+Dallas and $195 in Uptown. Pickle's own guidance to lenders is 10–20%. The highest price sits in the
+highest-demand market, on the only local unit. That is scarcity expressed in price rather than
+inferred from a count, and it is observed rather than modelled.
+
+Demand pressure against those units is visible too: 135 and 136 saves on two of the three listings,
+for a product with three units on the platform.
 
 **Absent signals, stated:** only 5 Kilentar listings on Poshmark brand-wide. Read alongside ~32
 Kilentar rental listings on Pickle, the pattern suggests Kilentar is a rent-not-resell brand, which is
@@ -284,11 +296,11 @@ enough.
 - **Precision is measured on n=2.** Directionally useful, statistically nothing.
 - **Poshmark prices are asking, not sold.** Sold history needs a login. So price retention shows what
   sellers believe the market bears, not confirmed transactions.
-- **Pickle counts are one observation from one account, and they are floors rather than totals.**
-  Scrolling was stopped before the end of results in both cases, so "22+ Cora" and "at least 2 Ano
-  from at least 32 Kilentar listings" are minimums. This matters most for Ano, because the whole
-  recommendation rests on its product-level supply being thin — if a targeted product search returns
-  materially more than two, the recommendation weakens. That is the first thing I would re-check.
+- **The Ano count is reliable; the others are floors.** The targeted "Kilentar Ano" product search
+  exhausted itself (relevance collapsed into unrelated inventory), so three nationwide and one in NYC
+  is a total. But "22+ Cora" and "~32 Kilentar brand-wide" are minimums, because scrolling stopped
+  before the end in both cases. The comparison that matters — 1 Ano versus ~12 Cora in New York — is
+  therefore conservative in the direction that *weakens* my case, not strengthens it.
 - **The filter chip read "Local"** while returning results from six states, so its semantics are
   unresolved and my NYC subset is what I saw, not a complete NYC inventory.
 - **The Woburn "Yellow Fringe" listing** is my visual identification as an Ano, not a titled match.
@@ -316,10 +328,13 @@ enough.
 ## 10. The short version
 
 The radar works on demand and is honest about supply. It found the hottest dress in the market inside
-a day, and the manual step then told me not to recommend it. My recommendation is **Kilentar's Ano
-Layered Raffia at $750**: wedding-guest positioning confirmed independently, in your price band,
-peaking rather than fading, two product-level rental units against real demand, and rental pricing at
-double the platform norm — which is what scarcity looks like before anyone has organised it.
+a day, and the manual step then told me not to recommend it.
+
+My recommendation is **Kilentar's Ano Layered Raffia at $750**: wedding-guest positioning confirmed by
+an independent editorial, in your price band, peaking rather than fading, and **exactly one rental unit
+available in New York against roughly twelve for the dress everything else pointed at** — with that
+single local unit priced at 40% of retail, double Pickle's own guidance. That is what scarcity looks
+like before anyone has organised it.
 
 The most transferable thing I learned is that on this problem the automation is good at finding
 candidates and bad at qualifying them, and that the qualifying step is one platform you cannot
