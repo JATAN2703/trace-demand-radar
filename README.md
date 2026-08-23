@@ -100,7 +100,7 @@ scope. Without it, a consistently popular dress gets discarded as merely cooling
 highest-volume items in the dataset are `sustained`, so the label does real work.
 
 `faded` is what separates a live opportunity from a retrospective report. Tuckernuck's Marcie Dress has
-the largest all-time click total in the dataset (55,700) and a week-vs-month ratio of 0.155. A "most
+the largest all-time click total in the dataset (55,711) and a week-vs-month ratio of 0.158. A "most
 popular dresses" report leads with it. It is comprehensively over.
 
 **Two limitations handled rather than hidden.** Low-volume items produce wild ratios (1 → 7 clicks

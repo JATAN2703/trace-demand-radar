@@ -253,8 +253,8 @@ generating a candidate that qualification kills, and the failure mode matters mo
 
 ### 4.4 The counter-example: what a retrospective report would have led with
 
-**Tuckernuck's Marcie Dress.** 55,700 total clicks, the largest in the dataset. Also 4,084 monthly
-against **148 weekly**, a week-vs-month ratio of **0.155**.
+**Tuckernuck's Marcie Dress.** 55,711 total clicks, the largest in the dataset. Also 4,035 monthly
+against **149 weekly**, a week-vs-month ratio of **0.158**.
 
 A "most popular dresses" report ranks Marcie first. It is comprehensively over. The same ratio flags
 ASTR the Label's Wedelia (31,812 total, 0.185) and Leo Lin's Ava (18,297 total, 0.099).
