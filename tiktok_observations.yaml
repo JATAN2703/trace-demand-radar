@@ -241,11 +241,80 @@ finalists:
   - product: "Porter Midi Dress"
     brand: "ALÉMAIS"
     price: 690
-    searches_tried: []
-    videos: []
+    searches_tried:
+      - "alemais dress"
+      - "alemais beaded dress"
+      - "alemais majorelle dress"
+      - "anthropologie dresses"     # ALÉMAIS stocked there, tried as a side door
+    videos:
+      - creator: "Mary Polos"
+        posted: "Jul 18"
+        likes: 42600
+        caption: "dress is @Alémais shoes are @Gianvito R[ossi]"
+        note: "Highest-engagement ALÉMAIS post found, but five weeks old. Yellow paisley, not Porter."
+      - creator: "Sammy"
+        posted: "8-15"
+        likes: 12800
+        comments: 402
+        saves: 1282
+        shares: 512
+        caption: "Finished My Majorelle Dress from #alemais This is my pièce de [résistance]"
+        note: >
+          Patchwork Majorelle, not Porter. Very high saves-to-likes and 402
+          comments. Caption wording is ambiguous about whether this is a
+          purchased or self-made piece, so it is not counted as either.
+      - creator: "chrissycantor"
+        posted: "5-4"
+        likes: 13500
+        saves: 1581
+        caption: "cannot resist a summer sun dress @Anthropologie @Alémais"
+      - creator: "GUINWA"
+        posted: "Mar 21"
+        likes: 2400
+        caption: "Let's get dressed @ALÉMAIS"
+      - creator: "Jackie"
+        posted: "Jul 17"
+        likes: 2300
+        caption: "#alemais In love with this top"
+      - creator: "Roz Kaur"
+        posted: "1d ago"
+        likes: 585
+        comments: 15
+        saves: 39
+        caption: "@Alémais - SUMMER SAYS WEAR THE DRESS"
+        note: "Newest post found, but small engagement. Not Porter."
+
     comment_intent: []
-    verdict: null
-    note: ""
+
+    verdict: "brand present, product absent"
+    note: >
+      Deliberately different profile from Cora, and the contrast is the point.
+
+      1. BRAND has real TikTok presence: several posts in the 2K-43K like range.
+      2. The PORTER MIDI specifically was NOT FOUND in any search. Every video
+         located was a different ALÉMAIS piece (paisley, Majorelle patchwork,
+         floral sun dress).
+      3. RECENCY is thin. The high-engagement posts are Jul 17, Jul 18, Mar 21,
+         May 4. The only post from the last day had 585 likes. So brand attention
+         is real but not currently accelerating, which matches the radar showing
+         Porter rising on clicks without corroborating creator heat.
+
+      OCCASION MISMATCH, worth flagging honestly: TikTok positions ALÉMAIS as
+      vacation and resort wear (Portugal, palm trees, "summer sun dress", "you
+      can't do summer unless..."), not wedding-guest occasionwear. Our pipeline
+      tagged Porter Midi as `occasion` because of the collection a creator filed
+      it under. TikTok suggests that tag is wrong for this brand.
+
+      This is direct evidence for the limitation already noted in the code:
+      collection-name occasion inference is noisy, because it reflects one
+      curator's framing rather than the product's actual cultural positioning.
+      A cross-check against platform content would improve it.
+
+      Implication for TRACE: Porter Midi is the weakest of the three finalists.
+      Click momentum without creator corroboration, no product-level attention,
+      and a probable occasion mismatch. Worth reporting precisely because the
+      radar ranked it #4 and the manual check demotes it. That is the
+      human-in-the-loop step doing its job.
 
 # ---------------------------------------------------------------------------
 # PART 2 - Creator discovery (are we watching the right people?)
