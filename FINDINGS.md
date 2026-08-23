@@ -259,9 +259,24 @@ cheapest thing the system does.
   single voice on this dress.
 - **Olive** (TikTok), the editorial listicle that names the Ano Dress and frames it as wedding-guest
   wear, 5.1K likes, Apr 24. High-authority framing rather than a fit check.
-- **Surya Garg** (TikTok), posted 8 hours before my pass, `"@kilentar let's get married
-  #weddingguestdress"`, overlay *"potentially the greatest dress I will ever wear."* Small account,
-  but evidence the trend is live.
+- **Anne Leopard** (TikTok), posted 5 hours before my final pass: *"MY TOP FAVORITE niche and fun fall
+  wedding guest dresses"*, 87 likes, with the Ano selected among a shortlist. **The one I would contact
+  first.** She is producing forward-looking fall-season content, she chose this dress against
+  alternatives, and she posted today.
+- **Surya Garg** (TikTok), 10 hours before that pass, `"@kilentar let's get married
+  #weddingguestdress"`, overlay *"potentially the greatest dress I will ever wear."* Small account, but
+  current and unambiguous about occasion.
+
+**On the Cora** (included because it is one of the three dresses, even though I am not recommending it):
+
+- **Angel Song** `@angeltrsong` (TikTok), the anchor post at **58K likes, 4,496 saves, 1,635 shares**,
+  tagged `#weddingguestlook`, 6 days old. 5.6K followers but 1.7M total likes, so reach far exceeds
+  follower count. She also answered two separate "where is this from" comments in-thread with the brand.
+- **Eliza** `@elizasmithx` (TikTok), 57.9K views, 2,703 likes: *"The hype around this dress is deserved."*
+  Note the caption reacts to an existing trend rather than starting one.
+- **courtney** (TikTok, and **has a ShopMy storefront**), the dupe angle: two posts titled *"Realisation
+  P@r lookalike dress"* with TikTok Shop tags attached. Commercially the most interesting of the Cora
+  creators, because monetising a lookalike means demand exceeds affordable access.
 
 **On the ShopMy side:** `curatedbymc` is the single most valuable creator in the pipeline. She
 surfaced both finalists and 18 of the top 20 ranked items. That is also a risk, see §7.
