@@ -225,15 +225,29 @@ One manual check on the one platform that cannot be scraped reversed the conclus
 | Creator activity | ShopMy promoters present; **zero TikTok posts featuring this dress** |
 | Cross-platform breadth | ShopMy only at product level |
 | Commerce intent | Clicks only, no corroborating attention |
-| Rental liquidity | Poshmark 28 brand-wide; Pickle not checked |
+| Rental liquidity | Poshmark 28 brand-wide. **Pickle: 30+ ALÉMAIS listings, 15+ of them in New York, but none titled or identifiable as the Porter** |
 
 **Two reasons it drops out.** The Porter Midi itself appears in no TikTok search, four queries
 returned only *other* ALÉMAIS pieces. And the occasion tag is probably wrong: TikTok positions ALÉMAIS
 as vacation and resort wear (Portugal, palm trees, "summer sun dress"), while my pipeline tagged
 Porter `occasion` from a curator's collection name.
 
+**And the Pickle check closes it.** ALÉMAIS has at least 30 rental listings, 15 or more in New York:
+Seaport ×3, Chelsea ×3, West Village ×3, Greenwich Village ×2, Carnegie Hill, Financial District,
+Flatiron, Tribeca, Lincoln Square, Brooklyn Heights, Lenox Hill. Saves run high throughout, up to 1.1K
+on one listing. So the brand is an established, well-supplied rental name in exactly TRACE's market.
+
+The pricing agrees, from independent evidence. ALÉMAIS rents at roughly **$60 to $210, about 15–25% of
+retail**, squarely inside Pickle's own 10–20% guidance. No scarcity premium at all. Compare the Ano at
+33–40%. Count and price discriminate in the same direction.
+
+So Porter Midi fails every qualifying check: click momentum with no product-level attention, an occasion
+tag that is probably wrong, and abundant brand rental supply at normal platform pricing. **The radar
+ranked it fourth and every manual check demoted it.**
+
 That is a concrete instance of a known weakness in my own inference, caught by the manual step. It is
-in the write-up rather than quietly dropped because the failure mode matters more than the item.
+in the write-up rather than quietly dropped, because it is the clearest example of the automation
+generating a candidate that qualification kills, and the failure mode matters more than the item.
 
 ---
 

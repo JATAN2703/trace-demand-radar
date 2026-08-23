@@ -294,6 +294,49 @@ observations:
       Both observations support the presale mechanic on this brand, though with
       n this small they are directional rather than established.
 
+  - product_id: "3129357"
+    title: "Porter Midi Dress"
+    brand: "ALÉMAIS"
+    retail: 690
+    poshmark_listings: 28          # brand-wide, automated collector
+    pickle_brand_listings: 30      # FLOOR, scrolling stopped early
+    pickle_product_listings: 0     # no listing titled or identifiable as Porter
+    pickle_checked_at: 2026-08-23
+    confidence: manual
+    method: >
+      Pickle iOS app, brand search "Alemais", roughly seven screens scrolled and
+      stopped before the end. Counted brand-wide listings and looked for anything
+      titled or visually identifiable as the Porter Midi.
+    note: >
+      Completes the three-platform check for all three finalists, and Porter Midi
+      now fails on every qualifying signal.
+
+      BRAND supply is heavy and concentrated exactly where TRACE operates. At
+      least 30 ALÉMAIS listings, of which 15+ are New York: Seaport x3, Chelsea
+      x3, West Village x3, Greenwich Village x2, Carnegie Hill, Financial
+      District, Flatiron, Tribeca, Lincoln Square, Brooklyn Heights, Lenox Hill,
+      New York. High save counts throughout (1.1K on an Exclusive Marion, 412,
+      503, 311, 306, 278, 257).
+
+      PRODUCT supply: no listing titled "Porter" appeared. One "Alemais Midi
+      Dress" (Lower Greenville, TX, $100) could conceivably be it but is not
+      identifiable as such, so it is recorded as 0 rather than guessed at.
+
+      RENTAL PRICING is the quiet supporting point. ALÉMAIS rents at roughly
+      $60-210, which against typical retail for these pieces is approximately
+      15-25% of retail, i.e. squarely inside Pickle's own 10-20% guidance. No
+      scarcity premium. Compare Ano at 33-40%. So the pricing signal
+      discriminates in the same direction as the count, from independent
+      evidence: ALÉMAIS is an established, well-supplied rental brand and Kilentar's
+      Ano is not.
+
+      NET on Porter Midi: rising click momentum on ShopMy, product absent from
+      TikTok across four searches, occasion tag probably wrong, brand rental
+      supply abundant in TRACE's home market at normal platform pricing. The
+      radar ranked it #4 and every manual check demoted it. Kept in the writeup
+      precisely because it is the clearest example of the automation generating a
+      candidate that qualification kills.
+
 # Template to copy once the finalist dresses are locked and checked by hand:
 #
 # observations:
