@@ -3,7 +3,7 @@
 A near-real-time cross-platform fashion demand and liquidity radar, built for the TRACE Applied AI
 Engineering exercise.
 
-**Findings and recommendation: [`FINDINGS.md`](FINDINGS.md)** — start there if you want the answer
+**Findings and recommendation: [`FINDINGS.md`](FINDINGS.md)**. Start there if you want the answer
 rather than the machinery.
 **What was and was not reachable: [`PROBE_LOG.md`](../Trace%20-%20Interview%20Prep/PROBE_LOG.md)**
 
@@ -12,7 +12,7 @@ rather than the machinery.
 ## What it does
 
 Tracks occasionwear dresses that creators are actively pushing, detects when one starts accelerating,
-and ranks them by demand against available secondary supply — so the output is a decision, not a
+and ranks them by demand against available secondary supply, so the output is a decision, not a
 dashboard.
 
 It has run unattended twice daily since 22 August 2026, committing its own snapshots to this repo.
@@ -26,7 +26,7 @@ TikTok (MANUAL)  ──>  seed set of occasionwear creators
                         │
         ┌───────────────┼────────────────┐
         ▼               ▼                ▼
-  Google Trends    Poshmark        Pickle (MANUAL — bot-gated)
+  Google Trends    Poshmark        Pickle (MANUAL, bot-gated)
   (AUTOMATED)      (AUTOMATED,     product-level rental supply
   independent      permitted
   demand check     paths only)
@@ -96,7 +96,7 @@ accel_mid   = (weeklyClicks / 7) / (monthlyClicks / 30) # this week vs this mont
 Trajectory labels: `rising` · `peaking` · `sustained` · `cooling` · `faded` · `insufficient_volume`.
 
 `sustained` exists because the brief counts an item "especially popular over the past two weeks" as in
-scope. Without it, a consistently popular dress gets discarded as merely cooling — and the two
+scope. Without it, a consistently popular dress gets discarded as merely cooling, and the two
 highest-volume items in the dataset are `sustained`, so the label does real work.
 
 `faded` is what separates a live opportunity from a retrospective report. Tuckernuck's Marcie Dress has
@@ -106,7 +106,7 @@ popular dresses" report leads with it. It is comprehensively over.
 **Two limitations handled rather than hidden.** Low-volume items produce wild ratios (1 → 7 clicks
 reads as 5x), so `MIN_DAILY` and `MIN_WEEKLY` gate them into `insufficient_volume` and they are never
 alerted. And `dailyClicks` is a single day, so a weekend snapshot would inflate `accel_short` across
-the board — which the stored history corrects for.
+the board, which the stored history corrects for.
 
 ## The most important thing measured about the data source
 
@@ -153,7 +153,7 @@ item is merely dearer than the stated focus, so it is penalised far more gently.
 stops an unchecked item masquerading as a confirmed gap.
 
 **Tuned for precision, not coverage.** One alert triggers content, creator outreach, comment
-engagement, lister identification and possibly a seeded listing — real coordinated effort, so a false
+engagement, lister identification and possibly a seeded listing, real coordinated effort, so a false
 positive is expensive. Volume floor raised, rising threshold lifted to 1.35, alerts gated on price fit
 and capped at 5 per run. A recent run produced 5 alerts and suppressed 13.
 
@@ -165,7 +165,7 @@ what it reached and names what it did not. The digest lists unavailable sources.
 - **Pickle's bot protection was not circumvented.** Every host returns HTTP 429 behind a Vercel
   checkpoint, including `robots.txt`. Bypassing an explicit anti-bot control would create legal
   exposure for TRACE, not for me. Pickle is handled as manual observation, with a documented path to
-  proper access — a data partnership or licensed provider, which is a business conversation.
+  proper access, a data partnership or licensed provider, which is a business conversation.
 - **Authentication was not bypassed.** ShopMy's `/Products/` and `POST /Pins/search` return 401 and are
   untouched.
 - **Poshmark's `robots.txt` is respected.** `/search` is disallowed, so only brand and category paths
@@ -178,7 +178,7 @@ what it reached and names what it did not. The digest lists unavailable sources.
 
 1. **Demand is measured well, supply badly.** The system will systematically over-rank items whose
    supply it cannot see. Pickle is unreachable and Poshmark's automated count saturates at 48 for every
-   brand, so the supply term is usually neutral — and neutral supply flatters a high-demand item.
+   brand, so the supply term is usually neutral, and neutral supply flatters a high-demand item.
 2. **Brand-level and product-level supply give opposite answers.** Brand-level, Kilentar looks well
    supplied and Réalisation Par thin. Product-level it inverts: Cora 22+, Ano 3. The radar only reaches
    brand level. This single distinction decided the recommendation.
@@ -186,7 +186,7 @@ what it reached and names what it did not. The digest lists unavailable sources.
    currently reflects one curator's taste more than the market.
 4. **Occasion inference is noisy.** It reads a curator's collection title, not the product's cultural
    positioning. Correct on Kilentar's Ano, wrong on ALÉMAIS's Porter Midi.
-5. **A vanished Pickle listing is ambiguous** — rented, sold, removed and deactivated are
+5. **A vanished Pickle listing is ambiguous**, rented, sold, removed and deactivated are
    indistinguishable from outside. Nothing here treats disappearance as a rental.
 6. **Two distinct batches of history so far**, so one genuine day-over-day transition.
 

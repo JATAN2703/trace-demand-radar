@@ -1,4 +1,4 @@
-# TRACE Demand Radar — Findings
+# TRACE Demand Radar: Findings
 
 **Jatan Patel · 22–24 August 2026**
 
@@ -13,7 +13,7 @@ observe something, I say so rather than estimating it.
 
 There is **exactly one available to rent in New York.** For comparison, the dress that every other
 signal pointed at has **roughly twelve.** That single New York unit rents at **40% of retail**, double
-Pickle's own published guidance to lenders — which is what scarcity looks like in pricing. The dress
+Pickle's own published guidance to lenders, which is what scarcity looks like in pricing. The dress
 is named and framed as wedding-guest wear in an independent TikTok editorial, sits inside your
 $400–1,000 band, and is peaking rather than fading.
 
@@ -30,7 +30,7 @@ all, so the detection works.
 **What I learned about it:** the system is good at finding candidates and bad at qualifying them. It
 measures demand well and supply badly, because the platform that decides the answer is the one that
 cannot be scraped. **Measured precision on its own opportunity calls is 1 of 3.** That is not a reason
-to distrust the demand side, which held up under three independent corroborations — it is a precise
+to distrust the demand side, which held up under three independent corroborations, it is a precise
 statement of where the automation ends and why the human step is load-bearing rather than decorative.
 
 Detail, method, named creators, five failure modes and everything I am still unsure about follows.
@@ -76,7 +76,7 @@ intent to shop rather than mere attention.
   on TRACE, not on me, and Pickle is your closest comparable so a data partnership is unlikely.
   Pickle is handled as manual observation with a documented path to proper access.
 - **I did not bypass authentication.** ShopMy's `/Products/` and `POST /Pins/search` return 401. That
-  makes global product search unavailable, so discovery is creator-seeded instead — which suits your
+  makes global product search unavailable, so discovery is creator-seeded instead, which suits your
   creator-driven thesis better anyway.
 - **I did not scrape Poshmark's disallowed paths.** `robots.txt` disallows `/search`, so I used only
   brand and category paths, and hand-checked product level in a browser.
@@ -102,7 +102,7 @@ intent to shop rather than mere attention.
 | Depop / By Rotation / RTR | Blocked | 403 / 404 / 406 |
 
 One finding about the primary source matters enough to state up front: **ShopMy republishes its click
-counters as a once-daily batch, not live.** Measured across seven snapshots — zero of 525 products
+counters as a once-daily batch, not live.** Measured across seven snapshots, zero of 525 products
 changed between 23:26 and 07:26 UTC, then 248 of 526 changed at once at 13:25. So polling four times a
 day fetched an identical payload three extra times. I cut the schedule to twice daily around the
 observed publish window and re-anchored all comparisons to the previous *batch* rather than the
@@ -115,7 +115,7 @@ wall-clock time.
 
 Radar output as of run 7. Occasionwear only, ranked by priority against your $400–1,000 band.
 
-### 4.1 Kilentar — Ano Layered Raffia Dress · $750 · **the recommendation**
+### 4.1 Kilentar Ano Layered Raffia Dress · $750 · **the recommendation**
 
 **Why this one.** It is the only candidate where demand, attention, occasion, price band and thin
 product-level supply all hold at once.
@@ -133,14 +133,14 @@ product-level supply all hold at once.
 **The two things that make this the pick:**
 
 **Product identity and occasion are independently confirmed.** A TikTok editorial listicle titled
-*"The Wedding Guest Outfit Even The Bride Is Talking About — 8 African Brands Making Them"* names it
-directly: *"1. Kilentar — Ano Dress. Sunshine yellow. Four tiers of fringe that move before you do.
+*"The Wedding Guest Outfit Even The Bride Is Talking About - 8 African Brands Making Them"* names it
+directly: *"1. Kilentar, Ano Dress. Sunshine yellow. Four tiers of fringe that move before you do.
 The whole table turns before you've reached your seat."* Two further creators tagged the same dress
 `#weddingguestdress`, one styled with a partner in a suit. My pipeline had inferred `occasion` from a
 curator's collection name; TikTok agreed.
 
 **The supply is thin where it counts, and the price proves it.** A targeted product search returns
-**three Ano listings nationwide** — Kips Bay NY at $300, Dallas at $240, Uptown TX at $195 — plus one
+**three Ano listings nationwide**: Kips Bay NY at $300, Dallas at $240, Uptown TX at $195, plus one
 probable fourth in Woburn MA identified visually. The count is reliable rather than a floor because
 search relevance collapsed into unrelated inventory after the fourth result; the result set exhausted
 itself.
@@ -162,7 +162,7 @@ consistent with statement occasionwear worn once. Directional at this sample siz
 
 ---
 
-### 4.2 Réalisation Par — The Cora Dress · $360 · **hottest, and I am not recommending it**
+### 4.2 Réalisation Par: The Cora Dress · $360 · **hottest, and I am not recommending it**
 
 This is the most instructive case in the document.
 
@@ -179,7 +179,7 @@ This is the most instructive case in the document.
 **Every automated signal favoured Cora. The automated recommendation would have been wrong.**
 
 It also holds value on resale in a way its siblings do not. Three Cora listings at $295, $360 and $400
-against $360 retail — two of them new with tags, one **above** retail — while every other Réalisation
+against $360 retail, two of them new with tags, one **above** retail, while every other Réalisation
 Par dress on the same page discounts hard (Iris 38% of retail, Christy 52%, black mini 60%, Alba 68%,
 Elsa 67%, Gia 89%). Cora holds 82–111%. That within-brand comparison controls for brand effects, and
 it is a direct demonstration of your criterion that resale value must be high enough to influence the
@@ -195,7 +195,7 @@ One manual check on the one platform that cannot be scraped reversed the conclus
 
 ---
 
-### 4.3 ALÉMAIS — Porter Midi Dress · $690 · **radar ranked it, manual check demoted it**
+### 4.3 ALÉMAIS: Porter Midi Dress · $690 · **radar ranked it, manual check demoted it**
 
 | Signal | Observation |
 |---|---|
@@ -207,7 +207,7 @@ One manual check on the one platform that cannot be scraped reversed the conclus
 | Commerce intent | Clicks only, no corroborating attention |
 | Rental liquidity | Poshmark 28 brand-wide; Pickle not checked |
 
-**Two reasons it drops out.** The Porter Midi itself appears in no TikTok search — four queries
+**Two reasons it drops out.** The Porter Midi itself appears in no TikTok search, four queries
 returned only *other* ALÉMAIS pieces. And the occasion tag is probably wrong: TikTok positions ALÉMAIS
 as vacation and resort wear (Portugal, palm trees, "summer sun dress"), while my pipeline tagged
 Porter `occasion` from a curator's collection name.
@@ -219,7 +219,7 @@ in the write-up rather than quietly dropped because the failure mode matters mor
 
 ### 4.4 The counter-example: what a retrospective report would have led with
 
-**Tuckernuck — Marcie Dress.** 55,700 total clicks, the largest in the dataset. Also 4,084 monthly
+**Tuckernuck's Marcie Dress.** 55,700 total clicks, the largest in the dataset. Also 4,084 monthly
 against **148 weekly**, a week-vs-month ratio of **0.155**.
 
 A "most popular dresses" report ranks Marcie first. It is comprehensively over. The same ratio flags
@@ -234,23 +234,23 @@ cheapest thing the system does.
 
 **On the Ano (the recommendation):**
 
-- **Laura Morgan** (TikTok) — three posts on the Ano across Jun 21/23/27, 154 / 1.3K / 2.1K likes,
+- **Laura Morgan** (TikTok), three posts on the Ano across Jun 21/23/27, 154 / 1.3K / 2.1K likes,
   tagged `#kilentar #weddingguestdress`, one styled with a partner in a suit. The most consistent
   single voice on this dress.
-- **Olive** (TikTok) — the editorial listicle that names the Ano Dress and frames it as wedding-guest
+- **Olive** (TikTok), the editorial listicle that names the Ano Dress and frames it as wedding-guest
   wear, 5.1K likes, Apr 24. High-authority framing rather than a fit check.
-- **Surya Garg** (TikTok) — posted 8 hours before my pass, `"@kilentar let's get married
+- **Surya Garg** (TikTok), posted 8 hours before my pass, `"@kilentar let's get married
   #weddingguestdress"`, overlay *"potentially the greatest dress I will ever wear."* Small account,
   but evidence the trend is live.
 
 **On the ShopMy side:** `curatedbymc` is the single most valuable creator in the pipeline. She
-surfaced both finalists and 18 of the top 20 ranked items. That is also a risk — see §7.
+surfaced both finalists and 18 of the top 20 ranked items. That is also a risk, see §7.
 
 **One structural observation worth your attention.** The creators driving virality on TikTok are
 largely *not* on ShopMy. `@angeltrsong` (58K likes on Cora), `@elizasmithx`, `@miahiraani` have no
 ShopMy storefront under those handles. Going viral and running a monetised storefront are different
 businesses. But the radar still caught Cora, because a ShopMy curator picked it up. **ShopMy creators
-function as a sensing layer for trends that originate elsewhere** — which means for recruitment you
+function as a sensing layer for trends that originate elsewhere**, which means for recruitment you
 should be looking at TikTok, and for measurement at ShopMy.
 
 Kilentar's own brand account illustrates the same point: 100.3K followers, but its own posts get
@@ -267,10 +267,10 @@ a legitimate, reliable data source, and the part a human cannot do daily by hand
 
 - **Collectors** (ShopMy, Google Trends, Poshmark) behind one interface, so a manual source becomes
   automated later without touching scoring
-- **Append-only SQLite snapshots** — momentum is a derivative, so history is the asset
-- **Scoring** — `accel_short = dailyClicks / (weeklyClicks/7)`, plus a volume floor, a soft $400–1,000
+- **Append-only SQLite snapshots**: momentum is a derivative, so history is the asset
+- **Scoring**, `accel_short = dailyClicks / (weeklyClicks/7)`, plus a volume floor, a soft $400–1,000
   price fit, and occasion weighting. All weights in `watchlist.yaml`
-- **Alerting** — diffs against the previous upstream *batch*, capped at 5 alerts per run
+- **Alerting**, diffs against the previous upstream *batch*, capped at 5 alerts per run
 - **GitHub Actions**, twice daily, committing its own snapshots
 
 It has been running unattended since 22 August and has produced real detected change, including the
@@ -297,23 +297,23 @@ TikTok volume and recency, and Poshmark price retention all agreed on Cora.
 
 **So the failure is specific and diagnosable, not general.**
 
-**Failure mode 1 — the system measures demand well and supply badly.** It will systematically
+**Failure mode 1, the system measures demand well and supply badly.** It will systematically
 over-rank items whose supply it cannot see. Pickle is unreachable and Poshmark's automated count
 saturates, so the supply term is usually neutral, and neutral supply flatters a high-demand item.
 
-**Failure mode 2 — brand-level and product-level supply give opposite answers.** Brand-level, Kilentar
+**Failure mode 2, brand-level and product-level supply give opposite answers.** Brand-level, Kilentar
 looks well supplied (32 Pickle listings) and Réalisation Par looks thin. Product-level it inverts
 completely: Cora 22+, Ano 2. The radar can only reach brand level. This single distinction decided the
 recommendation, and the automation is structurally blind to it.
 
-**Failure mode 3 — creator concentration.** 18 of the top 20 ranked items came from one seeded creator,
+**Failure mode 3, creator concentration.** 18 of the top 20 ranked items came from one seeded creator,
 `curatedbymc`; 2 of 9 creators produced essentially the whole board. The output currently reflects one
 curator's taste more than the market.
 
-**Failure mode 4 — occasion inference is noisy.** It reads a curator's collection title, not the
+**Failure mode 4, occasion inference is noisy.** It reads a curator's collection title, not the
 product's cultural positioning. Right on Ano, wrong on Porter Midi.
 
-**Failure mode 5 — a vanished Pickle listing is ambiguous.** Rented, sold, removed and deactivated are
+**Failure mode 5, a vanished Pickle listing is ambiguous.** Rented, sold, removed and deactivated are
 indistinguishable from outside. Nothing in this document treats disappearance as a rental.
 
 **Reliability note.** The scheduled job lost a snapshot on 23 August to a push race, diagnosed from the
@@ -330,7 +330,7 @@ enough.
 - **The Ano count is reliable; the others are floors.** The targeted "Kilentar Ano" product search
   exhausted itself (relevance collapsed into unrelated inventory), so three nationwide and one in NYC
   is a total. But "22+ Cora" and "~32 Kilentar brand-wide" are minimums, because scrolling stopped
-  before the end in both cases. The comparison that matters — 1 Ano versus ~12 Cora in New York — is
+  before the end in both cases. The comparison that matters, 1 Ano versus ~12 Cora in New York, is
   therefore conservative in the direction that *weakens* my case, not strengthens it.
 - **The filter chip read "Local"** while returning results from six states, so its semantics are
   unresolved and my NYC subset is what I saw, not a complete NYC inventory.
@@ -363,7 +363,7 @@ a day, and the manual step then told me not to recommend it.
 
 My recommendation is **Kilentar's Ano Layered Raffia at $750**: wedding-guest positioning confirmed by
 an independent editorial, in your price band, peaking rather than fading, and **exactly one rental unit
-available in New York against roughly twelve for the dress everything else pointed at** — with that
+available in New York against roughly twelve for the dress everything else pointed at**, with that
 single local unit priced at 40% of retail, double Pickle's own guidance. That is what scarcity looks
 like before anyone has organised it.
 
