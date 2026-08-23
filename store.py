@@ -43,13 +43,15 @@ CREATE TABLE IF NOT EXISTS product_snapshots (
 -- Which creator surfaced which product, and when they pinned it. Lets us say
 -- "N distinct creators are currently linking this" and spot fresh adoption.
 CREATE TABLE IF NOT EXISTS creator_pins (
-    run_id        INTEGER NOT NULL,
-    observed_at   TEXT NOT NULL,
-    creator       TEXT NOT NULL,
-    collection_id TEXT,
-    product_id    TEXT NOT NULL,
-    pinned_at     TEXT,
-    confidence    TEXT NOT NULL
+    run_id          INTEGER NOT NULL,
+    observed_at     TEXT NOT NULL,
+    creator         TEXT NOT NULL,
+    collection_id   TEXT,
+    collection_name TEXT,
+    occasion        TEXT,
+    product_id      TEXT NOT NULL,
+    pinned_at       TEXT,
+    confidence      TEXT NOT NULL
 );
 
 -- Secondary-market supply. Deliberately source-agnostic: Poshmark is automated,
@@ -99,11 +101,25 @@ def utcnow() -> str:
     return dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
 
 
+def _migrate(conn: sqlite3.Connection) -> None:
+    """Add columns introduced after the first snapshots were already recorded.
+
+    History is the asset here, so schema changes have to be additive rather than
+    a rebuild. SQLite has no ADD COLUMN IF NOT EXISTS, hence the probe.
+    """
+    have = {r["name"] for r in conn.execute("PRAGMA table_info(creator_pins)")}
+    for col in ("collection_name", "occasion"):
+        if col not in have:
+            conn.execute(f"ALTER TABLE creator_pins ADD COLUMN {col} TEXT")
+    conn.commit()
+
+
 def connect(db_path: Path = DB_PATH) -> sqlite3.Connection:
     db_path.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     conn.executescript(SCHEMA)
+    _migrate(conn)
     return conn
 
 
@@ -151,13 +167,15 @@ def insert_pins(conn, run_id: int, rows: list[dict], confidence: str) -> int:
     ts = utcnow()
     payload = [
         (run_id, ts, r.get("creator"), str(r.get("collection_id") or ""),
+         r.get("collection_name"), r.get("occasion"),
          str(r.get("product_id") or ""), r.get("pinned_at"), confidence)
         for r in rows if r.get("product_id")
     ]
     conn.executemany(
         """INSERT INTO creator_pins
-           (run_id, observed_at, creator, collection_id, product_id, pinned_at, confidence)
-           VALUES (?,?,?,?,?,?,?)""",
+           (run_id, observed_at, creator, collection_id, collection_name, occasion,
+            product_id, pinned_at, confidence)
+           VALUES (?,?,?,?,?,?,?,?,?)""",
         payload,
     )
     conn.commit()

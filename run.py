@@ -53,6 +53,7 @@ def main() -> int:
         category_filter=cfg.get("category_filter", "Dresses"),
         max_collections=cfg.get("max_collections_per_creator", 12),
         staleness_days=cfg.get("collection_staleness_days", 400),
+        occasion_keywords=cfg.get("occasion_keywords", {}),
     )
     n_prod = store.insert_products(conn, run_id, "shopmy", products, confidence="observed")
     n_pins = store.insert_pins(conn, run_id, pins, confidence="observed")

@@ -24,8 +24,19 @@ Two honest limitations, both handled rather than hidden:
 
 import math
 
-MIN_DAILY = 5        # below this, accel_short is noise
-MIN_WEEKLY = 20      # below this, the product is not meaningfully in play
+# Tightened for precision. Ella's answer on what an alert triggers (content,
+# creator outreach, comment engagement, lister identification, possibly seeding a
+# listing) means every false positive costs a small team real coordinated effort.
+# So the bar to appear at all is higher than it would be for a browsing tool.
+MIN_DAILY = 8        # below this, accel_short is noise
+MIN_WEEKLY = 40      # below this, the product is not meaningfully in play
+
+# "That could mean an item beginning to gain momentum, one currently peaking, or
+#  one that has been especially popular over the past two weeks."
+# The third case needs its own label: high sustained recent volume, even when
+# acceleration has flattened. Without this, a consistently popular dress is
+# discarded as merely `cooling`.
+SUSTAINED_WEEKLY = 150
 
 WEIGHTS = {
     "heat": 0.25,             # how much is happening right now
@@ -35,7 +46,7 @@ WEIGHTS = {
     "recency": 0.10,          # how freshly creators are pinning it
 }
 
-RISING_THRESHOLD = 1.25
+RISING_THRESHOLD = 1.35
 COOLING_THRESHOLD = 0.80
 FADED_MID_THRESHOLD = 0.30
 
@@ -71,7 +82,9 @@ def classify(p: dict) -> tuple[str, float | None, float | None]:
     if a_short is not None and a_short >= RISING_THRESHOLD:
         return "rising", a_short, a_mid
     if a_short is not None and a_short < COOLING_THRESHOLD:
-        return "cooling", a_short, a_mid
+        # Decelerating, but if recent absolute volume is still heavy the item is
+        # "especially popular over the past two weeks" rather than cooling off.
+        return ("sustained" if weekly >= SUSTAINED_WEEKLY else "cooling"), a_short, a_mid
     return "peaking", a_short, a_mid
 
 
@@ -115,6 +128,43 @@ def supply_pressure(listing_count: int | None) -> float:
 def gap_score(demand: float, listing_count: int | None) -> float:
     """High demand against thin secondary supply is TRACE's opportunity."""
     return round(demand * (1.0 - supply_pressure(listing_count)), 4)
+
+
+def price_fit(price: float | None, band: dict) -> float:
+    """0-1 fit against TRACE's stated $400-$1,000 occasionwear band.
+
+    A soft factor, not a filter, because Ella was explicit that there is no
+    strict cutoff. The taper is asymmetric on purpose: below the band the
+    presale mechanic itself breaks down, since a cheap dress's resale value does
+    not influence anyone's decision to buy it. Above the band the mechanic still
+    works and the item is simply dearer than her stated focus, so it is
+    penalised far more gently.
+
+    Unknown price returns 0.6 rather than 0, so a missing field does not silently
+    disqualify a product.
+    """
+    if price is None:
+        return 0.6
+    lo, hi = band.get("min", 400), band.get("max", 1000)
+    if lo <= price <= hi:
+        return 1.0
+    if price < lo:
+        floor = band.get("below_falloff", 250)
+        return max(0.0, 1.0 - (lo - price) / floor)
+    ceil = band.get("above_falloff", 1500)
+    return max(0.0, 1.0 - (price - hi) / ceil)
+
+
+def priority(gap: float, price_fit_v: float, occasion_w: float) -> float:
+    """Rank order actually shown to a human.
+
+    Kept separate from `gap` deliberately. `gap` is the analytical finding, the
+    demand-versus-supply imbalance that exists whether or not TRACE cares about
+    it. `priority` layers TRACE's stated targeting on top. Splitting them means
+    a change in strategy is a config change, and the underlying measurement
+    stays honest and reusable.
+    """
+    return round(gap * price_fit_v * occasion_w, 4)
 
 
 def day_over_day(curr: dict, prev: dict | None) -> dict | None:

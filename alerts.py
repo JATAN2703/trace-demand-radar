@@ -18,10 +18,23 @@ import score as sc
 TOP_N = 10
 ACCEL_JUMP = 0.35   # rise in accel_short between runs worth flagging
 
-# Trajectories TRACE can act on. The brief asks for products "beginning to gain
-# momentum, experiencing peak current interest, or demonstrating both", so a
-# cooling product must not be able to head the board on gap alone.
-ACTIONABLE = ("rising", "peaking")
+# Trajectories TRACE can act on. Per Ella: "an item beginning to gain momentum,
+# one currently peaking, or one that has been especially popular over the past
+# two weeks." `sustained` covers that third case. A cooling or faded product must
+# not be able to head the board on gap alone.
+ACTIONABLE = ("rising", "peaking", "sustained")
+
+# Precision gates. An alert triggers content, creator outreach, comment
+# engagement, lister identification and possibly a seeded listing, so a false
+# positive costs a small team real coordinated effort. Better to surface three
+# items worth acting on than twenty worth triaging.
+MIN_PRICE_FIT_TO_ALERT = 0.5   # ignore items well outside the $400-1,000 band
+MAX_ALERTS = 5                 # a digest, not a queue
+
+
+def load_config() -> dict:
+    path = Path(__file__).parent / "watchlist.yaml"
+    return yaml.safe_load(path.read_text()) or {}
 
 
 def _index(rows) -> dict:
@@ -73,6 +86,28 @@ def manual_supply() -> dict:
     return out
 
 
+def occasion_for(conn, run_id: int) -> dict:
+    """Dominant occasion per product, from the collections it was filed under.
+
+    A dress can appear in several creators' collections with different framings;
+    we take the most frequent, preferring a named occasion over 'unknown'.
+    """
+    rows = conn.execute(
+        """SELECT product_id, occasion, COUNT(*) AS n
+           FROM creator_pins WHERE run_id = ? AND occasion IS NOT NULL
+           GROUP BY product_id, occasion""",
+        (run_id,),
+    ).fetchall()
+    best: dict[str, tuple[int, bool, str]] = {}
+    for r in rows:
+        pid, occ, n = r["product_id"], r["occasion"], r["n"]
+        # Rank by count, then prefer a named occasion over 'unknown'.
+        cand = (n, occ != "unknown", occ)
+        if pid not in best or cand > best[pid]:
+            best[pid] = cand
+    return {pid: occ for pid, (_, _, occ) in best.items()}
+
+
 def creator_counts(conn, run_id: int) -> dict:
     rows = conn.execute(
         """SELECT product_id, COUNT(DISTINCT creator) AS n
@@ -88,6 +123,11 @@ def build_board(conn, run_id: int) -> list[dict]:
     supply = supply_for(conn, run_id)
     manual = manual_supply()
     creators = creator_counts(conn, run_id)
+    occasions = occasion_for(conn, run_id)
+
+    cfg = load_config()
+    band = cfg.get("price_band", {})
+    occ_weights = cfg.get("occasion_weights", {})
 
     board = []
     for pid, p in prods.items():
@@ -96,6 +136,9 @@ def build_board(conn, run_id: int) -> list[dict]:
         demand = sc.demand_score(p, distinct_creators=n_creators)
         # A hand-checked product-level count beats a brand-level proxy.
         listings = manual[pid] if pid in manual else supply.get(p.get("brand"))
+        occ = occasions.get(pid, "unknown")
+        pfit = sc.price_fit(p.get("price"), band)
+        gap = sc.gap_score(demand, listings)
         board.append({
             **p,
             "label": label,
@@ -107,12 +150,15 @@ def build_board(conn, run_id: int) -> list[dict]:
             "supply_observed": listings is not None,
             "supply_source": ("manual" if pid in manual
                               else "poshmark" if listings is not None else None),
-            "gap": sc.gap_score(demand, listings),
+            "gap": gap,
+            "occasion": occ,
+            "price_fit": round(pfit, 3),
+            "priority": sc.priority(gap, pfit, occ_weights.get(occ, 0.8)),
         })
-    # Actionable trajectories first, then by gap. Without this a fading product
-    # with thin supply outranks one that is actually accelerating, which is the
-    # opposite of what TRACE needs to see.
-    board.sort(key=lambda r: (r["label"] not in ACTIONABLE, -r["gap"]))
+    # Actionable trajectories first, then by priority. Priority rather than raw
+    # gap, so TRACE's stated targeting (the $400-1,000 occasionwear focus) drives
+    # the order a human reads, while `gap` stays the untargeted measurement.
+    board.sort(key=lambda r: (r["label"] not in ACTIONABLE, -r["priority"]))
     return board
 
 
@@ -133,8 +179,11 @@ def diff(conn, curr_run: int, prev_run: int | None) -> list[dict]:
         p_old = prev.get(pid)
         name = f"{r.get('title')} ({r.get('brand')})"
 
-        if r["label"] == "insufficient_volume":
+        # Precision gates, in order of how cheaply they reject.
+        if r["label"] not in ACTIONABLE:
             continue
+        if r["price_fit"] < MIN_PRICE_FIT_TO_ALERT:
+            continue  # outside TRACE's band, so not worth a human's time
 
         if i < TOP_N and pid not in prev_rank:
             out.append({"kind": "new_entrant", "product": name,
@@ -157,6 +206,16 @@ def diff(conn, curr_run: int, prev_run: int | None) -> list[dict]:
             out.append({"kind": "creator_pickup", "product": name,
                         "message": f"+{d['d_num_promoters']} creators promoting since last run"})
 
+    # Cap the digest. If everything is an alert, nothing is: a small team can
+    # only run content plus outreach plus seeding on a handful of items at once.
+    # Ordering follows the board, which is already priority-sorted, so the cap
+    # keeps the highest-priority signals rather than an arbitrary slice.
+    if len(out) > MAX_ALERTS:
+        out = out[:MAX_ALERTS] + [{
+            "kind": "suppressed", "product": None,
+            "message": f"{len(out) - MAX_ALERTS} further threshold crossings not "
+                       f"shown; raise MAX_ALERTS to see them.",
+        }]
     return out
 
 
@@ -184,21 +243,27 @@ def digest(conn, curr_run: int, prev_run: int | None, meta: dict) -> str:
                      "full-day baseline exists.")
     L.append(f"{len(board)} dress products from {len(meta.get('creators_ok', []))} creators "
              f"across {meta.get('collections_scanned', 0)} collections. "
-             f"{len(scored)} cleared the volume floor, {len(actionable)} are rising or peaking.")
+             f"{len(scored)} cleared the volume floor, {len(actionable)} are in play "
+             f"(rising, peaking or sustained).")
     L += ["", "## Alerts", ""]
     if alerts:
         L += [f"- **{a['kind']}** - {a['product'] or ''} {a['message']}".strip() for a in alerts]
     else:
         L.append("- No threshold crossings this run.")
 
-    L += ["", "## Rising or peaking, ranked by demand-supply gap", "",
-          "| # | Product | Brand | $ | State | Accel | Creators | Daily | Supply | Gap |",
-          "|---|---|---|---|---|---|---|---|---|---|"]
+    L += ["", "## In play, ranked by priority", "",
+          "Rising, peaking, or sustained (especially popular recently), ordered by "
+          "priority = gap x price fit x occasion weight. Targeting is TRACE's stated "
+          "focus: contemporary-to-premium occasionwear, roughly $400 to $1,000.", "",
+          "| # | Product | Brand | $ | Fit | Occasion | State | Accel | Creators | Daily | Supply | Gap | Priority |",
+          "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
     for i, r in enumerate(actionable[:TOP_N], 1):
         sup = f"{r['supply_listings']} ({r['supply_source']})" if r["supply_observed"] else "unmeasured"
-        L.append(f"| {i} | {str(r.get('title'))[:38]} | {r.get('brand')} | "
-                 f"{r.get('price')} | {r['label']} | {r['accel_short']} | "
-                 f"{r['distinct_creators']} | {r.get('daily_clicks')} | {sup} | {r['gap']} |")
+        L.append(f"| {i} | {str(r.get('title'))[:34]} | {r.get('brand')} | "
+                 f"{r.get('price')} | {r['price_fit']} | {r['occasion']} | "
+                 f"{r['label']} | {r['accel_short']} | "
+                 f"{r['distinct_creators']} | {r.get('daily_clicks')} | {sup} | "
+                 f"{r['gap']} | {r['priority']} |")
 
     if faded:
         L += ["", "## Past peak (what a retrospective report would wrongly surface)", "",

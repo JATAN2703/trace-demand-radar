@@ -24,6 +24,48 @@ creators:
 # Department_id 44 (verified against /api/Categories/).
 category_filter: Dresses
 
+# ---------------------------------------------------------------------------
+# Targeting, per Ella's clarifications (2026-08-22). Quoted so the reasoning
+# behind these numbers stays attached to them.
+# ---------------------------------------------------------------------------
+
+# "There is not a strict price or brand cutoff, but I would focus on
+#  contemporary-to-premium occasionwear, roughly $400 to $1,000. The key is that
+#  the item is expensive enough for its potential rental or resale value to
+#  meaningfully influence someone's decision to purchase it."
+#
+# Implemented as a soft ranking factor, not a hard filter, because she said it is
+# not a strict cutoff. The taper is deliberately asymmetric: below the band the
+# presale mechanic breaks down (a $100 dress's resale value does not change
+# anyone's purchase decision), while above it the mechanic still holds and the
+# item is merely pricier than her stated focus.
+price_band:
+  min: 400
+  max: 1000
+  below_falloff: 250   # dollars below `min` at which fit reaches zero
+  above_falloff: 1500  # dollars above `max` at which fit reaches zero
+
+# "I would focus primarily on occasionwear, particularly wedding guest and event
+#  dressing. I would not completely exclude going-out or vacation dresses if the
+#  signals are especially strong."
+#
+# Occasion is inferred from the collection a creator filed the item under, then
+# weighted rather than filtered, so a strong going-out signal can still surface.
+occasion_weights:
+  occasion: 1.00       # wedding guest, formal, event, gala, black tie
+  going_out: 0.70
+  vacation: 0.60
+  unknown: 0.80        # unlabelled collections are not penalised to zero
+
+occasion_keywords:
+  occasion:
+    [wedding, bridal, bridesmaid, formal, gala, "black tie", event, cocktail,
+     gown, engagement, rehearsal, guest]
+  going_out:
+    ["going out", party, club, night, birthday, bachelorette, "date night"]
+  vacation:
+    [vacation, resort, beach, honeymoon, cruise, tropical, "spring break"]
+
 # Per creator, how many of their most-recently-updated collections to pull.
 # Bounded to keep request volume polite; raise it for a wider sweep.
 max_collections_per_creator: 12

@@ -26,6 +26,24 @@ API = "https://apiv3.shopmy.us/api"
 REFERER = "https://shopmy.us/"
 
 
+def classify_occasion(collection_name: str | None, keywords: dict) -> str:
+    """Infer occasion from the collection a creator filed the item under.
+
+    Creators name collections for the occasion they have in mind ("Wedding Guest
+    Dresses", "Formal dresses"), which makes the collection title a better
+    occasion signal than the product title. Returns 'unknown' rather than
+    guessing when nothing matches; downstream weighting treats unknown as
+    mildly discounted, not disqualified.
+    """
+    if not collection_name:
+        return "unknown"
+    name = collection_name.lower()
+    for occasion, terms in (keywords or {}).items():
+        if any(str(t).lower() in name for t in terms):
+            return occasion
+    return "unknown"
+
+
 def _days_since(iso: str | None) -> float:
     if not iso:
         return 1e9
@@ -90,7 +108,8 @@ def _extract(pin: dict, category_filter: str) -> dict | None:
 
 
 def collect(fetcher, creators: list[str], category_filter: str = "Dresses",
-            max_collections: int = 12, staleness_days: int = 400) -> tuple[list[dict], list[dict], dict]:
+            max_collections: int = 12, staleness_days: int = 400,
+            occasion_keywords: dict | None = None) -> tuple[list[dict], list[dict], dict]:
     """Walk seeded creators and return (products, pins, meta).
 
     Products are deduped by id at the store layer; the same dress legitimately
@@ -110,6 +129,8 @@ def collect(fetcher, creators: list[str], category_filter: str = "Dresses",
 
         for col in select_collections(user, max_collections, staleness_days):
             cid = col.get("id")
+            cname = col.get("name")
+            occasion = classify_occasion(cname, occasion_keywords or {})
             payload = fetcher.get(
                 f"{API}/Collections/{cid}/pins?offset=0&limit=100", referer=REFERER
             )
@@ -125,6 +146,8 @@ def collect(fetcher, creators: list[str], category_filter: str = "Dresses",
                 pins.append({
                     "creator": handle,
                     "collection_id": cid,
+                    "collection_name": cname,
+                    "occasion": occasion,
                     "product_id": row["product_id"],
                     "pinned_at": pinned_at,
                 })
