@@ -5,8 +5,19 @@ name: Daily demand radar
 # so the stored series is auditable rather than asserted.
 on:
   schedule:
-    - cron: "0 13 * * *"   # 13:00 UTC daily (roughly 9am ET)
-  workflow_dispatch:        # manual trigger for demos
+    # Every 6 hours. Four snapshots a day rather than one buys lower detection
+    # latency, and it also lets us establish empirically whether the upstream
+    # `dailyClicks` counter is a rolling trailing-24h window or a same-day
+    # accumulator. Alerting is anchored to a ~24h-old baseline either way (see
+    # store.baseline_run), so polling frequency is a latency choice and not a
+    # correctness risk.
+    #
+    # Not more often than this on purpose: each run makes roughly 120 requests
+    # to a third-party API, so 6-hourly stays a respectful ~480/day, and it
+    # keeps the job comfortably inside the free Actions minutes for a private
+    # repo (~360 min/month).
+    - cron: "0 1,7,13,19 * * *"   # 01/07/13/19 UTC; the 13:00 run is ~9am ET
+  workflow_dispatch:              # manual trigger for demos
 
 permissions:
   contents: write

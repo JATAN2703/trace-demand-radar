@@ -196,3 +196,45 @@ def latest_two_runs(conn) -> list[int]:
         "SELECT run_id FROM runs WHERE finished_at IS NOT NULL ORDER BY run_id DESC LIMIT 2"
     ).fetchall()
     return [r["run_id"] for r in rows]
+
+
+MIN_BASELINE_HOURS = 20
+
+
+def baseline_run(conn, min_hours: float = MIN_BASELINE_HOURS) -> tuple[int | None, float | None]:
+    """Pick the run to diff against: the newest one at least `min_hours` old.
+
+    Why not simply the previous run. The upstream click counters are reported at
+    daily granularity, and we have not yet established whether `dailyClicks` is a
+    rolling trailing-24h window or a same-day accumulator that resets. If it
+    accumulates, then comparing a 3pm snapshot against a 9am snapshot shows the
+    counter filling up and reads as acceleration that never happened.
+
+    Anchoring to a roughly 24-hour-old baseline keeps every comparison
+    like-for-like no matter how often we poll, so polling frequency becomes a
+    detection-latency choice rather than a correctness risk.
+
+    Returns (run_id, age_in_hours). Falls back to the oldest completed run when
+    nothing is old enough yet, so early runs still produce a usable comparison,
+    and the caller can say so honestly in the digest.
+    """
+    now = dt.datetime.now(dt.timezone.utc)
+    rows = conn.execute(
+        "SELECT run_id, started_at FROM runs WHERE finished_at IS NOT NULL "
+        "ORDER BY run_id DESC"
+    ).fetchall()
+    if not rows:
+        return None, None
+
+    def age(row) -> float:
+        started = dt.datetime.fromisoformat(row["started_at"])
+        if started.tzinfo is None:
+            started = started.replace(tzinfo=dt.timezone.utc)
+        return (now - started).total_seconds() / 3600.0
+
+    for r in rows:
+        a = age(r)
+        if a >= min_hours:
+            return r["run_id"], round(a, 1)
+    oldest = rows[-1]
+    return oldest["run_id"], round(age(oldest), 1)
