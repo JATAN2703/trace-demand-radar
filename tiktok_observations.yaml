@@ -29,11 +29,141 @@ finalists:
   - product: "Ano Layered Raffia Dress"
     brand: "Kilentar"
     price: 750
-    searches_tried: []          # e.g. ["kilentar", "kilentar raffia dress"]
-    videos: []                  # see video template at the bottom
-    comment_intent: []          # comments asking to buy/rent/find it
-    verdict: null               # "present", "thin", or "absent on TikTok"
-    note: ""
+    searches_tried: ["kilentar", "kilentar dress"]
+
+    brand_account:
+      handle: "@kilentar"
+      followers: 100300
+      total_likes: 1600000
+      note: "Not an obscure label. Own-account posts get low engagement (60-112 likes), so the brand's reach is creator-driven, not owned-channel driven."
+
+    videos:
+      # --- posts showing the Ano dress specifically (sunshine yellow, tiered fringe)
+      - creator: "Olive"
+        posted: "Apr 24"
+        likes: 5100
+        caption: "@kilentar @Ibilola Ogundipe Official #afr[ican...]"
+        overlay_text: >
+          "1. Kilentar - Ano Dress. Sunshine yellow. Four tiers of fringe that
+          move before you do. The whole table turns before you've reached your
+          seat." Part of a listicle titled "The Wedding Guest Outfit Even The
+          Bride Is Talking About - 8 African Brands Making Them".
+        product_named_in_video: true
+        note: >
+          The single most valuable video found in the whole pass. It names the Ano
+          Dress explicitly, describes it, and frames it as WEDDING GUEST wear in
+          an editorial ranking. Independent third-party confirmation of both
+          product identity and occasion.
+      - creator: "Surya Garg"
+        posted: "8h ago"
+        likes: 67
+        caption: "@kilentar let's get married #weddinggues[tdress]"
+        overlay_text: "potentially the greatest dress I will ever wear"
+        product_named_in_video: true
+        note: "Posted 8 hours before this pass. The trend is live, not historic."
+      - creator: "Laura Morgan"
+        posted: "Jun 27"
+        likes: 2100
+        caption: "#kilentar #weddingguestdress"
+        product_named_in_video: true
+      - creator: "Laura Morgan"
+        posted: "Jun 23"
+        likes: 1300
+        caption: "#kilentar #fringedress #weddingguestdress"
+        product_named_in_video: true
+        note: "Shot with a partner in a suit, i.e. styled as actual wedding-guest wear."
+      - creator: "Laura Morgan"
+        posted: "Jun 21"
+        likes: 154
+        caption: "this dress cured me #outfittransition #kilentar"
+      - creator: "Tessa"
+        posted: "Apr 21"
+        likes: 7700
+        caption: "@kilentar Dare I say best summer dress eve[r]"
+        product_named_in_video: true
+      - creator: "slowish.style"
+        posted: "Jun 20"
+        likes: 13400
+        caption: "#coupleoutfit #kilentar #saintlaurent"
+        note: "Highest-engagement Kilentar post found. Couple/event styling."
+      # --- other Kilentar pieces, recorded for brand context not product evidence
+      - creator: "Ahahaitsliz"
+        posted: "Oct 13, 2024"
+        likes: 7300
+        caption: "Fave dress ever @kilentar"
+        note: "Rainbow scale 'Mami' dress, a different product."
+      - creator: "Michelle Adep..."
+        posted: "Sep 25, 2025"
+        likes: 588
+        caption: "#kilentar #rainbowfishdress"
+      - creator: "Roms"
+        posted: "Jun 26"
+        likes: 1300
+        caption: "@kilentar dress."
+      - creator: "Style Rotate"
+        posted: "Feb 10"
+        likes: 224
+        caption: "#dressrentalsouthafrica Spotted on Becca Bloo[m]"
+        note: >
+          A DRESS RENTAL account featuring Kilentar. Weak and dated, but it is the
+          only direct evidence anywhere in this pass that Kilentar pieces circulate
+          in a rental market. Relevant to TRACE's rental-liquidity question.
+
+    comment_intent: []
+
+    verdict: "present, product-level, correctly occasion-tagged"
+    note: >
+      This is the strongest case of the three finalists, and it displaces Cora as
+      the lead finding.
+
+      All four signals line up, which is not true of the other two:
+
+      1. PRODUCT identified by name, not just brand. An editorial listicle names
+         "Kilentar - Ano Dress" and describes the four tiers of fringe. Visual
+         match to the sunshine-yellow fringe dress across at least five videos.
+      2. OCCASION independently confirmed. Tagged #weddingguestdress by two
+         separate creators, styled with a partner in a suit, and placed in a
+         listicle about wedding-guest outfits. Our pipeline tagged it `occasion`
+         from a collection name; TikTok agrees. Contrast ALEMAIS, where the same
+         inference was wrong.
+      3. LIVE. A post 8 hours before this pass, alongside sustained engagement
+         from April to June (13.4K, 7.7K, 5.1K, 2.1K).
+      4. PRICE in band at $750, unlike Cora at $360.
+
+      And the supply side is where it becomes a TRACE opportunity rather than
+      just a trend: Poshmark showed only 5 listings for the entire brand
+      (below page size, so a genuine count, not a saturated one). Real
+      product-level demand, wedding-guest positioning, in-band price, and almost
+      no secondary supply.
+
+      RECENCY, stated precisely because it matters and is easy to overstate:
+
+        Ano-dress-specific evidence:  Apr 21, Apr 24, Jun 20, Jun 21, Jun 23,
+                                      Jun 27, and one post 8h before this pass.
+        Other Kilentar products:      Oct 13 2024, Sep 25 2025, Aug 24 2025,
+                                      Feb 10 (rainbow "Mami"/scale dress, and the
+                                      rental post).
+
+      So the bulk of Ano evidence is two to four months old, with a single post in
+      the last day. This is sustained attention, NOT a fresh explosion, and it
+      should not be described as one. It matches the radar classifying Ano
+      `peaking` rather than `rising`, so the two sources agree on trajectory as
+      well as existence. It is not the 10x spike Cora is.
+
+      The genuinely old posts (Oct 2024 onward) are DIFFERENT products and must
+      not be read as Ano momentum. What they do establish is separate and useful:
+      Kilentar has held creator attention across roughly two years. For a presale
+      marketplace that matters on its own terms, because Ella's criterion is that
+      an item be "expensive enough for its potential rental or resale value to
+      meaningfully influence someone's decision to purchase it." Durable brand
+      appeal makes that resale value credible in a way a three-week flash trend
+      does not. A dress that is hot this month and forgotten next month is a poor
+      presale bet even if its momentum score is high today.
+
+      Also note the brand account has 100.3K followers but its own posts get
+      60-112 likes, while creator posts reach 5-13K. Reach here is creator-driven,
+      which is directly relevant to Ella's stated action of recruiting the
+      creators already driving discovery.
 
   - product: "The Cora Dress"
     brand: "Réalisation Par"
