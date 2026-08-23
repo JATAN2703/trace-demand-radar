@@ -26,7 +26,72 @@
 #   confidence:        manual
 #   note:              anything ambiguous or surprising
 
-observations: []
+observations:
+  - product_id: "2128245"
+    title: "The Cora Dress"
+    brand: "Réalisation Par"
+    retail: 360
+    poshmark_listings: 3
+    pickle_listings: null          # not yet checked
+    pickle_checked_at: null
+    observed_at: 2026-08-23
+    confidence: manual
+    method: >
+      poshmark.com search "Realisation Par - The Cora Dress", filtered to brand
+      Réalisation Par + Women/Dresses. Scrolled roughly three screens of
+      brand-filtered results; no further Cora listings appeared after the third.
+      Counted only listings that are actually The Cora, in any print.
+    listings_seen:
+      - print: "Mirage stripe"
+        price: 360
+        size: "M"
+        condition: "used"
+        vs_retail: "at retail (100%)"
+      - print: "Tortoiseshell"
+        price: 400
+        size: "L"
+        condition: "NWT"
+        vs_retail: "ABOVE retail (111%)"
+      - print: "stripe"
+        price: 295
+        size: "XS"
+        condition: "NWT"
+        vs_retail: "below retail (82%)"
+    note: >
+      THE KEY FINDING IS PRICE RETENTION, NOT THE COUNT.
+
+      Three Cora listings at $295, $360 and $400 against $360 retail, so a mean
+      of roughly $352, about 98% of retail. Two of the three are New With Tags,
+      i.e. bought and never worn. One is listed ABOVE retail.
+
+      What makes this rigorous rather than anecdotal is the within-brand
+      comparison, which controls for brand effects. Every other Réalisation Par
+      dress on the same filtered results page is discounted hard:
+        Iris silk    $125 from $325   (38%)
+        Christy 90s  $129 from $249   (52%)
+        Black mini   $120 from $200   (60%)
+        Alba         $170 from $250   (68%)
+        Elsa midi    $185 from $275   (67%)
+        Gia midi     $275 from $310   (89%)
+        Meg          $320 from $340   (94%)
+
+      So the brand's catalogue typically resells at 38-94% of retail, while Cora
+      holds at 82-111%. Cora is the only piece in the set retaining full value.
+
+      Why this matters for TRACE specifically: Ella's stated criterion is that an
+      item be "expensive enough for its potential rental or resale value to
+      meaningfully influence someone's decision to purchase it." A dress that
+      resells at or above what you paid makes listing it pre-purchase a rational
+      financial decision rather than a gamble. This is the presale mechanic
+      demonstrated with observed prices rather than asserted.
+
+      Supply read: three units, two of them unworn, against 100+ TikTok posts and
+      3,653 published daily clicks. Thin secondary supply against heavy demand.
+
+      Caveats: asking prices, not sold prices, so this shows what sellers believe
+      the market will bear, not confirmed transactions. Poshmark's sold-price
+      history needs a login and was not used. Three listings is also a small
+      sample; the within-brand contrast is what carries the argument, not the n.
 
 # Template to copy once the finalist dresses are locked and checked by hand:
 #
