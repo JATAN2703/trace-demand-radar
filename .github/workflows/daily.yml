@@ -42,16 +42,46 @@ jobs:
         run: python run.py
 
       - name: Commit snapshot
+        # The push must survive the remote having moved on since checkout, which
+        # happens whenever a commit lands mid-run. A plain push fails with
+        # "fetch first" and, because the runner is ephemeral, that silently loses
+        # the whole snapshot.
+        #
+        # `reset --soft` onto the fetched tip is used instead of pull/rebase
+        # because data/radar.sqlite is a binary file: a rebase can conflict on it
+        # and there is no sane textual resolution. Soft-resetting keeps the
+        # working tree (which already holds this run's database, built from the
+        # remote state at checkout plus this run's append) and simply replays it
+        # on top of the new tip, so a conflict is not possible.
+        #
+        # This makes CI the single writer of the database, which is deliberate:
+        # local runs should not commit it.
         run: |
+          set -euo pipefail
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/radar.sqlite reports/
-          if git diff --staged --quiet; then
-            echo "No change to commit."
-          else
-            git commit -m "radar: snapshot $(date -u +%Y-%m-%d)"
-            git push
-          fi
+
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --soft origin/main
+            # Stage only our own outputs. Never `add -A`: after the soft reset,
+            # files added to the remote by other commits would otherwise be
+            # staged as deletions.
+            git add data/radar.sqlite reports/
+            if git diff --staged --quiet; then
+              echo "No change to commit."
+              exit 0
+            fi
+            git commit -m "radar: snapshot $(date -u +%Y-%m-%dT%H:%MZ)"
+            if git push; then
+              echo "pushed on attempt ${attempt}"
+              exit 0
+            fi
+            echo "push rejected (attempt ${attempt}), retrying against new tip"
+            sleep $((attempt * 5))
+          done
+          echo "::error::snapshot could not be pushed after 3 attempts"
+          exit 1
 
       - name: Surface the digest in the run summary
         run: cat reports/latest.md >> "$GITHUB_STEP_SUMMARY"
