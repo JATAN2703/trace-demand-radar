@@ -1,0 +1,227 @@
+# TikTok observations (manual, human-in-the-loop).
+#
+# TikTok is the attention layer: it shows what creators are putting in front of
+# consumers. It is also the one source with no usable programmatic access, and
+# the brief says so ("TikTok content is unstructured, and the exact product may
+# not be named in the video"). So this is collected by hand and labelled as such.
+#
+# This is not a shortcut. Deciding which creators and which content matter is
+# the judgement step the role description asks for, and it is the input that
+# seeds everything the automated pipeline then does.
+#
+# RULES
+#   * Record only what you actually saw, with the date you saw it.
+#   * Never estimate a view count. Copy the number or leave it null.
+#   * `null` means not observed. It is not zero.
+#   * Paste the real video URL so every claim is checkable.
+
+observed_at: 2026-08-23   # pass done ~15:40-16:15 ET, TikTok iOS app
+
+# ---------------------------------------------------------------------------
+# PART 1 - Confirm the finalists (cross-platform breadth)
+#
+# For each dress the radar surfaced, does TikTok show creator attention too?
+# A product strong on ShopMy AND visible on TikTok is a much better bet than one
+# visible only in click data. Absence is also a finding: note it honestly.
+# ---------------------------------------------------------------------------
+
+finalists:
+  - product: "Ano Layered Raffia Dress"
+    brand: "Kilentar"
+    price: 750
+    searches_tried: []          # e.g. ["kilentar", "kilentar raffia dress"]
+    videos: []                  # see video template at the bottom
+    comment_intent: []          # comments asking to buy/rent/find it
+    verdict: null               # "present", "thin", or "absent on TikTok"
+    note: ""
+
+  - product: "The Cora Dress"
+    brand: "Réalisation Par"
+    price: 360
+    searches_tried:
+      - "realisation par cora"          # in-app search reported "100+ posts"
+      - "realisation par cora dress"
+      - "the cora realisation par"
+    videos:
+      - creator: "@angeltrsong"          # Angel Song
+        posted: "6d ago"
+        likes: 58000
+        comments: 118
+        saves: 4496
+        shares: 1635
+        caption: "Wedding szn #outfitinspo #couple #weddingguestlook @Réalisation Par"
+        product_named_in_video: true
+        note: >
+          The anchor post. Explicitly tagged #weddingguestlook, which is exactly
+          TRACE's stated occasion focus. Creator has 5,625 followers but 1.7M
+          total likes, so reach is far above follower count.
+      - creator: "@elizasmithx"          # Eliza
+        posted: null
+        views: 57900
+        likes: 2703
+        comments: 26
+        saves: 355
+        shares: 94
+        caption: "The hype around this dress is deserved omg #fitcheck #realisationpar"
+        product_named_in_video: true
+        note: "Caption itself references 'the hype', i.e. the creator is reacting to an existing trend."
+      - creator: "@miahiraani"
+        posted: null
+        likes: 570
+        comments: 16
+        saves: 68
+        shares: 13
+        caption: "girls don't want bfs they want realisation par dresses #realisationpar"
+        product_named_in_video: true
+      - creator: "sarah"
+        likes: 4900
+        caption: "a lil fairy @Réalisation Par"
+      - creator: "courtney"
+        posted: "5d ago"
+        likes: 136
+        caption: "Realisation P@r lookalike dress - The Cora"
+        tiktok_shop_tag: "COLORFUL STRIPE MI..."
+        note: "DUPE content with a TikTok Shop product tag attached. See dupe_signal below."
+      - creator: "courtney"
+        posted: "1d ago"
+        likes: 16
+        caption: "You absolutely need this Realisation p@r Cora l[ookalike]"
+        tiktok_shop_tag: "STRIPE MIDI SLIP DRE..."
+      - creator: "sharla"
+        posted: "5d ago"
+        likes: 194
+        caption: "birthday girl Cora dress"
+      - creator: "Mads"
+        posted: "8-15"
+        likes: 89
+        comments: 5
+        caption: "Your favorite wedding guest #realisationpar #gucci"
+        note: "Second independent #weddingguest framing."
+      - creator: "FARAHPINK"
+        likes: 329
+        caption: "#realisationpardress #jacquemuspochette"
+      - creator: "Greer Quarterm..."
+        posted: "2d ago"
+        likes: 62
+        caption: "@Réalisation Par I ADORE THIS"
+      - creator: "Emer"
+        posted: "47m ago"
+        likes: 16
+        caption: "wanted the Realisation Par Cora Mirage dress..."
+        note: "Posted 47 minutes before observation. Content is being created in real time."
+      - creator: "Lydia"
+        posted: "1h ago"
+        likes: 4
+        caption: "#realisationpar #viraldress favourite d[ress]"
+        note: "Creators are themselves tagging it #viraldress."
+
+    comment_intent: []   # TODO: open @angeltrsong's 118 comments and pull quotes
+
+    verdict: "present, strongly"
+    note: >
+      Cross-platform confirmation of the radar's top momentum signal, from an
+      entirely independent source. The radar flagged Cora on published click data
+      (378 -> 3,653 daily, ~10x in one publish); TikTok independently shows 100+
+      posts, at least 11 distinct creators, and videos posted 47 minutes and 1
+      hour before this pass. Two unrelated signals agreeing is much stronger
+      evidence than either alone.
+
+      Recency spread observed: 47m, 1h, 1d, 2d, 5d, 5d, 6d, and 8-15. This is a
+      live trend, not a retrospective one.
+
+      Saves-to-likes ratios are notably high (Angel Song 4,496 saves on 58K
+      likes; Eliza 355 on 2,703). A save is closer to purchase intent than a
+      like, since people bookmark what they intend to buy or find later.
+
+      Honest caveat on targeting: at $360 Cora sits just below Ella's stated
+      $400-1,000 band (price_fit 0.84 in the model). She said the band is not a
+      strict cutoff and that she would not exclude strong signals, so this is
+      defensible, but it should be stated rather than glossed.
+
+    dupe_signal:
+      observed: true
+      evidence:
+        - "courtney, 5d ago, 136 likes: 'Realisation P@r lookalike dress - The Cora'"
+        - "courtney, 1d ago, 16 likes: 'You absolutely need this Realisation p@r Cora l[ookalike]'"
+        - "Brand name deliberately obfuscated as 'P@r' / 'p@r' in captions"
+      why_it_matters: >
+        This is the most commercially interesting thing in the whole pass, and it
+        is a signal TRACE could act on that no click-count would reveal.
+
+        Dupe and lookalike content only appears once demand outstrips what people
+        can actually get or afford. Creators making "lookalike" videos with
+        TikTok Shop tags are monetising an audience that wants this specific
+        dress and is not buying the original. That is a demand-supply gap
+        expressed in consumer behaviour rather than inferred from listing counts.
+
+        For a presale marketplace this is close to an ideal condition: provable
+        want, constrained access, and a price point where resale or rental value
+        plausibly changes the purchase decision. It also suggests the population
+        TRACE wants is already visible and reachable, sitting in the comments of
+        dupe videos.
+
+        The obfuscated spelling ("P@r") is a secondary tell: creators evade brand
+        detection when content is organic and high-volume enough to be worth
+        policing.
+
+  - product: "Porter Midi Dress"
+    brand: "ALÉMAIS"
+    price: 690
+    searches_tried: []
+    videos: []
+    comment_intent: []
+    verdict: null
+    note: ""
+
+# ---------------------------------------------------------------------------
+# PART 2 - Creator discovery (are we watching the right people?)
+#
+# Goal: find occasionwear creators the seed list missed. For each creator you
+# see repeatedly, check whether they already appear in watchlist.yaml. If not,
+# check whether they have a ShopMy storefront (shopmy.us/<handle>) and add them.
+# ---------------------------------------------------------------------------
+
+creators_seen: []
+# Template:
+#   - handle: "@someone"
+#     followers: null
+#     what_they_post: "wedding guest dresses, try-on hauls"
+#     in_seed_list: false
+#     shopmy_handle: null        # look for a shopmy.us link in their bio
+#     ltk_handle: null
+#     example_video: ""
+#     recent_activity: null      # date of most recent dress video seen
+#     why_relevant: ""
+
+# ---------------------------------------------------------------------------
+# PART 3 - Comment-level buy/rent intent
+#
+# Ella specifically named this as an action: "engage people in the comments who
+# are asking to buy or rent it and introduce them to TRACE." So comments asking
+# "where is this from", "does anyone want to sell theirs", "wish I could rent
+# this" are direct evidence of the demand TRACE wants to concentrate. This is
+# arguably the highest-value thing on this page: it is a named TRACE action with
+# observable evidence.
+# ---------------------------------------------------------------------------
+
+intent_examples: []
+# Template:
+#   - video_url: ""
+#     product_guess: ""
+#     comment: "verbatim quote"
+#     intent_type: "buy" | "rent" | "find" | "price"
+#     likes_on_comment: null
+#     observed_at: null
+
+# ---------------------------------------------------------------------------
+# Video template (copy into `videos` above)
+# ---------------------------------------------------------------------------
+# - url: ""
+#   creator: "@handle"
+#   posted: null          # date shown on the video
+#   views: null
+#   likes: null
+#   comments: null
+#   product_named_in_video: true|false
+#   shoppable_link_present: true|false   # ShopMy/LTK link in bio or comments
+#   note: ""
