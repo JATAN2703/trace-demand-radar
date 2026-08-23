@@ -147,6 +147,93 @@ observations:
       so the NYC subset count is reported as observed rather than as a complete
       NYC inventory.
 
+  - product_id: "1484885"
+    title: "Ano Layered Raffia Dress"
+    brand: "Kilentar"
+    retail: 750
+    poshmark_listings: 5           # brand-wide, from the automated collector
+    pickle_listings: 2             # PRODUCT-level; brand-wide is ~32, see note
+    pickle_checked_at: 2026-08-23
+    observed_at: 2026-08-23
+    confidence: manual
+    method: >
+      Pickle iOS app, search "Kilentar", scrolled roughly eight screens. Counted
+      brand-wide listings and separately identified listings that are the Ano
+      Layered Raffia specifically (sunshine yellow, tiered fringe).
+    pickle_product_level:
+      - title: "KÍLÈŃTÀR Ano Layered Raffi..."
+        location: "Kips Bay, NY"
+        size: "2"
+        rent: 300
+        saves: 135
+        note: "Named explicitly. Rent is 40% of the $750 retail."
+      - title: "KILENTAR Yellow Fringe..."
+        location: "Woburn, MA"
+        size: "S"
+        rent: 250
+        saves: 12
+        note: "Titled differently but visually the Ano. Counted, flagged as an identification judgement."
+    note: >
+      SECOND HYPOTHESIS ALSO OVERTURNED, and the replacement is more useful.
+
+      Kilentar is NOT absent from Pickle. Brand-wide there are roughly 32 listings
+      across NY, CA, IL, FL, VA, WA, MA, GA, TX, NJ and MI, including Chelsea,
+      Tribeca x3, Financial District x2, Greenwich Village, East Village, Crown
+      Heights, Kips Bay, Central Harlem and Lawrence. One Mami listing has 2,000
+      saves. So the brand has an established, active rental market.
+
+      But the PRODUCT-level picture is completely different from Cora's, and that
+      difference is the actual finding:
+
+                          product-level Pickle    rent as % of retail
+        Cora  ($360)      22+ listings            $45-100   = 12-28%
+        Ano   ($750)      2 listings              $250-300  = 33-40%
+
+      Two things follow.
+
+      First, Ano's supply is genuinely thin at the product level even though its
+      brand is well represented. Cora has an order of magnitude more units of the
+      same dress available to rent.
+
+      Second, and more telling: Ano rents at 33-40% of retail against Cora's
+      12-28%, and against Pickle's own published guidance of 10-20%. A rental
+      price that far above the platform norm is what scarcity looks like in
+      pricing. Owners are able to charge it because demand exceeds the two
+      available units.
+
+      So the defensible claim is not "Kilentar is untapped". It is: proven brand
+      rental economics, thin product-level supply, and rental pricing well above
+      platform norms, on an in-band $750 occasionwear piece with wedding-guest
+      positioning confirmed independently on TikTok.
+
+    brand_vs_product_finding: >
+      THE METHODOLOGICAL LESSON, which belongs in the write-up:
+
+      Brand-level supply and product-level supply lead to opposite conclusions
+      here. Brand-level, Kilentar looks well supplied (32 Pickle listings) and
+      Cora looks scarce (Réalisation Par has fewer). Product-level, it inverts
+      completely: Cora has 22+ units, Ano has 2.
+
+      The radar as built can only reach brand-level supply, and only on Poshmark,
+      where page one saturates at 48 and the count is useless anyway. So the
+      system is structurally unable to see the distinction that actually decides
+      the recommendation. Both hypotheses it generated were overturned by manual
+      product-level checks.
+
+      That is not a reason to distrust the demand side, which performed well and
+      was corroborated three independent ways. It is a precise statement of where
+      the automation ends and why the human step is not decoration.
+
+    cross_platform_note: >
+      Kilentar shows ~32 Pickle rental listings against 5 Poshmark resale
+      listings. Réalisation Par shows the reverse pattern relative to its
+      resale presence. Tentative reading: Kilentar is a rent-not-resell brand,
+      which is consistent with statement occasionwear that gets worn once. Also
+      visible are high Pickle buy-out prices for Kilentar (a Starfish at $1,000,
+      one at $750, a Mami at $650, another at $500), so the pieces hold value.
+      Both observations support the presale mechanic on this brand, though with
+      n this small they are directional rather than established.
+
 # Template to copy once the finalist dresses are locked and checked by hand:
 #
 # observations:
