@@ -1,0 +1,114 @@
+# Hand-labelled ground truth for the system's own hypotheses.
+#
+# The system's job is not to rank dresses, it is to identify presale
+# opportunities: accelerating demand where secondary supply has NOT yet formed.
+# So the thing to evaluate is that claim, and the only way to check it is a
+# manual product-level supply check on platforms the radar cannot reach.
+#
+# `system_claim` is what the radar asserted by ranking the item into its
+# actionable board. `manual_verdict` is what the hand check found.
+#
+# Deliberately small and deliberately honest: three labels, two of which are
+# failures. A precision figure on n=3 is directionally useful and statistically
+# nothing, and the script says so.
+
+labels:
+  - product_id: "1484885"
+    title: "Ano Layered Raffia Dress"
+    brand: "Kilentar"
+    price: 750
+    system_claim: "presale opportunity: peaking demand, in-band price, occasionwear"
+    system_rank: 1
+    manual_verdict: CONFIRMED
+    evidence: >
+      3 Ano rental listings nationwide, exactly 1 in New York, that unit priced at
+      40% of retail against Pickle's published 10-20% guidance. Product identity
+      and wedding-guest occasion independently confirmed by a TikTok editorial.
+    failure_category: null
+
+  - product_id: "2128245"
+    title: "The Cora Dress"
+    brand: "Réalisation Par"
+    price: 360
+    system_claim: "presale opportunity: 10x acceleration, strongest demand in dataset"
+    system_rank: 2
+    manual_verdict: REFUTED
+    evidence: >
+      22+ Cora rental listings on Pickle, at least 12 in New York. Secondary
+      supply has already formed and Pickle has captured it in TRACE's home market.
+      Demand was real and correctly detected; the opportunity claim was wrong.
+    failure_category: unobservable_supply
+
+  - product_id: "3129357"
+    title: "Porter Midi Dress"
+    brand: "ALÉMAIS"
+    price: 690
+    system_claim: "presale opportunity: rising demand, in-band price, occasionwear"
+    system_rank: 4
+    manual_verdict: REFUTED
+    evidence: >
+      Product appears in no TikTok search across four queries, so click momentum
+      has no corroborating attention. Occasion tag is also wrong: TikTok positions
+      ALÉMAIS as vacation/resort wear, while the pipeline inferred `occasion` from
+      a curator's collection title.
+    failure_category: noisy_occasion_inference
+
+# ---------------------------------------------------------------------------
+# Failure-mode taxonomy. Each category names a specific, diagnosable defect
+# with a specific fix, rather than "the model was wrong".
+# ---------------------------------------------------------------------------
+
+taxonomy:
+  unobservable_supply:
+    description: >
+      Demand detected correctly, but the supply term was neutral because the
+      deciding platform could not be observed. Neutral supply flatters a
+      high-demand item, so the system over-ranks it.
+    root_cause: "Pickle is bot-gated (429 on every host); Poshmark's automated count saturates at 48 per brand."
+    fix: "Product-level supply data via partnership or licensed provider. Not a scraping problem."
+    severity: high
+    note: "This is the dominant failure mode and it is structural, not a tuning issue."
+
+  brand_vs_product_supply:
+    description: >
+      Brand-level and product-level supply can point in opposite directions.
+      Brand-level, Kilentar looks well supplied (~32 Pickle listings) and
+      Réalisation Par thin. Product-level it inverts: Cora 22+, Ano 3.
+    root_cause: "The radar can only reach brand-level supply."
+    fix: "Same as above. Until then, treat any automated supply figure as a prior, never a finding."
+    severity: high
+
+  noisy_occasion_inference:
+    description: >
+      Occasion is inferred from the collection title a creator filed the item
+      under, which reflects one curator's framing rather than the product's
+      cultural positioning.
+    root_cause: "Collection-name keyword matching."
+    fix: "Classify from product attributes and cross-check against platform content."
+    severity: medium
+    note: "Correct on Ano, wrong on Porter Midi. Noisy rather than broken."
+
+  creator_concentration:
+    description: >
+      18 of the top 20 ranked items came from a single seeded creator, so output
+      reflects one curator's taste more than the market.
+    root_cause: "9 seeds, of which only 2 have active dress collections in scope."
+    fix: "Widen seeds; require cross-creator corroboration before an item tops the board."
+    severity: medium
+
+  low_volume_ratio_noise:
+    description: >
+      Acceleration ratios explode on tiny counts (1 to 7 clicks reads as 5x).
+    root_cause: "Ratio of small integers."
+    fix: "Already handled: MIN_DAILY / MIN_WEEKLY floors route these to insufficient_volume, never alerted."
+    severity: low
+    note: "Mitigated, listed for completeness."
+
+  stale_batch_comparison:
+    description: >
+      Comparing two runs inside one upstream publish window yields an empty diff
+      that reads as "nothing is happening" when nothing has been published.
+    root_cause: "Source republishes counters as a once-daily batch, not live."
+    fix: "Already handled: store.previous_batch_run diffs against the previous distinct batch."
+    severity: low
+    note: "Mitigated. Was a real bug before it was measured."

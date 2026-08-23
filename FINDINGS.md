@@ -7,6 +7,36 @@ observe something, I say so rather than estimating it.
 
 ---
 
+## The short version
+
+**Recommendation: Kilentar's Ano Layered Raffia Dress, $750.**
+
+There is **exactly one available to rent in New York.** For comparison, the dress that every other
+signal pointed at has **roughly twelve.** That single New York unit rents at **40% of retail**, double
+Pickle's own published guidance to lenders — which is what scarcity looks like in pricing. The dress
+is named and framed as wedding-guest wear in an independent TikTok editorial, sits inside your
+$400–1,000 band, and is peaking rather than fading.
+
+**I am not recommending the hottest dress I found.** Réalisation Par's Cora had a 10x single-day jump
+in click-throughs, 100+ TikTok posts, videos posted 47 minutes before I looked, and it holds 82–111% of
+retail on resale while its sibling products discount to 38–68%. Every automated signal favoured it.
+Then I checked Pickle by hand and found 22+ units already rentable, a dozen in your home market. The
+supply has already formed and Pickle has captured it.
+
+**What I built:** a demand radar that has run unattended twice daily since 22 August, committing its
+own snapshots. It flagged Cora's acceleration on published click data before I had looked at TikTok at
+all, so the detection works.
+
+**What I learned about it:** the system is good at finding candidates and bad at qualifying them. It
+measures demand well and supply badly, because the platform that decides the answer is the one that
+cannot be scraped. **Measured precision on its own opportunity calls is 1 of 3.** That is not a reason
+to distrust the demand side, which held up under three independent corroborations — it is a precise
+statement of where the automation ends and why the human step is load-bearing rather than decorative.
+
+Detail, method, named creators, five failure modes and everything I am still unsure about follows.
+
+---
+
 ## 1. How I framed the problem
 
 TRACE does not need a trend tracker. Trend trackers are a commodity, and a ranked list of hot dresses
@@ -258,8 +288,9 @@ gated on price fit and capped. One run produced 5 alerts and suppressed 13.
 
 ## 7. How I would know if it works, and where it currently fails
 
-**Measured precision on the two hypotheses the system generated: 0 of 2.** Both Cora and Ano were
-overturned or materially revised by manual checks. That is the honest number, on a sample of two.
+**Measured precision on the hypotheses the system generated: 1 of 3 (33%).** Run
+`python eval/precision.py` for the labels and the failure taxonomy. Ano was confirmed by manual check;
+Cora and Porter Midi were both refuted.
 
 The demand side, by contrast, held up under three independent corroborations: click acceleration,
 TikTok volume and recency, and Poshmark price retention all agreed on Cora.
