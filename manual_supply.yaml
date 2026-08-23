@@ -32,8 +32,8 @@ observations:
     brand: "Réalisation Par"
     retail: 360
     poshmark_listings: 3
-    pickle_listings: null          # not yet checked
-    pickle_checked_at: null
+    pickle_listings: 22            # AT LEAST 22, still scrolling when counting stopped
+    pickle_checked_at: 2026-08-23
     observed_at: 2026-08-23
     confidence: manual
     method: >
@@ -92,6 +92,60 @@ observations:
       the market will bear, not confirmed transactions. Poshmark's sold-price
       history needs a login and was not used. Three listings is also a small
       sample; the within-brand contrast is what carries the argument, not the n.
+
+    pickle_finding: >
+      HYPOTHESIS OVERTURNED. Cora is NOT a demand-supply gap. It is the opposite.
+
+      Pickle search "Realisation Par cora", brand-filtered, iOS app, 2026-08-23:
+      at least 22 distinct Cora listings, and results were still scrolling when
+      counting stopped. Rental prices $45-$100 against $360 retail, which is
+      12-28% of retail and consistent with Pickle's own 10-20% guidance.
+
+      Geography, recorded because TRACE is NYC-based and this is the relevant
+      part: at least 12 of the listings are New York, spanning West Village,
+      Greenwich Village x2, Chelsea x2, Gowanus x2, East Village x2, Lower East
+      Side, Battery Park City, Murray Hill, Carnegie Hill. Plus Jersey City NJ.
+      The rest are CA, IL, TN, PA, DC, CO.
+
+      Listing-level demand on Pickle is also high: save counts of 434, 428, 288,
+      286, 199, 187, 175, 153, 144, 135, 127 and so on. So this is an active
+      rental market, not dormant inventory.
+
+      One listing offers "Buy $360" alongside rent, i.e. resale at full retail on
+      the rental platform.
+
+      WHAT THIS MEANS FOR TRACE, stated plainly:
+
+      Cora is the hottest item the radar found and simultaneously the WEAKEST
+      presale candidate of the three. Demand is real and accelerating, but the
+      secondary supply has already formed, and Pickle has already captured it in
+      TRACE's own home market. Organising presale demand around Cora would mean
+      competing with roughly a dozen existing NYC rental listings for the same
+      dress.
+
+      The brief anticipates exactly this test: "a dress that is accelerating on
+      TikTok and being linked by multiple creators on ShopMy but has little
+      presence on Pickle may represent an opportunity." Cora has heavy Pickle
+      presence, so by that logic it is not the opportunity.
+
+      WHY THIS MATTERS METHODOLOGICALLY: every automated signal pointed at Cora.
+      10x click acceleration, 100+ TikTok posts, retail-price retention on
+      Poshmark, two creators, correct occasion. On the automated evidence alone
+      the recommendation would have been "concentrate on Cora", and it would have
+      been wrong. A single manual check on the one platform that cannot be
+      scraped reversed the conclusion.
+
+      That is the strongest available argument for the human-in-the-loop design,
+      and also a caution about the radar as built: it measures demand well and
+      supply badly, so it will systematically over-rank items whose supply it
+      cannot see. Recorded as a known limitation, not glossed.
+
+    filter_caveat: >
+      The search chip read "Local" while returning results from CA, IL, TN, DC
+      and CO, so either the filter was not applied or "Local" denotes local
+      delivery availability rather than a geographic restriction. Not resolved,
+      so the NYC subset count is reported as observed rather than as a complete
+      NYC inventory.
 
 # Template to copy once the finalist dresses are locked and checked by hand:
 #
