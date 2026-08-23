@@ -344,6 +344,14 @@ Cora and Porter Midi were both refuted.
 The demand side, by contrast, held up under three independent corroborations: click acceleration,
 TikTok volume and recency, and Poshmark price retention all agreed on Cora.
 
+**External sanity check.** I compared my output to a fashion-press roundup of this week's trending
+dresses. Most of its picks fall outside your brief by design (a $90 slip, a $169 polka-dot day dress, a
+knit day dress), so their absence is the occasionwear targeting working. But DÔEN appears in both:
+editorial calls it "the cult label of the moment," and my board independently surfaced two DÔEN dresses
+from click data alone. One plausible in-scope miss, Sleeper's Genus Rosa at $458, is absent because none
+of my nine seeded creators pinned it, which is the creator-concentration limitation below showing up
+concretely rather than theoretically.
+
 **So the failure is specific and diagnosable, not general.**
 
 **Failure mode 1, the system measures demand well and supply badly.** It will systematically
