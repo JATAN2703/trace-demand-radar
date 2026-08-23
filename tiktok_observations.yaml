@@ -115,7 +115,81 @@ finalists:
         caption: "#realisationpar #viraldress favourite d[ress]"
         note: "Creators are themselves tagging it #viraldress."
 
-    comment_intent: []   # TODO: open @angeltrsong's 118 comments and pull quotes
+    comment_intent:
+      # Source: @angeltrsong's 58K-like post, 118 comments, read 2026-08-23.
+      - comment: "you look beautiful !! Where is the dress from please ? It is stunning"
+        author: "jade.vcd"
+        age: "6d"
+        likes: 25
+        intent_type: "find"
+        creator_replied: "Thank you!! It's from @Réalisation Par"
+        note: >
+          Explicit product-identification request, answered by the creator in
+          thread. The asker is a prospective purchaser who did not know the brand
+          until this exchange.
+      - comment: "where did u get this dresssssss"
+        author: "si"
+        age: "3d"
+        likes: 1
+        intent_type: "find"
+        creator_replied: "It's from @Réalisation Par xx"
+        note: "Second independent 'where is it from' three days later, so demand for identification is ongoing, not a one-off."
+      - comment: >
+          I've seen this dress many times and thought it was beautiful but this is
+          the first time I've seen it look thissss good on someone omg
+        author: "kezzy"
+        age: "5d"
+        likes: 115
+        intent_type: "repeat_exposure"
+        note: >
+          The most analytically useful comment in the thread. "I've seen this
+          dress many times" is a viewer reporting feed saturation, which is
+          independent confirmation of trend penetration from the demand side
+          rather than from creator or click data.
+      - comment: "THIS DRESS !!! ON YOUR BODYYY"
+        author: "Delilah"
+        age: "6d"
+        likes: 3651
+        intent_type: "desire"
+        note: "Top comment on the post by a wide margin, and it is about the dress rather than the couple. The garment is the object of attention."
+      - comment: "love the dress!!"
+        author: "paula"
+        age: "6d"
+        likes: 414
+        intent_type: "desire"
+      - comment: >
+          I think this is the most beautifully complimentary dress ive ever seen
+          in my life omfg girl you look stunning !!!
+        author: "cam"
+        age: "3d"
+        likes: 22
+        intent_type: "desire"
+
+    comment_intent_finding: >
+      HONEST GAP FIRST: no comment in this thread expressed rental or
+      buy-secondhand intent. Nobody said "does anyone want to sell theirs" or
+      "wish I could rent this." Claiming otherwise would be overclaiming, so the
+      rental-demand hypothesis is unsupported by this evidence.
+
+      What IS present is primary purchase intent: two explicit "where is this
+      from" requests, and a top comment at 3,651 likes about the garment itself.
+
+      And on reflection that is the more useful signal for TRACE, not a weaker
+      one. TRACE is a PRESALE marketplace: the listing is created before or at
+      the point of purchase. So the person who matters is the one about to buy,
+      not the one hunting a secondhand unit. Ella named this action explicitly:
+      "identify people who already own or are considering purchasing it as
+      potential listers."
+
+      A commenter asking where a $360 dress is from, on a post tagged
+      #weddingguestlook, is a candidate lister at the exact moment TRACE would
+      want to reach them. The comment thread is therefore a supply-acquisition
+      channel, not just a demand indicator, and it is directly observable at
+      product level.
+
+      Caveat on scale: six comments from one post is illustrative, not
+      quantitative. The pattern would need sampling across posts before anyone
+      sized it.
 
     verdict: "present, strongly"
     note: >
