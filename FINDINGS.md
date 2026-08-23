@@ -327,6 +327,11 @@ enough.
 - **Precision is measured on n=2.** Directionally useful, statistically nothing.
 - **Poshmark prices are asking, not sold.** Sold history needs a login. So price retention shows what
   sellers believe the market bears, not confirmed transactions.
+- **TikTok dates cannot support a recency claim.** All searches were run unfiltered on the "Top" tab,
+  which ranks by engagement rather than date, so the date spread I recorded is an artifact of that
+  ranking and not a recency sample. It establishes that content exists at those times; it does not
+  establish that recent content is absent. Everywhere I assert a trajectory, it rests on the ShopMy
+  click series, which is a real time series. Re-running with a 7-day filter would settle it.
 - **The Ano count is reliable; the others are floors.** The targeted "Kilentar Ano" product search
   exhausted itself (relevance collapsed into unrelated inventory), so three nationwide and one in NYC
   is a total. But "22+ Cora" and "~32 Kilentar brand-wide" are minimums, because scrolling stopped

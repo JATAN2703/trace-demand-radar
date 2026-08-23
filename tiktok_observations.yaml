@@ -18,6 +18,29 @@
 observed_at: 2026-08-23   # pass done ~15:40-16:15 ET, TikTok iOS app
 
 # ---------------------------------------------------------------------------
+# METHOD CAVEAT, and it limits what the dates below can support.
+#
+# All searches were run UNFILTERED on TikTok's "Top" tab, which ranks by
+# engagement rather than by date. So the date spread recorded here is an artifact
+# of that ranking, NOT a recency sample. High-engagement older posts surface;
+# recent lower-engagement posts get buried beneath them.
+#
+# Consequence: the dates below establish that content EXISTS at those times. They
+# do NOT establish that recent content is absent, and any claim of the form
+# "attention is sustained rather than fresh" is under-evidenced by this method.
+#
+# Supporting hint that recent content is being outranked rather than missing: the
+# Surya Garg post from 8 hours before the pass carried only 67 likes and still
+# appeared in Top results.
+#
+# To measure recency properly, re-run with the date filter set to the last 7 days,
+# or use the Videos tab sorted by recency. NOT DONE for this pass.
+#
+# Where trajectory is asserted in FINDINGS.md, it rests on the ShopMy click data
+# (which is a genuine time series) rather than on these dates.
+# ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
 # PART 1 - Confirm the finalists (cross-platform breadth)
 #
 # For each dress the radar surfaced, does TikTok show creator attention too?
