@@ -39,13 +39,8 @@ def main() -> int:
     fetcher = Fetcher(delay=cfg.get("request_delay", 0.7))
 
     conn = store.connect()
-    # Diff against a roughly 24h-old run rather than simply the previous one, so
-    # the comparison stays like-for-like however often the cron fires. See
-    # store.baseline_run for why this matters.
-    prev_run, baseline_age = store.baseline_run(conn)
     run_id = store.start_run(conn, notes=f"creators={len(creators)}")
-    print(f"run {run_id} started (baseline run: {prev_run}, "
-          f"{baseline_age}h old)" if prev_run else f"run {run_id} started (no baseline yet)")
+    print(f"run {run_id} started")
 
     # --- demand -------------------------------------------------------------
     products, pins, meta = shopmy.collect(
@@ -88,8 +83,15 @@ def main() -> int:
     store.finish_run(conn, run_id)
 
     # --- report -------------------------------------------------------------
+    # Baseline is chosen only now, because it depends on this run's data: we diff
+    # against the previous *upstream batch* rather than the previous run. The
+    # source republishes its counters once a day, so wall-clock is the wrong
+    # yardstick. See store.previous_batch_run.
+    prev_run, baseline_note = store.previous_batch_run(conn, run_id)
+    print(f"  baseline: {baseline_note}")
+
     meta["errors"] = fetcher.errors
-    meta["baseline_age_hours"] = baseline_age
+    meta["baseline_note"] = baseline_note
     text = alerts.digest(conn, run_id, prev_run, meta)
     REPORTS.mkdir(exist_ok=True)
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")

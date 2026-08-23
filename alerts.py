@@ -228,19 +228,17 @@ def digest(conn, curr_run: int, prev_run: int | None, meta: dict) -> str:
                    key=lambda r: -(r.get("total_clicks") or 0))
 
     L = ["# TRACE Demand Radar", ""]
-    age = meta.get("baseline_age_hours")
+    note = meta.get("baseline_note", "")
     if prev_run is None:
         L.append(f"Run `{curr_run}`, with _no prior run to compare against (baseline)_.")
     else:
-        L.append(f"Run `{curr_run}`, compared against run `{prev_run}` "
-                 f"({age}h earlier).")
-        if age is not None and age < 20:
-            L.append("")
-            L.append(f"> Baseline is only {age}h old. The upstream click counters are "
-                     "reported at daily granularity, so a sub-daily comparison may "
-                     "reflect the counter's own refresh cycle rather than real demand "
-                     "movement. Deltas below are indicative, not conclusive, until a "
-                     "full-day baseline exists.")
+        L.append(f"Run `{curr_run}`, compared against {note}.")
+        L.append("")
+        L.append("> The source republishes its click counters as a once-daily batch "
+                 "(measured: zero of 525 products changed across five snapshots "
+                 "spanning 23:27-07:27 UTC, then 248 of 526 changed at once at 13:27). "
+                 "Deltas below are therefore one publish apart, so a change means one "
+                 "day of movement, not the elapsed wall-clock time between runs.")
     L.append(f"{len(board)} dress products from {len(meta.get('creators_ok', []))} creators "
              f"across {meta.get('collections_scanned', 0)} collections. "
              f"{len(scored)} cleared the volume floor, {len(actionable)} are in play "

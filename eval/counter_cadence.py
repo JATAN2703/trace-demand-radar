@@ -1,118 +1,108 @@
-"""Is `dailyClicks` a rolling 24h window, or a same-day accumulator?
+"""How often does the source actually republish its click counters?
 
-This matters for correctness, not curiosity. If the counter accumulates through
-the UTC day and resets at midnight, then any intraday comparison shows the
-counter filling up and reads as acceleration that never happened. If it is a
-rolling trailing-24h window, intraday comparisons are meaningful and we get
-faster detection.
+This matters for correctness and for cost. If the counters are live, frequent
+polling cuts detection latency. If they are republished as a periodic batch,
+frequent polling fetches an identical payload and buys nothing, and worse, any
+diff taken inside one batch window reads as "nothing is happening" when really
+nothing has been *published*.
 
-We do not assume either. With four snapshots a day the data answers it:
+MEASURED ANSWER (2026-08-23): a once-daily batch.
 
-  * ACCUMULATOR  -> within a single UTC day, dailyClicks rises monotonically
-                    across snapshots, then drops sharply at the day boundary.
-  * ROLLING      -> values fluctuate up and down within a day with no
-                    systematic climb and no reset at midnight.
+    run 1 -> 2      0 of 525 products changed   (23:27 -> 23:48 UTC)
+    run 2 -> 3      0 of 525                    (23:48 -> 01:58)
+    run 3 -> 4      0 of 525                    (01:58 -> 02:21)
+    run 4 -> 5      0 of 525                    (02:21 -> 07:27)
+    run 5 -> 6    248 of 526  (47%)             (07:27 -> 13:27)
+
+Note the earlier version of this script got the verdict WRONG. It looked at
+whether individual products drifted within a day, saw mostly no movement, found
+no midnight resets, and concluded "rolling trailing-24h window, safe to poll
+more often." But flat-because-stale is indistinguishable from flat-because-
+steady when you only look product by product.
+
+The signature that actually separates them is **synchronisation**: a batch
+publish moves a large share of the whole panel at one instant, while a live
+counter moves a trickle of products continuously. So this version tests the
+panel, not the product.
+
+Consequences applied to the system:
+  * cron reduced from 4x/day to 2x/day bracketing the observed publish window,
+    cutting API load ~50% for zero information loss
+  * alerting diffs against the previous distinct batch, not the previous run
+    (see store.previous_batch_run)
+  * a reported change means one published day of movement, never "since N hours"
 
 Run:  python eval/counter_cadence.py
 """
 
 import sys
-from collections import defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import store  # noqa: E402
 
-MIN_PRODUCTS = 20   # need a decent panel before claiming anything
+# A batch publish moves a big share of the panel at once; a live counter does
+# not. These bounds separate the two regimes.
+QUIET_MAX = 0.02    # <=2% changed: same batch, nothing republished
+BATCH_MIN = 0.15    # >=15% changed at once: a publish happened
 
 
 def main() -> int:
     conn = store.connect()
-    rows = conn.execute(
-        """SELECT run_id, observed_at, product_id, daily_clicks
-           FROM product_snapshots
-           WHERE daily_clicks IS NOT NULL
-           ORDER BY observed_at"""
-    ).fetchall()
-
-    if not rows:
-        print("No snapshots yet.")
+    runs = [r["run_id"] for r in conn.execute(
+        "SELECT run_id FROM runs WHERE finished_at IS NOT NULL ORDER BY run_id")]
+    if len(runs) < 3:
+        print(f"Only {len(runs)} completed run(s). Need at least 3 consecutive "
+              "snapshots to characterise the refresh cadence.")
         return 0
 
-    # (utc_date, hour) buckets per product
-    by_product: dict[str, list[tuple[str, int, int]]] = defaultdict(list)
-    for r in rows:
-        day, _, rest = r["observed_at"].partition("T")
-        hour = int(rest[:2]) if rest[:2].isdigit() else 0
-        by_product[r["product_id"]].append((day, hour, r["daily_clicks"]))
+    times = {r["run_id"]: r["started_at"] for r in conn.execute(
+        "SELECT run_id, started_at FROM runs")}
 
-    days = sorted({d for obs in by_product.values() for d, _, _ in obs})
-    hours = sorted({h for obs in by_product.values() for _, h, _ in obs})
-    print(f"{len(rows)} snapshots | {len(by_product)} products | "
-          f"{len(days)} UTC day(s) {days} | hours seen {hours}")
+    print(f"{'transition':16} {'changed':>9} {'of':>6} {'share':>7}   window (UTC)")
+    print("-" * 74)
+    quiet, batch, mixed = [], [], []
+    for a, b in zip(runs, runs[1:]):
+        row = conn.execute(
+            """SELECT SUM(CASE WHEN x.daily_clicks <> y.daily_clicks THEN 1 ELSE 0 END) ch,
+                      COUNT(*) n
+               FROM product_snapshots x JOIN product_snapshots y USING(product_id)
+               WHERE x.run_id = ? AND y.run_id = ?
+                 AND x.daily_clicks IS NOT NULL AND y.daily_clicks IS NOT NULL""",
+            (a, b),
+        ).fetchone()
+        n = row["n"] or 0
+        if not n:
+            continue
+        share = (row["ch"] or 0) / n
+        bucket = quiet if share <= QUIET_MAX else (batch if share >= BATCH_MIN else mixed)
+        bucket.append((a, b, share))
+        print(f"  run {a} -> {b:<8} {row['ch']:>9} {n:>6} {share:>6.1%}   "
+              f"{times.get(a,'?')[11:16]} -> {times.get(b,'?')[11:16]}")
 
-    if len(hours) < 2:
-        print("\nVERDICT: insufficient data. Need at least two snapshots at "
-              "different hours of the same UTC day. Wait for the 6-hourly cron.")
-        return 0
-
-    rising = flat = falling = 0
-    resets = 0
-    panel = 0
-
-    for pid, obs in by_product.items():
-        per_day = defaultdict(list)
-        for day, hour, val in obs:
-            per_day[day].append((hour, val))
-
-        # Intraday direction: compare first and last snapshot within each day.
-        for day, seq in per_day.items():
-            if len(seq) < 2:
-                continue
-            seq.sort()
-            panel += 1
-            first, last = seq[0][1], seq[-1][1]
-            if last > first:
-                rising += 1
-            elif last < first:
-                falling += 1
-            else:
-                flat += 1
-
-        # Day boundary: does the first value of a day drop below the last value
-        # of the previous day? That is the signature of a reset.
-        ds = sorted(per_day)
-        for a, b in zip(ds, ds[1:]):
-            prev_last = sorted(per_day[a])[-1][1]
-            next_first = sorted(per_day[b])[0][1]
-            if prev_last > 0 and next_first < prev_last * 0.6:
-                resets += 1
-
-    if panel < MIN_PRODUCTS:
-        print(f"\nVERDICT: only {panel} product-days with multiple snapshots. "
-              f"Need >= {MIN_PRODUCTS} before drawing a conclusion.")
-        return 0
-
-    print(f"\nIntraday direction across {panel} product-days: "
-          f"rising {rising}, flat {flat}, falling {falling}")
-    print(f"Day-boundary drops consistent with a reset: {resets}")
-
-    share_rising = rising / panel
-    if share_rising > 0.7 and resets > 0:
-        verdict = ("ACCUMULATOR. dailyClicks climbs through the UTC day and "
-                   "resets at the boundary, so intraday comparisons are NOT "
-                   "valid. The ~24h baseline anchoring in store.baseline_run is "
-                   "required, not optional.")
-    elif share_rising < 0.55 and resets == 0:
-        verdict = ("ROLLING trailing-24h window. Intraday comparisons are "
-                   "meaningful, so polling frequency can be raised to cut "
-                   "detection latency.")
+    print()
+    if batch and quiet:
+        # Narrow the publish window to the transition that moved the panel.
+        a, b, share = max(batch, key=lambda t: t[2])
+        lo, hi = times.get(a, "?")[11:16], times.get(b, "?")[11:16]
+        print(f"VERDICT: BATCH PUBLISH, roughly once daily.\n"
+              f"  {len(quiet)} transition(s) moved <={QUIET_MAX:.0%} of the panel "
+              f"(same batch, nothing republished).\n"
+              f"  {len(batch)} transition(s) moved >={BATCH_MIN:.0%} at once "
+              f"(a publish), the largest being {share:.0%} between {lo} and {hi} UTC.\n"
+              f"  => Publish window is between {lo} and {hi} UTC. Poll around it, not\n"
+              f"     continuously, and diff against the previous distinct batch.")
+    elif mixed and not quiet:
+        print("VERDICT: LIVE or near-live counters. Products move continuously "
+              "rather than in a synchronised jump, so higher polling frequency "
+              "genuinely reduces detection latency.")
+    elif quiet and not batch:
+        print("VERDICT: INCONCLUSIVE. No publish observed yet; every transition was "
+              "quiet. Keep collecting until a refresh lands.")
     else:
-        verdict = ("INCONCLUSIVE. The pattern is mixed. Keep the ~24h baseline "
-                   "anchoring, which is safe under either behaviour, and collect "
-                   "more days.")
-    print(f"\nVERDICT: {verdict}")
+        print("VERDICT: INCONCLUSIVE. Pattern does not cleanly separate. Keep the "
+              "batch-aware baseline, which is safe under either behaviour.")
     return 0
 
 

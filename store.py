@@ -216,6 +216,54 @@ def latest_two_runs(conn) -> list[int]:
     return [r["run_id"] for r in rows]
 
 
+def previous_batch_run(conn, current_run: int) -> tuple[int | None, str]:
+    """The most recent run whose data is from a DIFFERENT upstream batch.
+
+    Measured behaviour of the source (see eval/counter_cadence.py): ShopMy's
+    click counters are republished as a once-daily batch. Across five
+    consecutive snapshots spanning 23:27 to 07:27 UTC, zero of 525 products
+    changed; at the 13:27 snapshot, 248 of 526 changed at once. So the counters
+    are not live, they are a daily publish.
+
+    That makes wall-clock a poor baseline. Two runs inside the same batch window
+    yield an empty diff that looks like "nothing is happening" when really
+    nothing has been *published*. Conversely a baseline two batches back
+    understates a single day's move.
+
+    So we walk backwards to the first run whose `daily_clicks` panel actually
+    differs, and diff against that. The comparison is then always exactly one
+    upstream publish apart, whatever the cron does.
+
+    Returns (run_id, note). note explains what was chosen, for the digest.
+    """
+    rows = conn.execute(
+        "SELECT run_id FROM runs WHERE finished_at IS NOT NULL AND run_id < ? "
+        "ORDER BY run_id DESC",
+        (current_run,),
+    ).fetchall()
+    skipped = 0
+    for r in rows:
+        rid = r["run_id"]
+        changed = conn.execute(
+            """SELECT COUNT(*) AS n
+               FROM product_snapshots x JOIN product_snapshots y USING(product_id)
+               WHERE x.run_id = ? AND y.run_id = ?
+                 AND x.daily_clicks IS NOT NULL AND y.daily_clicks IS NOT NULL
+                 AND x.daily_clicks <> y.daily_clicks""",
+            (current_run, rid),
+        ).fetchone()["n"]
+        if changed > 0:
+            note = (f"run {rid} (previous upstream batch"
+                    + (f", skipped {skipped} same-batch run(s)" if skipped else "")
+                    + ")")
+            return rid, note
+        skipped += 1
+    if rows:
+        return rows[0]["run_id"], (f"run {rows[0]['run_id']} (no distinct batch found; "
+                                   "all prior runs share this batch)")
+    return None, "no prior run"
+
+
 MIN_BASELINE_HOURS = 20
 
 
