@@ -14,8 +14,12 @@ observe something, I say so rather than estimating it.
 There is **exactly one available to rent in New York.** For comparison, the dress that every other
 signal pointed at has **roughly twelve.** That single New York unit rents at **40% of retail**, double
 Pickle's own published guidance to lenders, which is what scarcity looks like in pricing. The dress
-is named and framed as wedding-guest wear in an independent TikTok editorial, sits inside your
-$400–1,000 band, and is peaking rather than fading.
+sits inside your $400–1,000 band and is peaking rather than fading.
+
+**And the timing is the part I would act on.** A creator posted a *"fall wedding guest dresses"*
+roundup five hours before I looked, with the Ano selected among the options. Fall wedding season has
+not happened yet. Creators are pre-positioning for it now, and there is one unit available to rent in
+New York. That is a window to organise presale demand ahead of the season rather than chase it during.
 
 **I am not recommending the hottest dress I found.** Réalisation Par's Cora had a 10x single-day jump
 in click-throughs, 100+ TikTok posts, videos posted 47 minutes before I looked, and it holds 82–111% of
@@ -124,7 +128,7 @@ product-level supply all hold at once.
 |---|---|
 | Current heat | 36 daily clicks, 255 weekly (ShopMy, 23 Aug) |
 | Momentum | `accel_short` 0.99 → classified **peaking**, not rising |
-| Recency | TikTok post 8 hours before my pass; sustained posts Apr–Jun |
+| Recency | **Measured, not inferred:** a date-filtered search returned 4 Kilentar posts this week, 2 of them featuring the Ano, at 5 and 10 hours old |
 | Creator activity | 205 promoters on ShopMy; at least 4 distinct TikTok creators on this dress |
 | Cross-platform breadth | ShopMy ✓ · TikTok ✓ (product-level) · Poshmark ✓ · Pickle ✓ |
 | Commerce intent | 8,537 total clicks; Pickle buy-outs on Kilentar at $500–1,000 |
@@ -155,6 +159,22 @@ inferred from a count, and it is observed rather than modelled.
 
 Demand pressure against those units is visible too: 135 and 136 saves on two of the three listings,
 for a product with three units on the platform.
+
+**And the timing signal, which is the part I would act on first.** A date-filtered search returned
+exactly four Kilentar posts this week (the app then showed "No more results", so that is a complete
+set, not a sample). Two feature the Ano, at 5 and 10 hours old. The 5-hour-old one is a curated
+roundup titled *"Unique & chic fall wedding guest dresses"*, in which the Ano appears among a
+shortlist of options.
+
+That is **forward-looking demand.** Fall wedding season has not happened yet. Creators are
+pre-positioning for it now, the Ano is being selected against alternatives in that content, and there
+is exactly one available to rent in New York. Presale demand can be organised ahead of the season
+rather than chased during it, which is the window the presale model exists to exploit.
+
+Note also what the same search does *not* show: four posts brand-wide in a week is modest volume. This
+is steady-to-peaking, not a viral explosion, and I am describing it that way. That independently agrees
+with the click series classifying it `peaking` rather than `rising`, which is a genuine cross-source
+agreement on trajectory rather than a restatement of the same evidence.
 
 **Absent signals, stated:** only 5 Kilentar listings on Poshmark brand-wide. Read alongside ~32
 Kilentar rental listings on Pickle, the pattern suggests Kilentar is a rent-not-resell brand, which is
@@ -327,11 +347,11 @@ enough.
 - **Precision is measured on n=2.** Directionally useful, statistically nothing.
 - **Poshmark prices are asking, not sold.** Sold history needs a login. So price retention shows what
   sellers believe the market bears, not confirmed transactions.
-- **TikTok dates cannot support a recency claim.** All searches were run unfiltered on the "Top" tab,
-  which ranks by engagement rather than date, so the date spread I recorded is an artifact of that
-  ranking and not a recency sample. It establishes that content exists at those times; it does not
-  establish that recent content is absent. Everywhere I assert a trajectory, it rests on the ShopMy
-  click series, which is a real time series. Re-running with a 7-day filter would settle it.
+- **TikTok dates from the unfiltered pass cannot support recency claims**, because the "Top" tab ranks
+  by engagement rather than date. I caught this after the fact and re-ran a date-filtered search for
+  Kilentar, which is why the Ano recency figure is measured. The equivalent filtered pass was **not**
+  run for Cora or ALÉMAIS, so their date spreads carry the same caveat and should be read as "content
+  exists at these times", not as a recency distribution.
 - **The Ano count is reliable; the others are floors.** The targeted "Kilentar Ano" product search
   exhausted itself (relevance collapsed into unrelated inventory), so three nationwide and one in NYC
   is a total. But "22+ Cora" and "~32 Kilentar brand-wide" are minimums, because scrolling stopped

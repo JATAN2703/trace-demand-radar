@@ -134,7 +134,74 @@ finalists:
 
     comment_intent: []
 
-    verdict: "present, product-level, correctly occasion-tagged"
+    # -----------------------------------------------------------------------
+    # SECOND PASS, date-filtered to "this week" (2026-08-23 18:40 ET).
+    # Run specifically to fix the method caveat above: the first pass used the
+    # engagement-ranked Top tab, which cannot support a recency claim.
+    # Search returned exactly four posts and then "No more results", so this is
+    # a complete weekly set rather than a sample.
+    # -----------------------------------------------------------------------
+    filtered_week_pass:
+      total_posts_this_week: 4
+      complete_set: true          # "No more results" shown
+      ano_posts: 2
+      posts:
+        - creator: "Anne Leopard"
+          posted: "5h ago"
+          likes: 87
+          caption: "MY TOP FAVORITE niche and fun fall wedding g[uest dresses]"
+          overlay_text: "Unique & chic fall wedding guest dresses"
+          shows_ano: true
+          note: >
+            The most valuable single post in either pass. A curated FALL WEDDING
+            GUEST roundup, posted five hours before the search, in which the Ano
+            appears among a shortlist of options. This is a second, independent,
+            and current editorial framing of the Ano as wedding-guest wear, and it
+            is stronger than the April listicle because the Ano is being SELECTED
+            against alternatives rather than merely listed.
+        - creator: "Surya Garg"
+          posted: "10h ago"
+          likes: 70
+          caption: "@kilentar let's get married potentially the [greatest dress I will ever wear]"
+          shows_ano: true
+        - creator: "Lauren Wolfe"
+          posted: "1d ago"
+          likes: 2900
+          verified: true
+          caption: "how do people even think to design a dress..."
+          shows_ano: false
+          note: "Verified creator, highest engagement this week, but a different Kilentar piece (sheer beaded)."
+        - creator: "S"
+          posted: "4d ago"
+          likes: 146
+          caption: "OOTD Dress-@kilentar Shoes- Vinta[ge]"
+          shows_ano: false
+
+      what_this_settles: >
+        Recency claim now MEASURED rather than inferred. Fresh Ano content exists:
+        two of the four Kilentar posts this week feature it, at 5 and 10 hours old.
+
+        But weekly volume is genuinely modest at four posts brand-wide. So the
+        trajectory is steady-to-peaking, NOT a viral explosion, and it should be
+        described that way. This independently agrees with the ShopMy click series
+        classifying Ano `peaking` rather than `rising`, which is a real
+        cross-source agreement on trajectory rather than a restatement.
+
+      new_signal_fall_season: >
+        NEW AND ACTIONABLE, not visible in the first pass.
+
+        Anne Leopard's post is framed as "fall wedding guest dresses". Creators are
+        already producing content for the FALL wedding season, and the Ano is
+        appearing in it. That is forward-looking demand rather than a description
+        of the current moment.
+
+        For TRACE this is a timing argument. Fall wedding season has not happened
+        yet, creators are pre-positioning for it now, and there is exactly one Ano
+        available to rent in New York. Presale demand can be organised ahead of the
+        season rather than chased during it, which is precisely the window the
+        presale model is supposed to exploit.
+
+    verdict: "present, product-level, correctly occasion-tagged, fresh content confirmed"
     note: >
       This is the strongest case of the three finalists, and it displaces Cora as
       the lead finding.
