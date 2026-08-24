@@ -41,6 +41,34 @@ Detail, method, named creators, five failure modes and everything I am still uns
 
 ---
 
+### Update from this morning's run, 24 August
+
+The system published a new batch while I was finishing this, so here is what one more day did. I have
+left the body of the document at run 7 and put the delta here rather than quietly restating everything.
+
+| | Run 7 (23 Aug) | Run 8 (24 Aug) | |
+|---|---|---|---|
+| **Ano** (the recommendation) | 36 daily, accel 0.99, `peaking` | **48 daily, accel 1.46, `rising`** | strengthened |
+| **Cora** (not recommended) | 3,653 daily, accel 3.62, `rising` | **442 daily, accel 0.42, `sustained`** | the spike reverted |
+| **Porter Midi** (demoted) | 75 daily, accel 2.84, `rising` | 102 daily, accel 2.60, `rising` | still climbing |
+
+Three things worth drawing out.
+
+**The recommendation got stronger.** The Ano crossed from peaking into rising overnight, which is the
+trajectory you said you wanted to catch, and it is still ranked first.
+
+**Cora's 10x jump was a single-day event.** Daily click-throughs fell from 3,653 to 442 in one publish.
+I declined to recommend it because the rental supply had already formed; a day later the demand
+signal has reverted too. So the call was right for a second reason I had not claimed.
+
+**Porter Midi is still climbing and I still would not act on it.** The radar has now ranked it second on
+click momentum two batches running, while the manual checks that demoted it (no product-level
+attention, probable occasion mismatch, 30+ ALÉMAIS rental listings with 15+ in New York) have not
+changed. That is failure mode 1 doing exactly what I described, on live data, rather than as a
+hypothetical.
+
+---
+
 ## 1. How I framed the problem
 
 TRACE does not need a trend tracker. Trend trackers are a commodity, and a ranked list of hot dresses
