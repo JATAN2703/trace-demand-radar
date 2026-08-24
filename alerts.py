@@ -267,7 +267,7 @@ def digest(conn, curr_run: int, prev_run: int | None, meta: dict) -> str:
         L += ["", "## Past peak (what a retrospective report would wrongly surface)", "",
               "High all-time volume, thin recent activity. Listed so the contrast is "
               "explicit: these are the products a 'most popular dresses' report would "
-              "lead with, and they are exactly the ones TRACE should not organise "
+              "lead with, and they are exactly the ones TRACE should not organize "
               "demand around now.", "",
               "| Product | Brand | Total clicks | Monthly | Weekly | Week vs month |",
               "|---|---|---|---|---|---|"]

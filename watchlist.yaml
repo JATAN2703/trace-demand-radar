@@ -5,7 +5,7 @@
 # bypass auth. See PROBE_LOG.md.
 #
 # Choosing which creators matter is the human-in-the-loop step: it is where
-# judgement genuinely beats automation, and it is the stage the role description
+# judgment genuinely beats automation, and it is the stage the role description
 # explicitly asks for. Everything downstream of this list is automated.
 
 creators:
@@ -55,7 +55,7 @@ occasion_weights:
   occasion: 1.00       # wedding guest, formal, event, gala, black tie
   going_out: 0.70
   vacation: 0.60
-  unknown: 0.80        # unlabelled collections are not penalised to zero
+  unknown: 0.80        # unlabeled collections are not penalized to zero
 
 occasion_keywords:
   occasion:

@@ -19,11 +19,11 @@ sits inside your $400–1,000 band and is peaking rather than fading.
 **And the timing is the part I would act on.** A creator posted a *"fall wedding guest dresses"*
 roundup five hours before I looked, with the Ano selected among the options. Fall wedding season has
 not happened yet. Creators are pre-positioning for it now, and there is one unit available to rent in
-New York. That is a window to organise presale demand ahead of the season rather than chase it during.
+New York. So there is a window to organize presale demand ahead of the season rather than chase it during.
 
 **I am not recommending the hottest dress I found.** Réalisation Par's Cora had a 10x single-day jump
 in click-throughs, 100+ TikTok posts, videos posted 47 minutes before I looked, and it holds 82–111% of
-retail on resale while its sibling products discount to 38–68%. Every automated signal favoured it.
+retail on resale while its sibling products discount to 38–68%. Every automated signal favored it.
 Then I checked Pickle by hand and found 22+ units already rentable, a dozen in your home market. The
 supply has already formed and Pickle has captured it.
 
@@ -48,7 +48,7 @@ would not tell you where to act.
 
 What TRACE needs is a **supply-gap detector.** The business is presale: demand has to form *before*
 supply exists. So the decision-relevant signal is not "what is popular" but the intersection of
-**demand accelerating** with **secondary supply not yet formed**. That is the only output that points
+**demand accelerating** with **secondary supply not yet formed**. It is the only output that points
 at an action.
 
 So I built the system around that intersection, and I built it to be honest about the half it cannot
@@ -70,7 +70,7 @@ shaped everything else. Full log in [`PROBE_LOG.md`](../Trace%20-%20Interview%20
 **What I chose to automate: the demand side, via ShopMy.** It is the only one of the three named
 platforms whose `robots.txt` grants `Allow: /`, and its public API returns product-level
 `dailyClicks`, `weeklyClicks`, `monthlyClicks`, `num_promoters`, price and category. That covers five
-of the seven signals you listed, with real numbers, and clicks on monetised retailer links measure
+of the seven signals you listed, with real numbers, and clicks on monetized retailer links measure
 intent to shop rather than mere attention.
 
 **What I deliberately did not do:**
@@ -154,8 +154,8 @@ Ano available to rent in New York, against roughly twelve Coras.**
 
 And the New York unit is the most expensive of the three: $300, or **40% of retail**, against $240 in
 Dallas and $195 in Uptown. Pickle's own guidance to lenders is 10–20%. The highest price sits in the
-highest-demand market, on the only local unit. That is scarcity expressed in price rather than
-inferred from a count, and it is observed rather than modelled.
+highest-demand market, on the only local unit. Scarcity expressed in price rather than
+inferred from a count, and it is observed rather than modeled.
 
 Demand pressure against those units is visible too: 135 and 136 saves on two of the three listings,
 for a product with three units on the platform.
@@ -168,7 +168,7 @@ shortlist of options.
 
 That is **forward-looking demand.** Fall wedding season has not happened yet. Creators are
 pre-positioning for it now, the Ano is being selected against alternatives in that content, and there
-is exactly one available to rent in New York. Presale demand can be organised ahead of the season
+is exactly one available to rent in New York. Presale demand can be organized ahead of the season
 rather than chased during it, which is the window the presale model exists to exploit.
 
 Note also what the same search does *not* show: four posts brand-wide in a week is modest volume. This
@@ -196,7 +196,7 @@ This is the most instructive case in the document.
 | Commerce intent | Two explicit "where is this from" comments answered in-thread; save-to-like ratios of 4,496 on 58K |
 | **Rental liquidity** | **22+ Pickle listings, at least 12 in New York** |
 
-**Every automated signal favoured Cora. The automated recommendation would have been wrong.**
+**Every automated signal favored Cora. The automated recommendation would have been wrong.**
 
 It also holds value on resale in a way its siblings do not. Three Cora listings at $295, $360 and $400
 against $360 retail, two of them new with tags, one **above** retail, while every other Réalisation
@@ -208,7 +208,7 @@ purchase decision.
 **And then the supply check killed it.** 22+ units of this exact dress are already rentable, a dozen
 of them in your home market. Your own brief anticipates this test: a dress accelerating on TikTok and
 linked on ShopMy *"but has little presence on Pickle"* is the opportunity. Cora has heavy Pickle
-presence. Organising presale demand around it means competing with a dozen existing NYC listings for
+presence. Organizing presale demand around it means competing with a dozen existing NYC listings for
 the same garment.
 
 One manual check on the one platform that cannot be scraped reversed the conclusion.
@@ -245,7 +245,7 @@ So Porter Midi fails every qualifying check: click momentum with no product-leve
 tag that is probably wrong, and abundant brand rental supply at normal platform pricing. **The radar
 ranked it fourth and every manual check demoted it.**
 
-That is a concrete instance of a known weakness in my own inference, caught by the manual step. It is
+It's a concrete instance of a known weakness in my own inference, caught by the manual step. It is
 in the write-up rather than quietly dropped, because it is the clearest example of the automation
 generating a candidate that qualification kills, and the failure mode matters more than the item.
 
@@ -290,14 +290,14 @@ cheapest thing the system does.
   Note the caption reacts to an existing trend rather than starting one.
 - **courtney** (TikTok, and **has a ShopMy storefront**), the dupe angle: two posts titled *"Realisation
   P@r lookalike dress"* with TikTok Shop tags attached. Commercially the most interesting of the Cora
-  creators, because monetising a lookalike means demand exceeds affordable access.
+  creators, because monetizing a lookalike means demand exceeds affordable access.
 
 **On the ShopMy side:** `curatedbymc` is the single most valuable creator in the pipeline. She
-surfaced both finalists and 18 of the top 20 ranked items. That is also a risk, see §7.
+surfaced both finalists and 18 of the top 20 ranked items, which is also a risk, see §7.
 
 **One structural observation worth your attention.** The creators driving virality on TikTok are
 largely *not* on ShopMy. `@angeltrsong` (58K likes on Cora), `@elizasmithx`, `@miahiraani` have no
-ShopMy storefront under those handles. Going viral and running a monetised storefront are different
+ShopMy storefront under those handles. Going viral and running a monetized storefront are different
 businesses. But the radar still caught Cora, because a ShopMy curator picked it up. **ShopMy creators
 function as a sensing layer for trends that originate elsewhere**, which means for recruitment you
 should be looking at TikTok, and for measurement at ShopMy.
@@ -329,7 +329,7 @@ Ranking separates `gap` (the measurement) from `priority` (`gap × price_fit × 
 targeting), so a change in strategy is a config edit and the underlying measurement stays reusable.
 
 **Tuned for precision, because you told me an alert triggers content, creator outreach, comment
-engagement, lister identification and possibly a seeded listing.** That is real coordinated effort per
+engagement, lister identification and possibly a seeded listing.** Real coordinated effort per
 flag, so a false positive is expensive. Volume floor raised, rising threshold lifted to 1.35, alerts
 gated on price fit and capped. One run produced 5 alerts and suppressed 13.
 
@@ -427,7 +427,7 @@ My recommendation is **Kilentar's Ano Layered Raffia at $750**: wedding-guest po
 an independent editorial, in your price band, peaking rather than fading, and **exactly one rental unit
 available in New York against roughly twelve for the dress everything else pointed at**, with that
 single local unit priced at 40% of retail, double Pickle's own guidance. That is what scarcity looks
-like before anyone has organised it.
+like before anyone has organized it.
 
 The most transferable thing I learned is that on this problem the automation is good at finding
 candidates and bad at qualifying them, and that the qualifying step is one platform you cannot

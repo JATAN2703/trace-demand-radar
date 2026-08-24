@@ -3,10 +3,10 @@
 # TikTok is the attention layer: it shows what creators are putting in front of
 # consumers. It is also the one source with no usable programmatic access, and
 # the brief says so ("TikTok content is unstructured, and the exact product may
-# not be named in the video"). So this is collected by hand and labelled as such.
+# not be named in the video"). So this is collected by hand and labeled as such.
 #
 # This is not a shortcut. Deciding which creators and which content matter is
-# the judgement step the role description asks for, and it is the input that
+# the judgment step the role description asks for, and it is the input that
 # seeds everything the automated pipeline then does.
 #
 # RULES
@@ -197,7 +197,7 @@ finalists:
 
         For TRACE this is a timing argument. Fall wedding season has not happened
         yet, creators are pre-positioning for it now, and there is exactly one Ano
-        available to rent in New York. Presale demand can be organised ahead of the
+        available to rent in New York. Presale demand can be organized ahead of the
         season rather than chased during it, which is precisely the window the
         presale model is supposed to exploit.
 
@@ -332,7 +332,7 @@ finalists:
       - creator: "Lydia"
         posted: "1h ago"
         likes: 4
-        caption: "#realisationpar #viraldress favourite d[ress]"
+        caption: "#realisationpar #viraldress favorite d[ress]"
         note: "Creators are themselves tagging it #viraldress."
 
     comment_intent:
@@ -444,9 +444,9 @@ finalists:
 
         Dupe and lookalike content only appears once demand outstrips what people
         can actually get or afford. Creators making "lookalike" videos with
-        TikTok Shop tags are monetising an audience that wants this specific
+        TikTok Shop tags are monetizing an audience that wants this specific
         dress and is not buying the original. That is a demand-supply gap
-        expressed in consumer behaviour rather than inferred from listing counts.
+        expressed in consumer behavior rather than inferred from listing counts.
 
         For a presale marketplace this is close to an ideal condition: provable
         want, constrained access, and a price point where resale or rental value

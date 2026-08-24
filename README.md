@@ -48,11 +48,11 @@ around that intersection.
 **Why ShopMy is the engine.** It is the only one of the three named platforms whose `robots.txt` grants
 `Allow: /`, and its public API returns product-level `dailyClicks`, `weeklyClicks`, `monthlyClicks`,
 `num_promoters`, price and category. That is five of the seven requested signals with real numbers. And
-clicks on monetised retailer links measure intent to shop, which is strictly stronger than views.
+clicks on monetized retailer links measure intent to shop, which is strictly stronger than views.
 
 **Why discovery is creator-seeded.** ShopMy's global product search requires authentication (verified
 401). Rather than bypass it, the system starts from a curated creator list. This suits TRACE's
-creator-driven thesis anyway, and choosing which creators matter is exactly where human judgement
+creator-driven thesis anyway, and choosing which creators matter is exactly where human judgment
 beats automation.
 
 ## Quick start
@@ -129,10 +129,10 @@ Consequences, all applied:
   happening" when really nothing has been *published*.
 - Any reported change means one published day of movement, never elapsed wall-clock time.
 
-Worth noting how this was got wrong first: the initial analyzer inspected per-product drift, saw
+Note how this was got wrong first: the initial analyzer inspected per-product drift, saw
 mostly no movement, found no midnight resets, and concluded "rolling 24h window, safe to poll more
 often." Flat-because-stale is indistinguishable from flat-because-steady when you look product by
-product. The signature that separates them is **synchronisation across the panel**, so the analyzer was
+product. The signature that separates them is **synchronization across the panel**, so the analyzer was
 rewritten to test the panel instead.
 
 ## Design decisions worth arguing with
@@ -147,7 +147,7 @@ stated targeting. Splitting them means strategy changes without touching the mea
 **Price band is a soft factor, not a filter**, because the brief said there is no strict cutoff. The
 taper is deliberately asymmetric: below $400 the presale mechanic breaks down, since a cheap dress's
 resale value does not change anyone's purchase decision. Above $1,000 the mechanic still works and the
-item is merely dearer than the stated focus, so it is penalised far more gently.
+item is merely dearer than the stated focus, so it is penalized far more gently.
 
 **Unmeasured supply scores neutral (0.5), not zero.** Absence of data is not absence of supply. This
 stops an unchecked item masquerading as a confirmed gap.

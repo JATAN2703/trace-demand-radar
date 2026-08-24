@@ -20,7 +20,7 @@ no midnight resets, and concluded "rolling trailing-24h window, safe to poll
 more often." But flat-because-stale is indistinguishable from flat-because-
 steady when you only look product by product.
 
-The signature that actually separates them is **synchronisation**: a batch
+The signature that actually separates them is **synchronization**: a batch
 publish moves a large share of the whole panel at one instant, while a live
 counter moves a trickle of products continuously. So this version tests the
 panel, not the product.
@@ -54,7 +54,7 @@ def main() -> int:
         "SELECT run_id FROM runs WHERE finished_at IS NOT NULL ORDER BY run_id")]
     if len(runs) < 3:
         print(f"Only {len(runs)} completed run(s). Need at least 3 consecutive "
-              "snapshots to characterise the refresh cadence.")
+              "snapshots to characterize the refresh cadence.")
         return 0
 
     times = {r["run_id"]: r["started_at"] for r in conn.execute(
@@ -95,14 +95,14 @@ def main() -> int:
               f"     continuously, and diff against the previous distinct batch.")
     elif mixed and not quiet:
         print("VERDICT: LIVE or near-live counters. Products move continuously "
-              "rather than in a synchronised jump, so higher polling frequency "
+              "rather than in a synchronized jump, so higher polling frequency "
               "genuinely reduces detection latency.")
     elif quiet and not batch:
         print("VERDICT: INCONCLUSIVE. No publish observed yet; every transition was "
               "quiet. Keep collecting until a refresh lands.")
     else:
         print("VERDICT: INCONCLUSIVE. Pattern does not cleanly separate. Keep the "
-              "batch-aware baseline, which is safe under either behaviour.")
+              "batch-aware baseline, which is safe under either behavior.")
     return 0
 
 

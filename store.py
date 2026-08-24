@@ -219,7 +219,7 @@ def latest_two_runs(conn) -> list[int]:
 def previous_batch_run(conn, current_run: int) -> tuple[int | None, str]:
     """The most recent run whose data is from a DIFFERENT upstream batch.
 
-    Measured behaviour of the source (see eval/counter_cadence.py): ShopMy's
+    Measured behavior of the source (see eval/counter_cadence.py): ShopMy's
     click counters are republished as a once-daily batch. Across five
     consecutive snapshots spanning 23:27 to 07:27 UTC, zero of 525 products
     changed; at the 13:27 snapshot, 248 of 526 changed at once. So the counters

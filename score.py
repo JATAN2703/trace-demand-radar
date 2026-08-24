@@ -138,7 +138,7 @@ def price_fit(price: float | None, band: dict) -> float:
     presale mechanic itself breaks down, since a cheap dress's resale value does
     not influence anyone's decision to buy it. Above the band the mechanic still
     works and the item is simply dearer than her stated focus, so it is
-    penalised far more gently.
+    penalized far more gently.
 
     Unknown price returns 0.6 rather than 0, so a missing field does not silently
     disqualify a product.
