@@ -11,8 +11,8 @@ observe something, I say so rather than estimating it.
 
 **Recommendation: Kilentar's Ano Layered Raffia Dress, $750.**
 
-There is **exactly one available to rent in New York.** For comparison, the dress that every other
-signal pointed at has **roughly twelve.** That single New York unit rents at **40% of retail**, double
+There is **exactly one available to rent in New York, and it is a size 2.** For comparison, the dress that
+every other signal pointed at has **roughly twelve.** That single New York unit rents at **40% of retail**, double
 Pickle's own published guidance to lenders, which is what scarcity looks like in pricing. The dress
 sits inside your $400–1,000 band and is peaking rather than fading.
 
@@ -184,6 +184,16 @@ And the New York unit is the most expensive of the three: $300, or **40% of reta
 Dallas and $195 in Uptown. Pickle's own guidance to lenders is 10–20%. The highest price sits in the
 highest-demand market, on the only local unit. Scarcity expressed in price rather than
 inferred from a count, and it is observed rather than modeled.
+
+**And the scarcity is tighter than the count suggests, because size fragments it.** The three listings
+are a size 2 in Kips Bay, an XS in Dallas and a size 2 in Uptown (plus the probable S in Woburn). So the
+single New York unit is a size 2. For a shopper who is not a size 2, there is currently **no** Ano available
+to rent in New York at all.
+
+That matters for the density problem you open with, which is about overlapping interest on the same
+product *and size*. A count of one already looks thin; once size is applied, most prospective renters in
+your market have no substitute, which is exactly the condition where organizing presale demand beats
+waiting for supply to appear.
 
 Demand pressure against those units is visible too: 135 and 136 saves on two of the three listings,
 for a product with three units on the platform.
