@@ -1,4 +1,4 @@
-"""How often does the source actually republish its click counters?
+"""How often does source actually republish its click counters?
 
 This matters for correctness and for cost. If the counters are live, frequent
 polling cuts detection latency. If they are republished as a periodic batch,
