@@ -425,7 +425,10 @@ enough.
 - **The filter chip read "Local"** while returning results from six states, so its semantics are
   unresolved and my NYC subset is what I saw, not a complete NYC inventory.
 - **The Woburn "Yellow Fringe" listing** is my visual identification as an Ano, not a titled match.
-- **One genuine day-over-day transition** exists in the data so far. Seven runs, two distinct batches.
+- **Two genuine day-over-day transitions** exist so far: eight runs, three distinct batches. Still a
+  short series. Worth noting that both observed publishes moved almost exactly the same share of the
+  panel, 47.1% and 47.2%, which confirms the once-daily batch finding on a second independent
+  occurrence rather than a single one.
 - **Whether creator pinning leads or lags consumer search** is untested. I have the Google Trends
   series to test it and did not have enough days.
 
