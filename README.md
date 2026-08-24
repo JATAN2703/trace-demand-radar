@@ -5,7 +5,7 @@ Engineering exercise.
 
 **Findings and recommendation: [`FINDINGS.md`](FINDINGS.md)**. Start there if you want the answer
 rather than the machinery.
-**What was and was not reachable: [`PROBE_LOG.md`](../Trace%20-%20Interview%20Prep/PROBE_LOG.md)**
+**What was and was not reachable: [`PROBE_LOG.md`](PROBE_LOG.md)**
 
 ---
 

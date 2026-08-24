@@ -65,7 +65,7 @@ the conclusion.
 
 I started by probing what is actually reachable, before writing any pipeline. The brief says
 determining what can be observed is part of the exercise, and it turned out to be the decision that
-shaped everything else. Full log in [`PROBE_LOG.md`](../Trace%20-%20Interview%20Prep/PROBE_LOG.md).
+shaped everything else. Full log in [`PROBE_LOG.md`](PROBE_LOG.md).
 
 **What I chose to automate: the demand side, via ShopMy.** It is the only one of the three named
 platforms whose `robots.txt` grants `Allow: /`, and its public API returns product-level
