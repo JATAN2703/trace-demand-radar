@@ -1,6 +1,6 @@
 """Append-only snapshot store.
 
-History is the product here: momentum is a derivative, so we never overwrite a
+History is product here: momentum is a derivative, so we never overwrite a
 row. Every collector run inserts a new dated snapshot and old rows stay put.
 That is what makes day-over-day deltas and alerting possible at all.
 """
