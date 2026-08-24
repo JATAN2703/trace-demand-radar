@@ -134,11 +134,11 @@ product-level supply all hold at once.
 | Commerce intent | 8,537 total clicks; Pickle buy-outs on Kilentar at $500–1,000 |
 | **Rental liquidity** | **3 Pickle listings nationwide, exactly 1 in New York**, renting at **26–40% of retail** |
 
-**The two things that make this the pick:**
+**What makes this the pick:**
 
 **Product identity and occasion are independently confirmed.** A TikTok editorial listicle titled
 *"The Wedding Guest Outfit Even The Bride Is Talking About - 8 African Brands Making Them"* names it
-directly: *"1. Kilentar, Ano Dress. Sunshine yellow. Four tiers of fringe that move before you do.
+directly: *"1. Kilentar - Ano Dress. Sunshine yellow. Four tiers of fringe that move before you do.
 The whole table turns before you've reached your seat."* Two further creators tagged the same dress
 `#weddingguestdress`, one styled with a partner in a suit. My pipeline had inferred `occasion` from a
 curator's collection name; TikTok agreed.
@@ -360,7 +360,7 @@ saturates, so the supply term is usually neutral, and neutral supply flatters a 
 
 **Failure mode 2, brand-level and product-level supply give opposite answers.** Brand-level, Kilentar
 looks well supplied (32 Pickle listings) and Réalisation Par looks thin. Product-level it inverts
-completely: Cora 22+, Ano 2. The radar can only reach brand level. This single distinction decided the
+completely: Cora 22+, Ano 3. The radar can only reach brand level. This single distinction decided the
 recommendation, and the automation is structurally blind to it.
 
 **Failure mode 3, creator concentration.** 18 of the top 20 ranked items came from one seeded creator,
@@ -381,7 +381,7 @@ enough.
 
 ## 8. What remains uncertain
 
-- **Precision is measured on n=2.** Directionally useful, statistically nothing.
+- **Precision is measured on n=3.** Directionally useful, statistically nothing.
 - **Poshmark prices are asking, not sold.** Sold history needs a login. So price retention shows what
   sellers believe the market bears, not confirmed transactions.
 - **TikTok dates from the unfiltered pass cannot support recency claims**, because the "Top" tab ranks
