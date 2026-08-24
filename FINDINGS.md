@@ -276,7 +276,7 @@ cheapest thing the system does.
 - **Anne Leopard** (TikTok), posted 5 hours before my final pass: *"MY TOP FAVORITE niche and fun fall
   wedding guest dresses"*, 87 likes, with the Ano selected among a shortlist. **The one I would contact
   first.** She is producing forward-looking fall-season content, she chose this dress against
-  alternatives, and she posted today.
+  alternatives, and she posted the same day I ran the search.
 - **Surya Garg** (TikTok), 10 hours before that pass, `"@kilentar let's get married
   #weddingguestdress"`, overlay *"potentially the greatest dress I will ever wear."* Small account, but
   current and unambiguous about occasion.
@@ -359,8 +359,8 @@ over-rank items whose supply it cannot see. Pickle is unreachable and Poshmark's
 saturates, so the supply term is usually neutral, and neutral supply flatters a high-demand item.
 
 **Failure mode 2, brand-level and product-level supply give opposite answers.** Brand-level, Kilentar
-looks well supplied (32 Pickle listings) and Réalisation Par looks thin. Product-level it inverts
-completely: Cora 22+, Ano 3. The radar can only reach brand level. This single distinction decided the
+looks well supplied: around 32 Pickle listings brand-wide. Product-level it inverts completely, to
+just 3 Ano units, one of them in New York. The radar can only reach brand level. This single distinction decided the
 recommendation, and the automation is structurally blind to it.
 
 **Failure mode 3, creator concentration.** 18 of the top 20 ranked items came from one seeded creator,
