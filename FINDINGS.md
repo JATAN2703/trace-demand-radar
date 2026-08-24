@@ -116,8 +116,8 @@ intent to shop rather than mere attention.
   de-risk single-source dependence. Its payload is minified and, more decisively, it exposes no click
   or promoter counts, so it would add breadth but not momentum. Documented as the best next
   integration rather than half-built.
-- **I did not persist incidental data.** The ShopMy user endpoint leaks unrelated internal fields (a
-  referring brand's `stripeCustomerId`, a support phone number, admin flags). The collector whitelists
+- **I did not persist incidental data.** The ShopMy user endpoint leaks unrelated internal fields (billing
+  identifiers, a support phone number, admin flags) that this task has no use for. The collector whitelists
   only what it scores and drops the rest.
 
 ---

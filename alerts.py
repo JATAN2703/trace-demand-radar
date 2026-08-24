@@ -18,7 +18,7 @@ import score as sc
 TOP_N = 10
 ACCEL_JUMP = 0.35   # rise in accel_short between runs worth flagging
 
-# Trajectories TRACE can act on. Per Ella: "an item beginning to gain momentum,
+# Trajectories TRACE can act on. Per the brief: "an item beginning to gain momentum,
 # one currently peaking, or one that has been especially popular over the past
 # two weeks." `sustained` covers that third case. A cooling or faded product must
 # not be able to head the board on gap alone.

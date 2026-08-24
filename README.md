@@ -135,10 +135,10 @@ often." Flat-because-stale is indistinguishable from flat-because-steady when yo
 product. The signature that separates them is **synchronization across the panel**, so the analyzer was
 rewritten to test the panel instead.
 
-## Design decisions worth arguing with
+## Design decisions and tradeoffs
 
 **Interpretable scoring over a better model.** Every weight lives in `watchlist.yaml`. A weighted score
-Ella can disagree with beats a model nobody can question, and disagreement should be a config edit.
+a reader can disagree with beats a model nobody can question, and disagreement should be a config edit.
 
 **`gap` and `priority` are kept separate.** `gap = demand × (1 − supply_pressure)` is the measurement,
 true whether or not TRACE cares. `priority = gap × price_fit × occasion_weight` layers on TRACE's
@@ -171,7 +171,7 @@ what it reached and names what it did not. The digest lists unavailable sources.
 - **Poshmark's `robots.txt` is respected.** `/search` is disallowed, so only brand and category paths
   are used programmatically. Product-level counts were done by hand in a browser.
 - **Incidental data is not persisted.** The ShopMy user endpoint returns unrelated internal fields
-  (a referring brand's `stripeCustomerId`, a support phone number, admin flags). The collector
+  (billing identifiers, a support phone number, admin flags) that the task does not need. The collector
   whitelists only what it scores; everything else is dropped rather than stored "just in case".
 
 ## Known limitations

@@ -243,7 +243,7 @@ finalists:
       The genuinely old posts (Oct 2024 onward) are DIFFERENT products and must
       not be read as Ano momentum. What they do establish is separate and useful:
       Kilentar has held creator attention across roughly two years. For a presale
-      marketplace that matters on its own terms, because Ella's criterion is that
+      marketplace that matters on its own terms, because the stated criterion is that
       an item be "expensive enough for its potential rental or resale value to
       meaningfully influence someone's decision to purchase it." Durable brand
       appeal makes that resale value credible in a way a three-week flash trend
@@ -252,7 +252,7 @@ finalists:
 
       Also note the brand account has 100.3K followers but its own posts get
       60-112 likes, while creator posts reach 5-13K. Reach here is creator-driven,
-      which is directly relevant to Ella's stated action of recruiting the
+      which is directly relevant to the stated action of recruiting the
       creators already driving discovery.
 
   - product: "The Cora Dress"
@@ -397,7 +397,7 @@ finalists:
       And on reflection that is the more useful signal for TRACE, not a weaker
       one. TRACE is a PRESALE marketplace: the listing is created before or at
       the point of purchase. So the person who matters is the one about to buy,
-      not the one hunting a secondhand unit. Ella named this action explicitly:
+      not the one hunting a secondhand unit. The brief names this action explicitly:
       "identify people who already own or are considering purchasing it as
       potential listers."
 
@@ -427,7 +427,7 @@ finalists:
       likes; Eliza 355 on 2,703). A save is closer to purchase intent than a
       like, since people bookmark what they intend to buy or find later.
 
-      Honest caveat on targeting: at $360 Cora sits just below Ella's stated
+      Honest caveat on targeting: at $360 Cora sits just below the stated
       $400-1,000 band (price_fit 0.84 in the model). She said the band is not a
       strict cutoff and that she would not exclude strong signals, so this is
       defensible, but it should be stated rather than glossed.
@@ -559,7 +559,7 @@ creators_seen: []
 # ---------------------------------------------------------------------------
 # PART 3 - Comment-level buy/rent intent
 #
-# Ella specifically named this as an action: "engage people in the comments who
+# The brief specifically named this as an action: "engage people in the comments who
 # are asking to buy or rent it and introduce them to TRACE." So comments asking
 # "where is this from", "does anyone want to sell theirs", "wish I could rent
 # this" are direct evidence of the demand TRACE wants to concentrate. This is

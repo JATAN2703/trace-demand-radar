@@ -1,6 +1,6 @@
 """Scoring: turn raw click counters into a ranked demand-supply gap.
 
-Kept deliberately interpretable. A weighted, inspectable score that Ella can
+Kept deliberately interpretable. A weighted, inspectable score that a reader can
 argue with beats a model nobody can question, and every weight lives in WEIGHTS
 below so disagreement is a config change rather than a rewrite.
 
@@ -24,7 +24,7 @@ Two honest limitations, both handled rather than hidden:
 
 import math
 
-# Tightened for precision. Ella's answer on what an alert triggers (content,
+# Tightened for precision. The founder's answer on what an alert triggers (content,
 # creator outreach, comment engagement, lister identification, possibly seeding a
 # listing) means every false positive costs a small team real coordinated effort.
 # So the bar to appear at all is higher than it would be for a browsing tool.
@@ -133,7 +133,7 @@ def gap_score(demand: float, listing_count: int | None) -> float:
 def price_fit(price: float | None, band: dict) -> float:
     """0-1 fit against TRACE's stated $400-$1,000 occasionwear band.
 
-    A soft factor, not a filter, because Ella was explicit that there is no
+    A soft factor, not a filter, because the brief was explicit that there is no
     strict cutoff. The taper is asymmetric on purpose: below the band the
     presale mechanic itself breaks down, since a cheap dress's resale value does
     not influence anyone's decision to buy it. Above the band the mechanic still

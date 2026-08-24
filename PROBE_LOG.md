@@ -80,7 +80,7 @@ previous day, so **the recency signal is genuinely live**.
 |---|---|
 | `title`, `AllBrand_name` | exact product + brand identification |
 | `Category_name` (`Dresses`), `Department_name` | topical filtering |
-| `fallbackPrice` | **price-tier filtering** (directly answers the price-band question put to Ella) |
+| `fallbackPrice` | **price-tier filtering** (directly answers the price-band question I raised) |
 | `num_promoters`, `yearlyElitePromoters` | creator breadth, how many creators push this item |
 | **`dailyClicks`, `weeklyClicks`, `monthlyClicks`, `totalClicks`** | **current heat + momentum + commerce intent** |
 | `domain`, `merchant_data.name`, `affiliate_link` | retailer, monetized intent |
@@ -117,7 +117,7 @@ Daily snapshots then upgrade these ratios into a true time series.
 ### Ethics and data hygiene, deliberate choices
 - `/api/Products/` (401) and `POST /api/Pins/search` (401) require auth. **Not used, not bypassed.**
   Discovery is therefore creator-seeded rather than global-search, which suits TRACE's creator-driven thesis.
-- The `Users` response incidentally leaks non-public fields (a referring brand's `stripeCustomerId`, a
+- The `Users` response incidentally returns non-public fields (billing identifiers, a
   `noirPhoneNumber`, admin flags). The collector **whitelists only the fields it needs and discards the rest**;
   nothing incidental is persisted. Worth stating explicitly, a founder should want this instinct.
 - Undocumented internal API: fine for a PoC, but the write-up should say a production system needs a sanctioned
