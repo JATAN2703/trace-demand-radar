@@ -1,18 +1,18 @@
 # TRACE Demand Radar
 
-Run `100`, compared against run 98 (previous upstream batch, skipped 1 same-batch run(s)).
+Run `101`, compared against run 100 (previous upstream batch).
 
 > The source republishes its click counters as a once-daily batch (measured: zero of 525 products changed across five snapshots spanning 23:27-07:27 UTC, then 248 of 526 changed at once at 13:27). Deltas below are therefore one publish apart, so a change means one day of movement, not the elapsed wall-clock time between runs.
-812 dress products from 9 creators across 108 collections. 58 cleared the volume floor, 48 are in play (rising, peaking or sustained).
+657 dress products from 9 creators across 108 collections. 52 cleared the volume floor, 38 are in play (rising, peaking or sustained).
 
 ## Alerts
 
-- **accelerating** - Kyla Fringe Dress (Yellow the Label) acceleration rose +1.763 to 2.406 since the last run
-- **trajectory_change** - Kyla Fringe Dress (Yellow the Label) sustained -> rising
-- **accelerating** - Helena Dress (Arcina Ori) acceleration rose +0.397 to 1.75 since the last run
-- **new_entrant** - Nellcote Anniversary Dress  (DÔEN) entered the top 10 at #5 (gap 0.3442, rising)
-- **accelerating** - Nellcote Anniversary Dress  (DÔEN) acceleration rose +1.51 to 2.608 since the last run
-- **suppressed** -  24 further threshold crossings not shown; raise MAX_ALERTS to see them.
+- **trajectory_change** - Charli Silk Dress (STAUD) rising -> peaking
+- **trajectory_change** - Helena Dress (Arcina Ori) rising -> peaking
+- **new_entrant** - Kelsa Dress (Retrofete) entered the top 10 at #9 (gap 0.2812, peaking)
+- **trajectory_change** - House of Harlow 1960 x Revolve Hera Fringe Maxi Dress (House of Harlow 1960) rising -> peaking
+- **accelerating** - Helsi x By Anthropologie Weddings Gloria Shift Dress (Helsi) acceleration rose +0.473 to 0.982 since the last run
+- **suppressed** -  3 further threshold crossings not shown; raise MAX_ALERTS to see them.
 
 ## In play, ranked by priority
 
@@ -20,16 +20,16 @@ Rising, peaking, or sustained (especially popular recently), ordered by priority
 
 | # | Product | Brand | $ | Fit | Occasion | State | Accel | Creators | Daily | Supply | Gap | Priority |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Kyla Fringe Dress | Yellow the Label | 428.0 | 1.0 | occasion | rising | 2.406 | 1 | 133 | unmeasured | 0.4437 | 0.4437 |
-| 2 | Ano Layered Raffia Dress | Kilentar | 1013.0 | 0.991 | occasion | rising | 1.954 | 1 | 55 | 8 (manual) | 0.4268 | 0.4231 |
-| 3 | Charli Silk Dress | STAUD | 750.0 | 1.0 | occasion | rising | 1.668 | 1 | 426 | unmeasured | 0.3946 | 0.3946 |
-| 4 | Helena Dress | Arcina Ori | 480.0 | 1.0 | occasion | rising | 1.75 | 1 | 39 | unmeasured | 0.3772 | 0.3772 |
-| 5 | Nellcote Anniversary Dress  | DÔEN | 698.0 | 1.0 | occasion | rising | 2.608 | 1 | 19 | unmeasured | 0.3442 | 0.3442 |
-| 6 | Lorela Dress | Rat & Boa | 560.0 | 1.0 | occasion | rising | 2.66 | 1 | 19 | unmeasured | 0.3373 | 0.3373 |
-| 7 | Alice Linen Mini Dress | POSSE | 330.0 | 0.72 | occasion | rising | 4.654 | 1 | 127 | unmeasured | 0.456 | 0.3283 |
-| 8 | Charlotte Gown | ALÉMAIS | 790.0 | 1.0 | occasion | sustained | 0.249 | 1 | 37 | unmeasured | 0.3281 | 0.3281 |
-| 9 | Madalena Dress | Arcina Ori | 560.0 | 1.0 | occasion | peaking | 1.259 | 1 | 34 | unmeasured | 0.3147 | 0.3147 |
-| 10 | Kira Draped Silk Maxi Dress | STAUD | 795.0 | 1.0 | going_out | rising | 1.73 | 1 | 320 | unmeasured | 0.4279 | 0.2995 |
+| 1 | Charli Silk Dress | STAUD | 750.0 | 1.0 | occasion | peaking | 1.215 | 1 | 353 | unmeasured | 0.3832 | 0.3832 |
+| 2 | Helena Dress | Arcina Ori | 480.0 | 1.0 | occasion | peaking | 1.062 | 1 | 27 | unmeasured | 0.3491 | 0.3491 |
+| 3 | Kyla Fringe Dress | Yellow the Label | 428.0 | 1.0 | occasion | sustained | 0.557 | 1 | 32 | unmeasured | 0.3427 | 0.3427 |
+| 4 | Ano Layered Raffia Dress | Kilentar | 1081.0 | 0.946 | occasion | sustained | 0.798 | 1 | 22 | 8 (manual) | 0.344 | 0.3254 |
+| 5 | Lorela Dress | Rat & Boa | 560.0 | 1.0 | occasion | rising | 1.898 | 1 | 16 | unmeasured | 0.3101 | 0.3101 |
+| 6 | Charlotte Gown | ALÉMAIS | 790.0 | 1.0 | occasion | sustained | 0.189 | 1 | 25 | unmeasured | 0.3081 | 0.3081 |
+| 7 | Kira Draped Silk Maxi Dress | STAUD | 795.0 | 1.0 | going_out | rising | 1.593 | 1 | 373 | unmeasured | 0.4324 | 0.3027 |
+| 8 | Madalena Dress | Arcina Ori | 560.0 | 1.0 | occasion | sustained | 0.766 | 1 | 21 | unmeasured | 0.2857 | 0.2857 |
+| 9 | Kelsa Dress | Retrofete | 698.0 | 1.0 | occasion | peaking | 0.891 | 1 | 28 | unmeasured | 0.2812 | 0.2812 |
+| 10 | Alice Linen Mini Dress | POSSE | 330.0 | 0.72 | occasion | rising | 1.643 | 1 | 54 | unmeasured | 0.3784 | 0.2724 |
 
 ## Past peak (what a retrospective report would wrongly surface)
 
@@ -37,9 +37,10 @@ High all-time volume, thin recent activity. Listed so the contrast is explicit: 
 
 | Product | Brand | Total clicks | Monthly | Weekly | Week vs month |
 |---|---|---|---|---|---|
-| Fiona Dress | DÔEN | 37886 | 16839 | 928 | 0.236 |
-| Marta Gown | Sachin & Babi | 30600 | 20176 | 134 | 0.028 |
-| The Plunge Drape Gown | Heiress Beverly Hills | 22067 | 4904 | 108 | 0.094 |
-| Portia Silk Dress | STAUD | 9278 | 1946 | 51 | 0.112 |
+| Fiona Dress | DÔEN | 37969 | 16900 | 828 | 0.21 |
+| Marta Gown | Sachin & Babi | 30633 | 20192 | 149 | 0.032 |
+| Portia Silk Dress | STAUD | 9286 | 1877 | 56 | 0.128 |
+| Riti Dress | Cult Gaia | 6805 | 1039 | 52 | 0.214 |
+| Chantelle Maxi Dress | Show Me Your Mumu | 5525 | 3996 | 90 | 0.097 |
 
 _Supply shown as `unmeasured` is not the same as zero; those rows are scored at neutral supply so an unchecked item cannot masquerade as a confirmed gap._
