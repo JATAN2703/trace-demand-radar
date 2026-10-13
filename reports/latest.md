@@ -1,18 +1,18 @@
 # TRACE Demand Radar
 
-Run `103`, compared against run 102 (previous upstream batch).
+Run `104`, compared against run 103 (previous upstream batch).
 
 > The source republishes its click counters as a once-daily batch (measured: zero of 525 products changed across five snapshots spanning 23:27-07:27 UTC, then 248 of 526 changed at once at 13:27). Deltas below are therefore one publish apart, so a change means one day of movement, not the elapsed wall-clock time between runs.
-669 dress products from 9 creators across 108 collections. 62 cleared the volume floor, 52 are in play (rising, peaking or sustained).
+616 dress products from 9 creators across 108 collections. 59 cleared the volume floor, 50 are in play (rising, peaking or sustained).
 
 ## Alerts
 
-- **new_entrant** - Darcy Dress (Arcina Ori) entered the top 10 at #1 (gap 0.4488, rising)
-- **accelerating** - Darcy Dress (Arcina Ori) acceleration rose +3.081 to 3.599 since the last run
-- **trajectory_change** - Darcy Dress (Arcina Ori) cooling -> rising
-- **new_entrant** - Portia Silk Dress (STAUD) entered the top 10 at #2 (gap 0.4368, rising)
-- **accelerating** - Portia Silk Dress (STAUD) acceleration rose +3.298 to 4.298 since the last run
-- **suppressed** -  29 further threshold crossings not shown; raise MAX_ALERTS to see them.
+- **new_entrant** - Zara Ruched Long Dress (HEMANT AND NANDITA) entered the top 10 at #2 (gap 0.4174, rising)
+- **accelerating** - Zara Ruched Long Dress (HEMANT AND NANDITA) acceleration rose +4.809 to 5.949 since the last run
+- **trajectory_change** - Zara Ruched Long Dress (HEMANT AND NANDITA) insufficient_volume -> rising
+- **new_entrant** - Avery Dress  (Arcina Ori) entered the top 10 at #3 (gap 0.4013, rising)
+- **accelerating** - Avery Dress  (Arcina Ori) acceleration rose +2.617 to 3.354 since the last run
+- **suppressed** -  27 further threshold crossings not shown; raise MAX_ALERTS to see them.
 
 ## In play, ranked by priority
 
@@ -20,16 +20,16 @@ Rising, peaking, or sustained (especially popular recently), ordered by priority
 
 | # | Product | Brand | $ | Fit | Occasion | State | Accel | Creators | Daily | Supply | Gap | Priority |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Darcy Dress | Arcina Ori | 480.0 | 1.0 | occasion | rising | 3.599 | 1 | 127 | unmeasured | 0.4488 | 0.4488 |
-| 2 | Portia Silk Dress | STAUD | 695.0 | 1.0 | occasion | rising | 4.298 | 1 | 105 | unmeasured | 0.4368 | 0.4368 |
-| 3 | Ano Layered Raffia Dress | Kilentar | 1081.0 | 0.946 | occasion | rising | 1.615 | 1 | 51 | 8 (manual) | 0.4129 | 0.3906 |
-| 4 | Charli Silk Dress | STAUD | 750.0 | 1.0 | occasion | peaking | 1.196 | 1 | 390 | unmeasured | 0.3874 | 0.3874 |
-| 5 | Ashika Dress | Cult Gaia | 998.0 | 1.0 | occasion | rising | 3.97 | 1 | 38 | unmeasured | 0.3861 | 0.3861 |
-| 6 | Helena Dress | Arcina Ori | 480.0 | 1.0 | occasion | peaking | 0.97 | 1 | 28 | unmeasured | 0.3535 | 0.3535 |
-| 7 | The Sabine Dress in Silk Chiffon | Helsa | 497.0 | 1.0 | occasion | rising | 2.5 | 1 | 15 | unmeasured | 0.3242 | 0.3242 |
-| 8 | Lorela Dress | Rat & Boa | 560.0 | 1.0 | occasion | rising | 1.68 | 1 | 18 | unmeasured | 0.3132 | 0.3132 |
-| 9 | Bea-Silk Organza Boat Neck Midi Dr | ILA | 1100.0 | 0.933 | occasion | rising | 2.077 | 1 | 27 | unmeasured | 0.3207 | 0.2993 |
-| 10 | Marsla Gown  | Cult Gaia | 1198.0 | 0.868 | occasion | rising | 1.556 | 2 | 62 | unmeasured | 0.3444 | 0.2989 |
+| 1 | Darcy Dress | Arcina Ori | 480.0 | 1.0 | occasion | rising | 2.644 | 1 | 139 | unmeasured | 0.43 | 0.43 |
+| 2 | Zara Ruched Long Dress | HEMANT AND NANDITA | 598.0 | 1.0 | occasion | rising | 5.949 | 1 | 232 | unmeasured | 0.4174 | 0.4174 |
+| 3 | Avery Dress  | Arcina Ori | 420.0 | 1.0 | occasion | rising | 3.354 | 1 | 46 | unmeasured | 0.4013 | 0.4013 |
+| 4 | Charli Silk Dress | STAUD | 750.0 | 1.0 | occasion | sustained | 0.762 | 1 | 258 | unmeasured | 0.3727 | 0.3727 |
+| 5 | Ano Layered Raffia Dress | Kilentar | 1079.0 | 0.947 | occasion | peaking | 0.953 | 1 | 32 | 8 (manual) | 0.3717 | 0.3521 |
+| 6 | Visions Lace Maxi Dress | Third Form | 420.0 | 1.0 | occasion | rising | 2.026 | 1 | 33 | unmeasured | 0.3488 | 0.3488 |
+| 7 | Kira Draped Silk Maxi Dress | STAUD | 795.0 | 1.0 | going_out | rising | 1.476 | 1 | 379 | unmeasured | 0.4175 | 0.2922 |
+| 8 | Portia Silk Dress | STAUD | 695.0 | 1.0 | occasion | peaking | 1.05 | 1 | 30 | unmeasured | 0.2884 | 0.2884 |
+| 9 | Himalia Maxi Dress in Antique Tull | De La Vali | 980.0 | 1.0 | occasion | sustained | 0.714 | 1 | 21 | unmeasured | 0.2824 | 0.2824 |
+| 10 | Kelsa Dress | Retrofete | 385.0 | 0.94 | occasion | peaking | 1.055 | 1 | 33 | unmeasured | 0.2917 | 0.2742 |
 
 ## Past peak (what a retrospective report would wrongly surface)
 
@@ -37,9 +37,10 @@ High all-time volume, thin recent activity. Listed so the contrast is explicit: 
 
 | Product | Brand | Total clicks | Monthly | Weekly | Week vs month |
 |---|---|---|---|---|---|
-| Fiona Dress | DÔEN | 38048 | 16945 | 683 | 0.173 |
-| Marta Gown | Sachin & Babi | 30675 | 20227 | 158 | 0.033 |
-| Riti Dress | Cult Gaia | 6826 | 1050 | 68 | 0.278 |
-| Chantelle Maxi Dress | Show Me Your Mumu | 5533 | 3999 | 73 | 0.078 |
+| Fiona Satin Silk Dress | DÔEN | 38098 | 16965 | 597 | 0.151 |
+| Marta Gown | Sachin & Babi | 30689 | 20230 | 150 | 0.032 |
+| The Plunge Drape Gown | Heiress Beverly Hills | 22088 | 4916 | 87 | 0.076 |
+| Phare Silk Maxi Dress | STAUD | 8743 | 1436 | 76 | 0.227 |
+| Chantelle Maxi Dress | Show Me Your Mumu | 5554 | 4014 | 75 | 0.08 |
 
 _Supply shown as `unmeasured` is not the same as zero; those rows are scored at neutral supply so an unchecked item cannot masquerade as a confirmed gap._
