@@ -1,9 +1,9 @@
 # TRACE Demand Radar
 
-Run `105`, compared against run 104 (previous upstream batch).
+Run `106`, compared against run 104 (previous upstream batch, skipped 1 same-batch run(s)).
 
 > The source republishes its click counters as a once-daily batch (measured: zero of 525 products changed across five snapshots spanning 23:27-07:27 UTC, then 248 of 526 changed at once at 13:27). Deltas below are therefore one publish apart, so a change means one day of movement, not the elapsed wall-clock time between runs.
-628 dress products from 9 creators across 108 collections. 60 cleared the volume floor, 49 are in play (rising, peaking or sustained).
+580 dress products from 9 creators across 108 collections. 57 cleared the volume floor, 46 are in play (rising, peaking or sustained).
 
 ## Alerts
 
@@ -12,7 +12,7 @@ Run `105`, compared against run 104 (previous upstream batch).
 - **trajectory_change** - Portia Silk Dress (STAUD) peaking -> rising
 - **new_entrant** - Charlotte Gown (ALÉMAIS) entered the top 10 at #5 (gap 0.3409, rising)
 - **accelerating** - Charlotte Gown (ALÉMAIS) acceleration rose +1.748 to 3.588 since the last run
-- **suppressed** -  13 further threshold crossings not shown; raise MAX_ALERTS to see them.
+- **suppressed** -  12 further threshold crossings not shown; raise MAX_ALERTS to see them.
 
 ## In play, ranked by priority
 
@@ -26,10 +26,10 @@ Rising, peaking, or sustained (especially popular recently), ordered by priority
 | 4 | Portia Silk Dress | STAUD | 695.0 | 1.0 | occasion | rising | 2.004 | 1 | 77 | unmeasured | 0.3515 | 0.3515 |
 | 5 | Charlotte Gown | ALÉMAIS | 790.0 | 1.0 | occasion | rising | 3.588 | 1 | 326 | 47 (poshmark) | 0.3409 | 0.3409 |
 | 6 | Darcy Dress | Arcina Ori | 480.0 | 1.0 | occasion | sustained | 0.72 | 1 | 39 | unmeasured | 0.3301 | 0.3301 |
-| 7 | Zara Ruched Long Dress | HEMANT AND NANDITA | 598.0 | 1.0 | occasion | peaking | 0.801 | 1 | 35 | unmeasured | 0.3264 | 0.3264 |
-| 8 | Avery Dress  | Arcina Ori | 420.0 | 1.0 | occasion | peaking | 1.291 | 1 | 19 | unmeasured | 0.3125 | 0.3125 |
-| 9 | Strapless Mikado Ball Gown | Mac Duggal | 498.0 | 1.0 | unknown | rising | 4.491 | 1 | 34 | unmeasured | 0.3709 | 0.2967 |
-| 10 | Kira Draped Silk Maxi Dress | STAUD | 795.0 | 1.0 | going_out | rising | 1.357 | 1 | 415 | unmeasured | 0.4192 | 0.2934 |
+| 7 | Daniela Silk Dress | Reformation | 398.0 | 0.992 | occasion | peaking | 1.056 | 1 | 35 | unmeasured | 0.3175 | 0.315 |
+| 8 | Strapless Mikado Ball Gown | Mac Duggal | 498.0 | 1.0 | unknown | rising | 4.491 | 1 | 34 | unmeasured | 0.3709 | 0.2967 |
+| 9 | Kira Draped Silk Maxi Dress | STAUD | 795.0 | 1.0 | going_out | rising | 1.357 | 1 | 415 | unmeasured | 0.4192 | 0.2934 |
+| 10 | Ava Bustier Maxi Dress | Leo Lin | 835.0 | 1.0 | occasion | peaking | 1.123 | 1 | 13 | unmeasured | 0.2872 | 0.2872 |
 
 ## Past peak (what a retrospective report would wrongly surface)
 
