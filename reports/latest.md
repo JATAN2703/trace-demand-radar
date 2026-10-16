@@ -1,9 +1,9 @@
 # TRACE Demand Radar
 
-Run `109`, compared against run 108 (previous upstream batch).
+Run `110`, compared against run 108 (previous upstream batch, skipped 1 same-batch run(s)).
 
 > The source republishes its click counters as a once-daily batch (measured: zero of 525 products changed across five snapshots spanning 23:27-07:27 UTC, then 248 of 526 changed at once at 13:27). Deltas below are therefore one publish apart, so a change means one day of movement, not the elapsed wall-clock time between runs.
-666 dress products from 9 creators across 108 collections. 60 cleared the volume floor, 47 are in play (rising, peaking or sustained).
+657 dress products from 9 creators across 108 collections. 56 cleared the volume floor, 46 are in play (rising, peaking or sustained).
 
 ## Alerts
 
@@ -39,8 +39,7 @@ High all-time volume, thin recent activity. Listed so the contrast is explicit: 
 |---|---|---|---|---|---|
 | The Cora Dress | Réalisation Par | 42075 | 3104 | 214 | 0.295 |
 | Fiona Satin Silk Dress | DÔEN | 38212 | 16846 | 390 | 0.099 |
-| Marta Gown | Sachin & Babi | 30622 | 20208 | 146 | 0.031 |
-| Cali Knit Dress | Reformation | 11629 | 6733 | 464 | 0.295 |
 | Kleo One Shoulder Maxi Dress | Petal & Pup | 9970 | 4262 | 254 | 0.255 |
+| Julietta Lace Slip Dress | alice + olivia | 5552 | 3523 | 42 | 0.051 |
 
 _Supply shown as `unmeasured` is not the same as zero; those rows are scored at neutral supply so an unchecked item cannot masquerade as a confirmed gap._
