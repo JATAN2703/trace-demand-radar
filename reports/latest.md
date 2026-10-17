@@ -1,9 +1,9 @@
 # TRACE Demand Radar
 
-Run `111`, compared against run 110 (previous upstream batch).
+Run `112`, compared against run 110 (previous upstream batch, skipped 1 same-batch run(s)).
 
 > The source republishes its click counters as a once-daily batch (measured: zero of 525 products changed across five snapshots spanning 23:27-07:27 UTC, then 248 of 526 changed at once at 13:27). Deltas below are therefore one publish apart, so a change means one day of movement, not the elapsed wall-clock time between runs.
-671 dress products from 9 creators across 108 collections. 61 cleared the volume floor, 52 are in play (rising, peaking or sustained).
+688 dress products from 9 creators across 108 collections. 65 cleared the volume floor, 55 are in play (rising, peaking or sustained).
 
 ## Alerts
 
@@ -39,8 +39,8 @@ High all-time volume, thin recent activity. Listed so the contrast is explicit: 
 |---|---|---|---|---|---|
 | Fiona Satin Silk Dress | DÔEN | 38231 | 16566 | 345 | 0.089 |
 | The Plunge Drape Gown | Heiress Beverly Hills | 22126 | 4732 | 59 | 0.053 |
+| Cali Knit Dress | Reformation | 11653 | 6591 | 439 | 0.285 |
 | Kleo One Shoulder Maxi Dress | Petal & Pup | 10029 | 4230 | 235 | 0.238 |
 | Maxi Phare Silk Dress | STAUD | 8815 | 1315 | 90 | 0.293 |
-| Julietta Lace Slip Dress | alice + olivia | 5561 | 3523 | 46 | 0.056 |
 
 _Supply shown as `unmeasured` is not the same as zero; those rows are scored at neutral supply so an unchecked item cannot masquerade as a confirmed gap._
