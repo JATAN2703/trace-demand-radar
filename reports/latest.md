@@ -1,9 +1,9 @@
 # TRACE Demand Radar
 
-Run `112`, compared against run 110 (previous upstream batch, skipped 1 same-batch run(s)).
+Run `113`, compared against run 110 (previous upstream batch, skipped 2 same-batch run(s)).
 
 > The source republishes its click counters as a once-daily batch (measured: zero of 525 products changed across five snapshots spanning 23:27-07:27 UTC, then 248 of 526 changed at once at 13:27). Deltas below are therefore one publish apart, so a change means one day of movement, not the elapsed wall-clock time between runs.
-688 dress products from 9 creators across 108 collections. 65 cleared the volume floor, 55 are in play (rising, peaking or sustained).
+696 dress products from 9 creators across 108 collections. 66 cleared the volume floor, 56 are in play (rising, peaking or sustained).
 
 ## Alerts
 
@@ -23,7 +23,7 @@ Rising, peaking, or sustained (especially popular recently), ordered by priority
 | 1 | Ava Bustier Maxi Dress | Leo Lin | 835.0 | 1.0 | occasion | rising | 3.5 | 1 | 84 | unmeasured | 0.4424 | 0.4424 |
 | 2 | Ambrosia Dress | Retrofete | 798.0 | 1.0 | occasion | rising | 1.362 | 1 | 94 | unmeasured | 0.4251 | 0.4251 |
 | 3 | Charli Silk Dress | STAUD | 750.0 | 1.0 | occasion | peaking | 0.908 | 1 | 227 | unmeasured | 0.3651 | 0.3651 |
-| 4 | Ano Layered Raffia Dress | Kilentar | 750.0 | 1.0 | occasion | sustained | 0.607 | 1 | 19 | 8 (manual) | 0.3545 | 0.3545 |
+| 4 | Ano Layered Raffia Dress | Kilentar | 1088.0 | 0.941 | occasion | sustained | 0.607 | 1 | 19 | 8 (manual) | 0.3545 | 0.3337 |
 | 5 | Marion Strapless Printed Midi Dres | ALÉMAIS | 590.0 | 1.0 | occasion | rising | 2.375 | 1 | 19 | unmeasured | 0.3286 | 0.3286 |
 | 6 | Himalia Maxi Dress in Antique Tull | De La Vali | 980.0 | 1.0 | occasion | rising | 1.65 | 1 | 33 | unmeasured | 0.3123 | 0.3123 |
 | 7 | Kyla Fringe Dress | Yellow the Label | 428.0 | 1.0 | occasion | peaking | 1.293 | 1 | 29 | unmeasured | 0.3066 | 0.3066 |
