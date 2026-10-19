@@ -1,9 +1,9 @@
 # TRACE Demand Radar
 
-Run `115`, compared against run 114 (previous upstream batch).
+Run `116`, compared against run 114 (previous upstream batch, skipped 1 same-batch run(s)).
 
 > The source republishes its click counters as a once-daily batch (measured: zero of 525 products changed across five snapshots spanning 23:27-07:27 UTC, then 248 of 526 changed at once at 13:27). Deltas below are therefore one publish apart, so a change means one day of movement, not the elapsed wall-clock time between runs.
-764 dress products from 9 creators across 108 collections. 68 cleared the volume floor, 57 are in play (rising, peaking or sustained).
+757 dress products from 9 creators across 108 collections. 67 cleared the volume floor, 56 are in play (rising, peaking or sustained).
 
 ## Alerts
 
@@ -26,10 +26,10 @@ Rising, peaking, or sustained (especially popular recently), ordered by priority
 | 4 | Darcy Dress | Arcina Ori | 480.0 | 1.0 | occasion | peaking | 0.994 | 1 | 48 | unmeasured | 0.337 | 0.337 |
 | 5 | Kira Draped Silk Maxi Dress | STAUD | 795.0 | 1.0 | going_out | rising | 2.366 | 1 | 1221 | unmeasured | 0.4563 | 0.3194 |
 | 6 | Marsla Gown  | Cult Gaia | 1198.0 | 0.868 | occasion | rising | 1.793 | 2 | 63 | unmeasured | 0.3463 | 0.3006 |
-| 7 | Himalia Maxi Dress in Antique Tull | De La Vali | 980.0 | 1.0 | occasion | peaking | 1.201 | 1 | 29 | unmeasured | 0.2995 | 0.2995 |
-| 8 | Helena Dress | Arcina Ori | 480.0 | 1.0 | occasion | rising | 1.694 | 1 | 15 | unmeasured | 0.2993 | 0.2993 |
-| 9 | Drop Waist Lace Gown  | Same | 548.0 | 1.0 | occasion | rising | 1.628 | 1 | 10 | unmeasured | 0.2982 | 0.2982 |
-| 10 | Thalia Dress | Retrofete | 598.0 | 1.0 | occasion | peaking | 1.312 | 1 | 18 | unmeasured | 0.2959 | 0.2959 |
+| 7 | Helena Dress | Arcina Ori | 480.0 | 1.0 | occasion | rising | 1.694 | 1 | 15 | unmeasured | 0.2993 | 0.2993 |
+| 8 | Drop Waist Lace Gown  | Same | 548.0 | 1.0 | occasion | rising | 1.628 | 1 | 10 | unmeasured | 0.2982 | 0.2982 |
+| 9 | Thalia Dress | Retrofete | 598.0 | 1.0 | occasion | peaking | 1.312 | 1 | 18 | unmeasured | 0.2959 | 0.2959 |
+| 10 | Nellcote Anniversary Dress  | DÔEN | 698.0 | 1.0 | occasion | rising | 1.379 | 1 | 13 | unmeasured | 0.2939 | 0.2939 |
 
 ## Past peak (what a retrospective report would wrongly surface)
 
