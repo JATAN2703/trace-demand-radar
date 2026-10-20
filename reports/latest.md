@@ -1,18 +1,18 @@
 # TRACE Demand Radar
 
-Run `116`, compared against run 114 (previous upstream batch, skipped 1 same-batch run(s)).
+Run `117`, compared against run 116 (previous upstream batch).
 
 > The source republishes its click counters as a once-daily batch (measured: zero of 525 products changed across five snapshots spanning 23:27-07:27 UTC, then 248 of 526 changed at once at 13:27). Deltas below are therefore one publish apart, so a change means one day of movement, not the elapsed wall-clock time between runs.
-757 dress products from 9 creators across 108 collections. 67 cleared the volume floor, 56 are in play (rising, peaking or sustained).
+711 dress products from 9 creators across 108 collections. 62 cleared the volume floor, 51 are in play (rising, peaking or sustained).
 
 ## Alerts
 
-- **accelerating** - Ano Layered Raffia Dress (Kilentar) acceleration rose +5.117 to 5.551 since the last run
-- **trajectory_change** - Ano Layered Raffia Dress (Kilentar) sustained -> rising
-- **new_entrant** - Pandorea Layered Maxi Dress (Aje) entered the top 10 at #3 (gap 0.341, rising)
-- **accelerating** - Pandorea Layered Maxi Dress (Aje) acceleration rose +1.19 to 2.536 since the last run
-- **trajectory_change** - Pandorea Layered Maxi Dress (Aje) peaking -> rising
-- **suppressed** -  36 further threshold crossings not shown; raise MAX_ALERTS to see them.
+- **new_entrant** - Mini Dress Sleeveless (Hemant & Nandita) entered the top 10 at #2 (gap 0.4243, rising)
+- **trajectory_change** - Mini Dress Sleeveless (Hemant & Nandita) insufficient_volume -> rising
+- **new_entrant** - Dahlia Strapless Maxi Dress (Bronx and Banco) entered the top 10 at #3 (gap 0.4155, rising)
+- **new_entrant** - Madalena Dress (Arcina Ori) entered the top 10 at #4 (gap 0.4099, rising)
+- **accelerating** - Madalena Dress (Arcina Ori) acceleration rose +2.567 to 3.234 since the last run
+- **suppressed** -  23 further threshold crossings not shown; raise MAX_ALERTS to see them.
 
 ## In play, ranked by priority
 
@@ -20,16 +20,16 @@ Rising, peaking, or sustained (especially popular recently), ordered by priority
 
 | # | Product | Brand | $ | Fit | Occasion | State | Accel | Creators | Daily | Supply | Gap | Priority |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Ano Layered Raffia Dress | Kilentar | 1088.0 | 0.941 | occasion | rising | 5.551 | 1 | 609 | 8 (manual) | 0.5906 | 0.556 |
-| 2 | Charli Silk Dress | STAUD | 750.0 | 1.0 | occasion | peaking | 1.254 | 1 | 269 | unmeasured | 0.3708 | 0.3708 |
-| 3 | Pandorea Layered Maxi Dress | Aje | 695.0 | 1.0 | occasion | rising | 2.536 | 1 | 25 | unmeasured | 0.341 | 0.341 |
-| 4 | Darcy Dress | Arcina Ori | 480.0 | 1.0 | occasion | peaking | 0.994 | 1 | 48 | unmeasured | 0.337 | 0.337 |
-| 5 | Kira Draped Silk Maxi Dress | STAUD | 795.0 | 1.0 | going_out | rising | 2.366 | 1 | 1221 | unmeasured | 0.4563 | 0.3194 |
-| 6 | Marsla Gown  | Cult Gaia | 1198.0 | 0.868 | occasion | rising | 1.793 | 2 | 63 | unmeasured | 0.3463 | 0.3006 |
-| 7 | Helena Dress | Arcina Ori | 480.0 | 1.0 | occasion | rising | 1.694 | 1 | 15 | unmeasured | 0.2993 | 0.2993 |
-| 8 | Drop Waist Lace Gown  | Same | 548.0 | 1.0 | occasion | rising | 1.628 | 1 | 10 | unmeasured | 0.2982 | 0.2982 |
-| 9 | Thalia Dress | Retrofete | 598.0 | 1.0 | occasion | peaking | 1.312 | 1 | 18 | unmeasured | 0.2959 | 0.2959 |
-| 10 | Nellcote Anniversary Dress  | DÔEN | 698.0 | 1.0 | occasion | rising | 1.379 | 1 | 13 | unmeasured | 0.2939 | 0.2939 |
+| 1 | Ano Layered Raffia Dress | Kilentar | 750.0 | 1.0 | occasion | rising | 1.806 | 1 | 256 | 8 (manual) | 0.5614 | 0.5614 |
+| 2 | Mini Dress Sleeveless | Hemant & Nandita | 398.0 | 0.992 | occasion | rising | 6.983 | 1 | 423 | unmeasured | 0.4243 | 0.4209 |
+| 3 | Dahlia Strapless Maxi Dress | Bronx and Banco | 826.0 | 1.0 | occasion | rising | 3.761 | 1 | 72 | unmeasured | 0.4155 | 0.4155 |
+| 4 | Madalena Dress | Arcina Ori | 560.0 | 1.0 | occasion | rising | 3.234 | 1 | 79 | unmeasured | 0.4099 | 0.4099 |
+| 5 | Charli Silk Dress | STAUD | 750.0 | 1.0 | occasion | rising | 1.506 | 1 | 341 | unmeasured | 0.3818 | 0.3818 |
+| 6 | Mock Neck Long Sleeve Lace Gown | Mac Duggal | 498.0 | 1.0 | occasion | peaking | 0.802 | 1 | 30 | unmeasured | 0.3441 | 0.3441 |
+| 7 | Visions Lace Maxi Dress | Third Form | 420.0 | 1.0 | occasion | peaking | 1.131 | 1 | 21 | unmeasured | 0.3115 | 0.3115 |
+| 8 | Kira Draped Silk Maxi Dress | STAUD | 795.0 | 1.0 | going_out | rising | 1.906 | 1 | 1210 | unmeasured | 0.4434 | 0.3104 |
+| 9 | Reformation Frankie Dress | Reformation | 348.0 | 0.792 | occasion | rising | 1.429 | 2 | 110 | unmeasured | 0.377 | 0.2986 |
+| 10 | Darcy Dress | Arcina Ori | 480.0 | 1.0 | occasion | sustained | 0.753 | 1 | 24 | unmeasured | 0.2937 | 0.2937 |
 
 ## Past peak (what a retrospective report would wrongly surface)
 
@@ -37,8 +37,10 @@ High all-time volume, thin recent activity. Listed so the contrast is explicit: 
 
 | Product | Brand | Total clicks | Monthly | Weekly | Week vs month |
 |---|---|---|---|---|---|
-| Fiona Satin Silk Dress | DÔEN | 38277 | 16563 | 229 | 0.059 |
-| The Plunge Drape Gown | Heiress Beverly Hills | 22147 | 4734 | 67 | 0.061 |
-| Cali Knit Dress | Reformation | 11727 | 6352 | 437 | 0.295 |
+| Fiona Satin Silk Dress | DÔEN | 38301 | 16563 | 203 | 0.053 |
+| Cali Knit Dress | Reformation | 11764 | 6306 | 430 | 0.292 |
+| Tiffany Fringe Maxi Dress | MESHKI | 11520 | 4259 | 262 | 0.264 |
+| Side Pleated Midi Dress  | LOFT | 1727 | 1727 | 111 | 0.275 |
+| Clash Sail Silk Maxi Dress | ZIMMERMANN | 713 | 711 | 47 | 0.283 |
 
 _Supply shown as `unmeasured` is not the same as zero; those rows are scored at neutral supply so an unchecked item cannot masquerade as a confirmed gap._
