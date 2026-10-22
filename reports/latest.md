@@ -1,9 +1,9 @@
 # TRACE Demand Radar
 
-Run `120`, compared against run 118 (previous upstream batch, skipped 1 same-batch run(s)).
+Run `121`, compared against run 118 (previous upstream batch, skipped 2 same-batch run(s)).
 
 > The source republishes its click counters as a once-daily batch (measured: zero of 525 products changed across five snapshots spanning 23:27-07:27 UTC, then 248 of 526 changed at once at 13:27). Deltas below are therefore one publish apart, so a change means one day of movement, not the elapsed wall-clock time between runs.
-623 dress products from 9 creators across 108 collections. 54 cleared the volume floor, 44 are in play (rising, peaking or sustained).
+654 dress products from 9 creators across 108 collections. 56 cleared the volume floor, 46 are in play (rising, peaking or sustained).
 
 ## Alerts
 
@@ -26,10 +26,10 @@ Rising, peaking, or sustained (especially popular recently), ordered by priority
 | 4 | Aiyana Pleated Strapless Maxi Dres | MESHKI | 369.0 | 0.876 | occasion | rising | 3.727 | 1 | 41 | unmeasured | 0.3562 | 0.312 |
 | 5 | Mock Neck Long Sleeve Lace Gown | Mac Duggal | 498.0 | 1.0 | occasion | peaking | 1.331 | 1 | 31 | unmeasured | 0.3066 | 0.3066 |
 | 6 | Brocade Cap Sleeve A-Line Ball Gow | Mac Duggal | 798.0 | 1.0 | unknown | rising | 5.075 | 1 | 58 | unmeasured | 0.373 | 0.2984 |
-| 7 | Kira Draped Silk Maxi Dress | STAUD | 795.0 | 1.0 | going_out | peaking | 1.289 | 1 | 909 | unmeasured | 0.4204 | 0.2943 |
-| 8 | Madalena Dress | Arcina Ori | 560.0 | 1.0 | occasion | peaking | 0.819 | 1 | 20 | unmeasured | 0.2878 | 0.2878 |
-| 9 | Mariah Dress  | Nana Jacqueline | 485.0 | 1.0 | occasion | rising | 1.366 | 1 | 8 | unmeasured | 0.2798 | 0.2798 |
-| 10 | Patrizia Dress | Cult Gaia | 698.0 | 1.0 | occasion | peaking | 1.241 | 1 | 14 | unmeasured | 0.2766 | 0.2766 |
+| 7 | Madalena Dress | Arcina Ori | 560.0 | 1.0 | occasion | peaking | 0.819 | 1 | 20 | unmeasured | 0.2878 | 0.2878 |
+| 8 | Mariah Dress  | Nana Jacqueline | 485.0 | 1.0 | occasion | rising | 1.366 | 1 | 8 | unmeasured | 0.2798 | 0.2798 |
+| 9 | Patrizia Dress | Cult Gaia | 698.0 | 1.0 | occasion | peaking | 1.241 | 1 | 14 | unmeasured | 0.2766 | 0.2766 |
+| 10 | Marsla Gown  | Cult Gaia | 1198.0 | 0.868 | occasion | peaking | 1.126 | 1 | 42 | unmeasured | 0.3149 | 0.2733 |
 
 ## Past peak (what a retrospective report would wrongly surface)
 
