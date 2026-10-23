@@ -1,18 +1,18 @@
 # TRACE Demand Radar
 
-Run `122`, compared against run 118 (previous upstream batch, skipped 3 same-batch run(s)).
+Run `123`, compared against run 122 (previous upstream batch).
 
 > The source republishes its click counters as a once-daily batch (measured: zero of 525 products changed across five snapshots spanning 23:27-07:27 UTC, then 248 of 526 changed at once at 13:27). Deltas below are therefore one publish apart, so a change means one day of movement, not the elapsed wall-clock time between runs.
-654 dress products from 9 creators across 108 collections. 56 cleared the volume floor, 46 are in play (rising, peaking or sustained).
+714 dress products from 9 creators across 108 collections. 67 cleared the volume floor, 62 are in play (rising, peaking or sustained).
 
 ## Alerts
 
-- **new_entrant** - Citrus Dress (Retrofete) entered the top 10 at #3 (gap 0.3392, rising)
-- **trajectory_change** - Citrus Dress (Retrofete) insufficient_volume -> rising
-- **new_entrant** - Aiyana Pleated Strapless Maxi Dress (MESHKI) entered the top 10 at #4 (gap 0.3562, rising)
-- **accelerating** - Aiyana Pleated Strapless Maxi Dress (MESHKI) acceleration rose +3.144 to 3.727 since the last run
-- **trajectory_change** - Aiyana Pleated Strapless Maxi Dress (MESHKI) insufficient_volume -> rising
-- **suppressed** -  21 further threshold crossings not shown; raise MAX_ALERTS to see them.
+- **trajectory_change** - Charli Silk Dress (STAUD) rising -> peaking
+- **new_entrant** - Leilani Tiered Lace Midi Dress (Retrofete) entered the top 10 at #3 (gap 0.3841, rising)
+- **accelerating** - Leilani Tiered Lace Midi Dress (Retrofete) acceleration rose +3.478 to 5.811 since the last run
+- **trajectory_change** - Leilani Tiered Lace Midi Dress (Retrofete) insufficient_volume -> rising
+- **new_entrant** - Exclusive Devlyn Satin Gown (Significant Other) entered the top 10 at #4 (gap 0.4309, rising)
+- **suppressed** -  43 further threshold crossings not shown; raise MAX_ALERTS to see them.
 
 ## In play, ranked by priority
 
@@ -20,16 +20,16 @@ Rising, peaking, or sustained (especially popular recently), ordered by priority
 
 | # | Product | Brand | $ | Fit | Occasion | State | Accel | Creators | Daily | Supply | Gap | Priority |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Ano Layered Raffia Dress | Kilentar | 750.0 | 1.0 | occasion | sustained | 0.663 | 1 | 99 | 8 (manual) | 0.4873 | 0.4873 |
-| 2 | Charli Silk Dress | STAUD | 750.0 | 1.0 | occasion | rising | 1.634 | 1 | 415 | unmeasured | 0.39 | 0.39 |
-| 3 | Citrus Dress | Retrofete | 798.0 | 1.0 | occasion | rising | 7.0 | 1 | 42 | unmeasured | 0.3392 | 0.3392 |
-| 4 | Aiyana Pleated Strapless Maxi Dres | MESHKI | 369.0 | 0.876 | occasion | rising | 3.727 | 1 | 41 | unmeasured | 0.3562 | 0.312 |
-| 5 | Mock Neck Long Sleeve Lace Gown | Mac Duggal | 498.0 | 1.0 | occasion | peaking | 1.331 | 1 | 31 | unmeasured | 0.3066 | 0.3066 |
-| 6 | Brocade Cap Sleeve A-Line Ball Gow | Mac Duggal | 798.0 | 1.0 | unknown | rising | 5.075 | 1 | 58 | unmeasured | 0.373 | 0.2984 |
-| 7 | Madalena Dress | Arcina Ori | 560.0 | 1.0 | occasion | peaking | 0.819 | 1 | 20 | unmeasured | 0.2878 | 0.2878 |
-| 8 | Mariah Dress  | Nana Jacqueline | 485.0 | 1.0 | occasion | rising | 1.366 | 1 | 8 | unmeasured | 0.2798 | 0.2798 |
-| 9 | Patrizia Dress | Cult Gaia | 698.0 | 1.0 | occasion | peaking | 1.241 | 1 | 14 | unmeasured | 0.2766 | 0.2766 |
-| 10 | Marsla Gown  | Cult Gaia | 1198.0 | 0.868 | occasion | peaking | 1.126 | 1 | 42 | unmeasured | 0.3149 | 0.2733 |
+| 1 | Ano Layered Raffia Dress | Kilentar | 750.0 | 1.0 | occasion | sustained | 0.256 | 1 | 40 | 8 (manual) | 0.4442 | 0.4442 |
+| 2 | Charli Silk Dress | STAUD | 750.0 | 1.0 | occasion | peaking | 1.316 | 1 | 431 | unmeasured | 0.3869 | 0.3869 |
+| 3 | Leilani Tiered Lace Midi Dress | Retrofete | 858.0 | 1.0 | occasion | rising | 5.811 | 1 | 44 | unmeasured | 0.3841 | 0.3841 |
+| 4 | Exclusive Devlyn Satin Gown | Significant Other | 495.0 | 1.0 | unknown | rising | 4.008 | 1 | 138 | unmeasured | 0.4309 | 0.3447 |
+| 5 | Patrizia Dress | Cult Gaia | 698.0 | 1.0 | occasion | rising | 2.333 | 1 | 31 | unmeasured | 0.3394 | 0.3394 |
+| 6 | Liela Sequin Dress | Retrofete | 698.0 | 1.0 | occasion | rising | 2.932 | 1 | 31 | unmeasured | 0.3392 | 0.3392 |
+| 7 | Viviana Dress | STAUD | 695.0 | 1.0 | unknown | rising | 3.829 | 1 | 99 | unmeasured | 0.4155 | 0.3324 |
+| 8 | Visions Lace Maxi Dress | Third Form | 420.0 | 1.0 | occasion | peaking | 1.176 | 1 | 20 | unmeasured | 0.3103 | 0.3103 |
+| 9 | Reformation Frankie Dress | Reformation | 348.0 | 0.792 | occasion | rising | 1.703 | 1 | 137 | unmeasured | 0.3857 | 0.3055 |
+| 10 | Tie Gown | L'IDÉE | 549.0 | 1.0 | occasion | peaking | 1.235 | 1 | 15 | unmeasured | 0.2995 | 0.2995 |
 
 ## Past peak (what a retrospective report would wrongly surface)
 
@@ -37,6 +37,8 @@ High all-time volume, thin recent activity. Listed so the contrast is explicit: 
 
 | Product | Brand | Total clicks | Monthly | Weekly | Week vs month |
 |---|---|---|---|---|---|
-| Tiffany Fringe Maxi Dress | MESHKI | 11561 | 4124 | 259 | 0.269 |
+| Cali Knit Dress | Reformation | 11861 | 5175 | 232 | 0.192 |
+| Tiffany Fringe Maxi Dress | MESHKI | 11626 | 3956 | 210 | 0.228 |
+| Side Pleated Midi Dress  | LOFT | 1758 | 1758 | 100 | 0.244 |
 
 _Supply shown as `unmeasured` is not the same as zero; those rows are scored at neutral supply so an unchecked item cannot masquerade as a confirmed gap._
