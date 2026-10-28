@@ -1,18 +1,18 @@
 # TRACE Demand Radar
 
-Run `132`, compared against run 130 (previous upstream batch, skipped 1 same-batch run(s)).
+Run `133`, compared against run 132 (previous upstream batch).
 
 > The source republishes its click counters as a once-daily batch (measured: zero of 525 products changed across five snapshots spanning 23:27-07:27 UTC, then 248 of 526 changed at once at 13:27). Deltas below are therefore one publish apart, so a change means one day of movement, not the elapsed wall-clock time between runs.
-707 dress products from 9 creators across 108 collections. 77 cleared the volume floor, 67 are in play (rising, peaking or sustained).
+729 dress products from 9 creators across 108 collections. 70 cleared the volume floor, 60 are in play (rising, peaking or sustained).
 
 ## Alerts
 
-- **new_entrant** - Pandorea Layered Maxi Dress (Aje) entered the top 10 at #1 (gap 0.4597, rising)
-- **accelerating** - Pandorea Layered Maxi Dress (Aje) acceleration rose +4.304 to 5.642 since the last run
-- **trajectory_change** - Pandorea Layered Maxi Dress (Aje) peaking -> rising
-- **accelerating** - Vinicia Dress (Retrofete) acceleration rose +2.654 to 4.251 since the last run
-- **new_entrant** - Thalia Dress (Retrofete) entered the top 10 at #4 (gap 0.3757, rising)
-- **suppressed** -  35 further threshold crossings not shown; raise MAX_ALERTS to see them.
+- **trajectory_change** - Vinicia Dress (Retrofete) rising -> peaking
+- **new_entrant** - Valencia Mini Dress (STAUD) entered the top 10 at #2 (gap 0.3957, rising)
+- **accelerating** - Valencia Mini Dress (STAUD) acceleration rose +4.958 to 5.833 since the last run
+- **trajectory_change** - Valencia Mini Dress (STAUD) insufficient_volume -> rising
+- **trajectory_change** - Ano Layered Raffia Dress (Kilentar) sustained -> peaking
+- **suppressed** -  32 further threshold crossings not shown; raise MAX_ALERTS to see them.
 
 ## In play, ranked by priority
 
@@ -20,16 +20,16 @@ Rising, peaking, or sustained (especially popular recently), ordered by priority
 
 | # | Product | Brand | $ | Fit | Occasion | State | Accel | Creators | Daily | Supply | Gap | Priority |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Pandorea Layered Maxi Dress | Aje | 695.0 | 1.0 | occasion | rising | 5.642 | 1 | 216 | unmeasured | 0.4597 | 0.4597 |
-| 2 | Vinicia Dress | Retrofete | 598.0 | 1.0 | occasion | rising | 4.251 | 1 | 167 | unmeasured | 0.4374 | 0.4374 |
-| 3 | Ano Layered Raffia Dress | Kilentar | 750.0 | 1.0 | occasion | sustained | 0.798 | 1 | 43 | 8 (manual) | 0.3868 | 0.3868 |
-| 4 | Thalia Dress | Retrofete | 648.0 | 1.0 | occasion | rising | 1.912 | 1 | 62 | unmeasured | 0.3757 | 0.3757 |
-| 5 | Charli Silk Dress | STAUD | 750.0 | 1.0 | occasion | peaking | 0.892 | 1 | 262 | unmeasured | 0.3637 | 0.3637 |
-| 6 | Bondera Sequin Dress | Retrofete | 898.0 | 1.0 | unknown | peaking | 1.333 | 1 | 100 | unmeasured | 0.4299 | 0.3439 |
-| 7 | Portia Silk Dress | STAUD | 695.0 | 1.0 | occasion | rising | 2.554 | 1 | 27 | unmeasured | 0.3391 | 0.3391 |
-| 8 | Drop-Waist Satin Midi Dress | BHLDN | 398.0 | 0.992 | occasion | rising | 1.564 | 1 | 21 | unmeasured | 0.3079 | 0.3054 |
-| 9 | Daniela Silk Dress | Reformation | 398.0 | 0.992 | occasion | peaking | 1.167 | 1 | 22 | unmeasured | 0.2978 | 0.2954 |
-| 10 | Madalena Dress | Arcina Ori | 560.0 | 1.0 | occasion | peaking | 1.235 | 1 | 18 | unmeasured | 0.2897 | 0.2897 |
+| 1 | Vinicia Dress | Retrofete | 598.0 | 1.0 | occasion | peaking | 1.177 | 1 | 55 | unmeasured | 0.4042 | 0.4042 |
+| 2 | Valencia Mini Dress | STAUD | 595.0 | 1.0 | occasion | rising | 5.833 | 1 | 40 | unmeasured | 0.3957 | 0.3957 |
+| 3 | Pandorea Layered Maxi Dress | Aje | 695.0 | 1.0 | occasion | rising | 1.595 | 1 | 77 | unmeasured | 0.3884 | 0.3884 |
+| 4 | Ano Layered Raffia Dress | Kilentar | 750.0 | 1.0 | occasion | peaking | 0.9 | 1 | 41 | 8 (manual) | 0.3835 | 0.3835 |
+| 5 | Charli Silk Dress | STAUD | 750.0 | 1.0 | occasion | peaking | 1.314 | 1 | 379 | unmeasured | 0.3777 | 0.3777 |
+| 6 | Thalia Dress | Retrofete | 648.0 | 1.0 | occasion | peaking | 1.158 | 1 | 43 | unmeasured | 0.3447 | 0.3447 |
+| 7 | Kira Strapless Printed Satin A-Lin | BHLDN | 348.0 | 0.792 | occasion | rising | 3.909 | 1 | 43 | unmeasured | 0.3964 | 0.3139 |
+| 8 | Madalena Dress | Arcina Ori | 560.0 | 1.0 | occasion | rising | 1.585 | 1 | 24 | unmeasured | 0.3103 | 0.3103 |
+| 9 | Bondera Sequin Dress | Retrofete | 898.0 | 1.0 | unknown | sustained | 0.486 | 1 | 39 | unmeasured | 0.3854 | 0.3083 |
+| 10 | Delina Dress | Delfi Collective | 559.0 | 1.0 | unknown | rising | 2.642 | 1 | 20 | unmeasured | 0.3612 | 0.289 |
 
 ## Past peak (what a retrospective report would wrongly surface)
 
@@ -37,8 +37,7 @@ High all-time volume, thin recent activity. Listed so the contrast is explicit: 
 
 | Product | Brand | Total clicks | Monthly | Weekly | Week vs month |
 |---|---|---|---|---|---|
-| Olsen Maxi Dress | Show Me Your Mumu | 38880 | 2242 | 154 | 0.294 |
-| Cali Knit Dress | Reformation | 12075 | 4968 | 319 | 0.275 |
-| Side Pleated Midi Dress  | LOFT | 1796 | 1204 | 69 | 0.246 |
+| Bita Gown | Katie May | 18180 | 17567 | 101 | 0.025 |
+| Cali Knit Dress | Reformation | 12119 | 4916 | 328 | 0.286 |
 
 _Supply shown as `unmeasured` is not the same as zero; those rows are scored at neutral supply so an unchecked item cannot masquerade as a confirmed gap._
