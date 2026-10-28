@@ -1,9 +1,9 @@
 # TRACE Demand Radar
 
-Run `133`, compared against run 132 (previous upstream batch).
+Run `134`, compared against run 132 (previous upstream batch, skipped 1 same-batch run(s)).
 
 > The source republishes its click counters as a once-daily batch (measured: zero of 525 products changed across five snapshots spanning 23:27-07:27 UTC, then 248 of 526 changed at once at 13:27). Deltas below are therefore one publish apart, so a change means one day of movement, not the elapsed wall-clock time between runs.
-729 dress products from 9 creators across 108 collections. 70 cleared the volume floor, 60 are in play (rising, peaking or sustained).
+599 dress products from 9 creators across 108 collections. 67 cleared the volume floor, 55 are in play (rising, peaking or sustained).
 
 ## Alerts
 
@@ -12,7 +12,7 @@ Run `133`, compared against run 132 (previous upstream batch).
 - **accelerating** - Valencia Mini Dress (STAUD) acceleration rose +4.958 to 5.833 since the last run
 - **trajectory_change** - Valencia Mini Dress (STAUD) insufficient_volume -> rising
 - **trajectory_change** - Ano Layered Raffia Dress (Kilentar) sustained -> peaking
-- **suppressed** -  32 further threshold crossings not shown; raise MAX_ALERTS to see them.
+- **suppressed** -  22 further threshold crossings not shown; raise MAX_ALERTS to see them.
 
 ## In play, ranked by priority
 
@@ -26,10 +26,10 @@ Rising, peaking, or sustained (especially popular recently), ordered by priority
 | 4 | Ano Layered Raffia Dress | Kilentar | 750.0 | 1.0 | occasion | peaking | 0.9 | 1 | 41 | 8 (manual) | 0.3835 | 0.3835 |
 | 5 | Charli Silk Dress | STAUD | 750.0 | 1.0 | occasion | peaking | 1.314 | 1 | 379 | unmeasured | 0.3777 | 0.3777 |
 | 6 | Thalia Dress | Retrofete | 648.0 | 1.0 | occasion | peaking | 1.158 | 1 | 43 | unmeasured | 0.3447 | 0.3447 |
-| 7 | Kira Strapless Printed Satin A-Lin | BHLDN | 348.0 | 0.792 | occasion | rising | 3.909 | 1 | 43 | unmeasured | 0.3964 | 0.3139 |
-| 8 | Madalena Dress | Arcina Ori | 560.0 | 1.0 | occasion | rising | 1.585 | 1 | 24 | unmeasured | 0.3103 | 0.3103 |
-| 9 | Bondera Sequin Dress | Retrofete | 898.0 | 1.0 | unknown | sustained | 0.486 | 1 | 39 | unmeasured | 0.3854 | 0.3083 |
-| 10 | Delina Dress | Delfi Collective | 559.0 | 1.0 | unknown | rising | 2.642 | 1 | 20 | unmeasured | 0.3612 | 0.289 |
+| 7 | Rayna Embroidered Maxi Dress | Leo Lin | 1095.0 | 0.937 | occasion | rising | 2.397 | 1 | 25 | unmeasured | 0.3601 | 0.3373 |
+| 8 | Petites Jillian Silk Dress | Reformation | 378.0 | 0.912 | occasion | sustained | 0.229 | 1 | 86 | unmeasured | 0.3611 | 0.3293 |
+| 9 | Feather-Trim Sheer Kaftan | HUTCH | 398.0 | 0.992 | occasion | peaking | 0.868 | 1 | 59 | unmeasured | 0.3313 | 0.3286 |
+| 10 | Kira Strapless Printed Satin A-Lin | BHLDN | 348.0 | 0.792 | occasion | rising | 3.909 | 1 | 43 | unmeasured | 0.3964 | 0.3139 |
 
 ## Past peak (what a retrospective report would wrongly surface)
 
@@ -39,5 +39,6 @@ High all-time volume, thin recent activity. Listed so the contrast is explicit: 
 |---|---|---|---|---|---|
 | Bita Gown | Katie May | 18180 | 17567 | 101 | 0.025 |
 | Cali Knit Dress | Reformation | 12119 | 4916 | 328 | 0.286 |
+| Felicity Satin Asymmetric-Neck Maxi Dr | Club L London | 4917 | 1558 | 83 | 0.228 |
 
 _Supply shown as `unmeasured` is not the same as zero; those rows are scored at neutral supply so an unchecked item cannot masquerade as a confirmed gap._
