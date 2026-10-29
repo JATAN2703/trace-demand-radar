@@ -1,18 +1,18 @@
 # TRACE Demand Radar
 
-Run `134`, compared against run 132 (previous upstream batch, skipped 1 same-batch run(s)).
+Run `135`, compared against run 134 (previous upstream batch).
 
 > The source republishes its click counters as a once-daily batch (measured: zero of 525 products changed across five snapshots spanning 23:27-07:27 UTC, then 248 of 526 changed at once at 13:27). Deltas below are therefore one publish apart, so a change means one day of movement, not the elapsed wall-clock time between runs.
-599 dress products from 9 creators across 108 collections. 67 cleared the volume floor, 55 are in play (rising, peaking or sustained).
+669 dress products from 9 creators across 108 collections. 69 cleared the volume floor, 63 are in play (rising, peaking or sustained).
 
 ## Alerts
 
-- **trajectory_change** - Vinicia Dress (Retrofete) rising -> peaking
-- **new_entrant** - Valencia Mini Dress (STAUD) entered the top 10 at #2 (gap 0.3957, rising)
-- **accelerating** - Valencia Mini Dress (STAUD) acceleration rose +4.958 to 5.833 since the last run
-- **trajectory_change** - Valencia Mini Dress (STAUD) insufficient_volume -> rising
-- **trajectory_change** - Ano Layered Raffia Dress (Kilentar) sustained -> peaking
-- **suppressed** -  22 further threshold crossings not shown; raise MAX_ALERTS to see them.
+- **new_entrant** - Genevieve Nebula Gown (LA FUORI) entered the top 10 at #1 (gap 0.4234, rising)
+- **accelerating** - Genevieve Nebula Gown (LA FUORI) acceleration rose +5.763 to 6.763 since the last run
+- **trajectory_change** - Genevieve Nebula Gown (LA FUORI) insufficient_volume -> rising
+- **new_entrant** - Sabela Maxi Dress (De La Vali) entered the top 10 at #6 (gap 0.3776, rising)
+- **accelerating** - Sabela Maxi Dress (De La Vali) acceleration rose +2.801 to 2.93 since the last run
+- **suppressed** -  19 further threshold crossings not shown; raise MAX_ALERTS to see them.
 
 ## In play, ranked by priority
 
@@ -20,16 +20,16 @@ Rising, peaking, or sustained (especially popular recently), ordered by priority
 
 | # | Product | Brand | $ | Fit | Occasion | State | Accel | Creators | Daily | Supply | Gap | Priority |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Vinicia Dress | Retrofete | 598.0 | 1.0 | occasion | peaking | 1.177 | 1 | 55 | unmeasured | 0.4042 | 0.4042 |
-| 2 | Valencia Mini Dress | STAUD | 595.0 | 1.0 | occasion | rising | 5.833 | 1 | 40 | unmeasured | 0.3957 | 0.3957 |
-| 3 | Pandorea Layered Maxi Dress | Aje | 695.0 | 1.0 | occasion | rising | 1.595 | 1 | 77 | unmeasured | 0.3884 | 0.3884 |
-| 4 | Ano Layered Raffia Dress | Kilentar | 750.0 | 1.0 | occasion | peaking | 0.9 | 1 | 41 | 8 (manual) | 0.3835 | 0.3835 |
-| 5 | Charli Silk Dress | STAUD | 750.0 | 1.0 | occasion | peaking | 1.314 | 1 | 379 | unmeasured | 0.3777 | 0.3777 |
-| 6 | Thalia Dress | Retrofete | 648.0 | 1.0 | occasion | peaking | 1.158 | 1 | 43 | unmeasured | 0.3447 | 0.3447 |
-| 7 | Rayna Embroidered Maxi Dress | Leo Lin | 1095.0 | 0.937 | occasion | rising | 2.397 | 1 | 25 | unmeasured | 0.3601 | 0.3373 |
-| 8 | Petites Jillian Silk Dress | Reformation | 378.0 | 0.912 | occasion | sustained | 0.229 | 1 | 86 | unmeasured | 0.3611 | 0.3293 |
-| 9 | Feather-Trim Sheer Kaftan | HUTCH | 398.0 | 0.992 | occasion | peaking | 0.868 | 1 | 59 | unmeasured | 0.3313 | 0.3286 |
-| 10 | Kira Strapless Printed Satin A-Lin | BHLDN | 348.0 | 0.792 | occasion | rising | 3.909 | 1 | 43 | unmeasured | 0.3964 | 0.3139 |
+| 1 | Genevieve Nebula Gown | LA FUORI | 806.0 | 1.0 | occasion | rising | 6.763 | 1 | 171 | unmeasured | 0.4234 | 0.4234 |
+| 2 | Charli Silk Dress | STAUD | 750.0 | 1.0 | occasion | peaking | 0.928 | 1 | 250 | unmeasured | 0.3604 | 0.3604 |
+| 3 | Thalia Dress | Retrofete | 598.0 | 1.0 | occasion | peaking | 1.095 | 1 | 46 | unmeasured | 0.3494 | 0.3494 |
+| 4 | Valencia Mini Dress | STAUD | 595.0 | 1.0 | occasion | rising | 1.75 | 1 | 16 | unmeasured | 0.3478 | 0.3478 |
+| 5 | Ano Layered Raffia Dress | Kilentar | 750.0 | 1.0 | occasion | sustained | 0.495 | 1 | 20 | 8 (manual) | 0.339 | 0.339 |
+| 6 | Sabela Maxi Dress | De La Vali | 780.0 | 1.0 | unknown | rising | 2.93 | 1 | 36 | unmeasured | 0.3776 | 0.3021 |
+| 7 | One-Shoulder Feather Kaftan | HUTCH | 398.0 | 0.992 | occasion | rising | 1.556 | 1 | 16 | unmeasured | 0.2893 | 0.287 |
+| 8 | Anaiis Silk Dress | Reformation | 398.0 | 0.992 | occasion | peaking | 1.077 | 1 | 12 | unmeasured | 0.2826 | 0.2803 |
+| 9 | Libertie Gown | L’IDÉE | 489.0 | 1.0 | occasion | rising | 1.424 | 1 | 12 | unmeasured | 0.2762 | 0.2762 |
+| 10 | Nellcote Anniversary Dress  | DÔEN | 698.0 | 1.0 | occasion | peaking | 1.148 | 1 | 10 | unmeasured | 0.2761 | 0.2761 |
 
 ## Past peak (what a retrospective report would wrongly surface)
 
@@ -37,8 +37,6 @@ High all-time volume, thin recent activity. Listed so the contrast is explicit: 
 
 | Product | Brand | Total clicks | Monthly | Weekly | Week vs month |
 |---|---|---|---|---|---|
-| Bita Gown | Katie May | 18180 | 17567 | 101 | 0.025 |
-| Cali Knit Dress | Reformation | 12119 | 4916 | 328 | 0.286 |
-| Felicity Satin Asymmetric-Neck Maxi Dr | Club L London | 4917 | 1558 | 83 | 0.228 |
+| Audience Satin Mini Halter Dress | Ten | 15383 | 1872 | 59 | 0.135 |
 
 _Supply shown as `unmeasured` is not the same as zero; those rows are scored at neutral supply so an unchecked item cannot masquerade as a confirmed gap._
