@@ -1,18 +1,18 @@
 # TRACE Demand Radar
 
-Run `142`, compared against run 140 (previous upstream batch, skipped 1 same-batch run(s)).
+Run `143`, compared against run 142 (previous upstream batch).
 
 > The source republishes its click counters as a once-daily batch (measured: zero of 525 products changed across five snapshots spanning 23:27-07:27 UTC, then 248 of 526 changed at once at 13:27). Deltas below are therefore one publish apart, so a change means one day of movement, not the elapsed wall-clock time between runs.
-487 dress products from 9 creators across 108 collections. 49 cleared the volume floor, 42 are in play (rising, peaking or sustained).
+490 dress products from 9 creators across 108 collections. 55 cleared the volume floor, 46 are in play (rising, peaking or sustained).
 
 ## Alerts
 
-- **new_entrant** - The Pieta Maxi Dress (Solace London) entered the top 10 at #2 (gap 0.3404, rising)
-- **accelerating** - The Pieta Maxi Dress (Solace London) acceleration rose +2.057 to 2.965 since the last run
-- **trajectory_change** - The Pieta Maxi Dress (Solace London) insufficient_volume -> rising
-- **new_entrant** - Abbey Jersey Dress (Junie) entered the top 10 at #3 (gap 0.321, rising)
-- **trajectory_change** - Abbey Jersey Dress (Junie) insufficient_volume -> rising
-- **suppressed** -  18 further threshold crossings not shown; raise MAX_ALERTS to see them.
+- **accelerating** - Thalia Dress (Retrofete) acceleration rose +0.802 to 1.963 since the last run
+- **trajectory_change** - Thalia Dress (Retrofete) peaking -> rising
+- **new_entrant** - Mimi Dress (STAUD) entered the top 10 at #2 (gap 0.393, rising)
+- **new_entrant** - Anchored Floor Length Dress (Third Form) entered the top 10 at #3 (gap 0.3857, rising)
+- **accelerating** - Anchored Floor Length Dress (Third Form) acceleration rose +3.875 to 4.511 since the last run
+- **suppressed** -  28 further threshold crossings not shown; raise MAX_ALERTS to see them.
 
 ## In play, ranked by priority
 
@@ -20,16 +20,16 @@ Rising, peaking, or sustained (especially popular recently), ordered by priority
 
 | # | Product | Brand | $ | Fit | Occasion | State | Accel | Creators | Daily | Supply | Gap | Priority |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Thalia Dress | Retrofete | 648.0 | 1.0 | occasion | peaking | 1.161 | 1 | 70 | unmeasured | 0.3785 | 0.3785 |
-| 2 | The Pieta Maxi Dress | Solace London | 860.0 | 1.0 | occasion | rising | 2.965 | 1 | 36 | unmeasured | 0.3404 | 0.3404 |
-| 3 | Abbey Jersey Dress | Junie | 526.0 | 1.0 | unknown | rising | 3.182 | 1 | 20 | unmeasured | 0.321 | 0.2568 |
-| 4 | Izel Cape Gown                  | SIMKHAI | 747.0 | 1.0 | unknown | rising | 1.806 | 1 | 16 | unmeasured | 0.3067 | 0.2454 |
-| 5 | Josie Bodice Midi Dress | ALÉMAIS | 690.0 | 1.0 | unknown | sustained | 0.53 | 1 | 24 | unmeasured | 0.2651 | 0.2121 |
-| 6 | Mock Neck Long Sleeve Lace Gown | Mac Duggal | 498.0 | 1.0 | unknown | rising | 2.019 | 1 | 15 | unmeasured | 0.2647 | 0.2118 |
-| 7 | The Cora Dress | Réalisation Par | 360.0 | 0.84 | unknown | sustained | 0.598 | 1 | 37 | 25 (manual) | 0.3061 | 0.2057 |
-| 8 | Amara Bustier Pleated Fit & Flare  | HUTCH | 348.0 | 0.792 | occasion | peaking | 1.05 | 1 | 9 | unmeasured | 0.2571 | 0.2036 |
-| 9 | Brynhild Strapless Maxi Dress | SAYLOR | 264.0 | 0.456 | occasion | rising | 6.748 | 1 | 751 | unmeasured | 0.4289 | 0.1956 |
-| 10 | Mynah Maxi Dress | Deme by Gabriella | 482.0 | 1.0 | unknown | rising | 1.5 | 1 | 9 | unmeasured | 0.2415 | 0.1932 |
+| 1 | Thalia Dress | Retrofete | 648.0 | 1.0 | occasion | rising | 1.963 | 1 | 136 | unmeasured | 0.4275 | 0.4275 |
+| 2 | Mimi Dress | STAUD | 450.0 | 1.0 | unknown | rising | 2.808 | 1 | 69 | unmeasured | 0.393 | 0.3144 |
+| 3 | Anchored Floor Length Dress | Third Form | 420.0 | 1.0 | unknown | rising | 4.511 | 1 | 29 | unmeasured | 0.3857 | 0.3086 |
+| 4 | The Pieta Maxi Dress | Solace London | 860.0 | 1.0 | occasion | rising | 1.929 | 1 | 27 | unmeasured | 0.2981 | 0.2981 |
+| 5 | Freda Silk Dress | STAUD | 795.0 | 1.0 | unknown | rising | 1.924 | 1 | 36 | unmeasured | 0.3296 | 0.2637 |
+| 6 | Lace Off Shoulder Mini Dress | Mac Duggal | 898.0 | 1.0 | unknown | rising | 2.827 | 1 | 21 | unmeasured | 0.3228 | 0.2582 |
+| 7 | Florencia Maxi Dress | De La Vali | 985.0 | 1.0 | unknown | rising | 2.164 | 1 | 17 | unmeasured | 0.2968 | 0.2374 |
+| 8 | Josie Bodice Midi Dress | ALÉMAIS | 690.0 | 1.0 | unknown | peaking | 1.024 | 1 | 37 | unmeasured | 0.2899 | 0.2319 |
+| 9 | Izel Cape Gown                  | SIMKHAI | 747.0 | 1.0 | unknown | peaking | 1.167 | 1 | 11 | unmeasured | 0.2776 | 0.2221 |
+| 10 | Mynah Maxi Dress | Deme by Gabriella | 482.0 | 1.0 | unknown | rising | 1.936 | 1 | 13 | unmeasured | 0.2687 | 0.215 |
 
 ## Past peak (what a retrospective report would wrongly surface)
 
@@ -37,9 +37,8 @@ High all-time volume, thin recent activity. Listed so the contrast is explicit: 
 
 | Product | Brand | Total clicks | Monthly | Weekly | Week vs month |
 |---|---|---|---|---|---|
-| Audience Satin Mini Halter Dress | Ten | 15419 | 1877 | 71 | 0.162 |
-| Viviana Dress | STAUD | 5360 | 1153 | 79 | 0.294 |
-| Puff Sleeve Valentina Mini Dress | Hyacinth House | 4545 | 4044 | 261 | 0.277 |
+| Audience Satin Mini Halter Dress | Ten | 15428 | 1875 | 69 | 0.158 |
+| Fawn Silk Maxi Dress | STAUD | 4069 | 867 | 49 | 0.242 |
 
 ## Sources unavailable this run
 
