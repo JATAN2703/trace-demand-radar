@@ -1,6 +1,6 @@
 # TRACE Demand Radar
 
-Run `154`, compared against run 153 (no distinct batch found; all prior runs share this batch).
+Run `155`, compared against run 154 (no distinct batch found; all prior runs share this batch).
 
 > The source republishes its click counters as a once-daily batch (measured: zero of 525 products changed across five snapshots spanning 23:27-07:27 UTC, then 248 of 526 changed at once at 13:27). Deltas below are therefore one publish apart, so a change means one day of movement, not the elapsed wall-clock time between runs.
 492 dress products from 9 creators across 108 collections. 0 cleared the volume floor, 0 are in play (rising, peaking or sustained).
